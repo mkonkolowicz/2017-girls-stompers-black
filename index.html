@@ -114,6 +114,14 @@
     .callcard .means{font-size:13px}
     .callcard .when{font-size:10px}
   }
+  .grouphead{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:44px 0 14px;padding:0 4px 8px;border-bottom:4px solid var(--green);scroll-margin-top:64px}
+  .grouphead .gk{font-size:clamp(24px,4vw,34px);font-weight:900;letter-spacing:-.01em;color:var(--ink)}
+  .grouphead .gs{font-size:15px;color:var(--muted)}
+  .cardgroup{margin:18px 0 6px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .cardgroup a{color:var(--green);text-decoration:none}
+  .cardgroup + .cards{margin-top:6px}
+  nav.quick .navg{flex:0 0 auto;align-self:center;color:#8d8f95;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:0 2px 0 8px}
+  nav.quick .navg:first-child{padding-left:0}
   .printbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
   .pbtn{display:inline-block;background:var(--green);color:#fff;border:0;border-radius:999px;padding:9px 16px;font:inherit;font-weight:800;font-size:14px;text-decoration:none;cursor:pointer}
   .pbtn.ghost{background:transparent;color:var(--green-hi);border:1.5px solid var(--green)}
@@ -139,6 +147,9 @@
     .cards{grid-template-columns:repeat(3,1fr) !important}
     .callcard,.playhead,header.hero,.jobs b,.drill .num,.tips,.pbtn{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .intro,.legend{break-inside:avoid}
+    .grouphead{break-before:page;margin:0 0 10px}
+    .grouphead + section.play{break-before:auto}
+    .cardgroup{margin:8px 0 4px;break-after:avoid}
     section.play{overflow:visible !important;border-radius:0}
     .playhead{border-radius:14px}
     .drills{display:block !important;margin:12px 0 0 !important}
@@ -165,14 +176,14 @@
     <img class="club-logo" src="icons/stompers-logo.png" width="132" height="132" alt="LaSalle Stompers logo">
     <div class="kicker">ECSL · Ontario Soccer · U10 Girls</div>
     <h1>LaSalle Stompers 2017 Black<br>Game Calls Playbook</h1>
-    <p>Eight calls Coach yells from the sideline. Each one matches a picture in your head and two drills we do at practice. Hear the call, see the picture, do your job.</p>
+    <p>Nine calls Coach yells from the sideline. Each one matches a picture in your head and two drills we do at practice. Hear the call, see the picture, do your job.</p>
     <p class="screen-only" style="color:var(--green-hi);font-weight:700">Every diagram plays like a short video. Tap a diagram to pause it, ↺ to watch again, ⛶ for full screen. On a phone, turn it sideways to go full screen.</p>
     <p class="screen-only printbar"><a class="pbtn" href="stompers-playbook.pdf" download>⬇ Printable PDF</a><button class="pbtn ghost" type="button" onclick="window.print()">🖨 Print</button></p>
   </div>
 </header>
 
 <nav class="quick" aria-label="Jump to a call"><div class="row">
-  <a href="#stomp">STOMP!</a><a href="#shape">SHAPE UP!</a><a href="#wings">WINGS OUT!</a><a href="#trap">SET THE TRAP!</a><a href="#tap">TAP &amp; BLAST!</a><a href="#wall">WALL UP!</a><a href="#crash">CRASH THE BOX!</a><a href="#lock">LOCK THE BOX!</a>
+  <span class="navg">Team shape</span><a href="#shape">SHAPE UP!</a><span class="navg">Win the ball</span><a href="#stomp">STOMP!</a><a href="#trap">SET THE TRAP!</a><span class="navg">Advance the ball</span><a href="#wings">WINGS OUT!</a><a href="#overtop">OVER THE TOP!</a><span class="navg">Corners</span><a href="#crash">CRASH THE BOX!</a><a href="#lock">LOCK THE BOX!</a><span class="navg">Free kicks</span><a href="#tap">TAP &amp; BLAST!</a><a href="#wall">WALL UP!</a>
 </div></nav>
 
 <main class="wrap">
@@ -187,86 +198,34 @@
     </ol>
   </div>
 
+  <h3 class="cardgroup"><a href="#g-shape">Team shape</a></h3>
+  <div class="cards">
+    <a class="callcard" href="#shape"><div class="when">Any time</div><div class="call">SHAPE UP!</div><div class="means">Get back in your 2-3-1 spot. Make triangles. "BIG" with the ball, "SMALL" without it.</div></a>
+  </div>
+  <h3 class="cardgroup"><a href="#g-win">Win the ball</a></h3>
   <div class="cards">
     <a class="callcard" href="#stomp"><div class="when">They have the ball</div><div class="call">STOMP!</div><div class="means">Closest girl presses the ball. Next girl covers. Everyone squeezes in.</div></a>
-    <a class="callcard" href="#shape"><div class="when">Any time</div><div class="call">SHAPE UP!</div><div class="means">Get back in your 2-3-1 spot. Make triangles. "BIG" with the ball, "SMALL" without it.</div></a>
-    <a class="callcard" href="#wings"><div class="when">We win it · our GK has it</div><div class="call">WINGS OUT!</div><div class="means">Backs fly to the sidelines. Mids show for the ball. Pass it forward and go!</div></a>
     <a class="callcard" href="#trap"><div class="when">Their keeper has it</div><div class="call">SET THE TRAP!</div><div class="means">Line up at the retreat line. When she passes: striker presses, wings block, CM jams the middle.</div></a>
-    <a class="callcard" href="#tap"><div class="when">Our indirect free kick</div><div class="call">TAP &amp; BLAST!</div><div class="means">One girl taps it a little, the next girl shoots right away.</div></a>
-    <a class="callcard" href="#wall"><div class="when">Their indirect free kick</div><div class="call">WALL UP!</div><div class="means">Keeper calls the number. Wall blocks the near post. Charge on the first touch.</div></a>
+  </div>
+  <h3 class="cardgroup"><a href="#g-advance">Advance the ball</a></h3>
+  <div class="cards">
+    <a class="callcard" href="#wings"><div class="when">We win it · our GK has it</div><div class="call">WINGS OUT!</div><div class="means">Backs fly to the sidelines. Mids show for the ball. Pass it forward and go!</div></a>
+    <a class="callcard" href="#overtop"><div class="when">They're pressing us high</div><div class="call">OVER THE TOP!</div><div class="means">Wings are covered? GK throws or kicks it high and far, into the space behind them. Strikers and wings sprint!</div></a>
+  </div>
+  <h3 class="cardgroup"><a href="#g-corners">Corners</a></h3>
+  <div class="cards">
     <a class="callcard" href="#crash"><div class="when">Our corner kick</div><div class="call">CRASH THE BOX!</div><div class="means">Kicker's hand up = get ready. Hand DOWN = GO! Runners attack near post, far post and the rebound spot.</div></a>
     <a class="callcard" href="#lock"><div class="when">Their corner kick</div><div class="call">LOCK THE BOX!</div><div class="means">Post, mark, gate, outlet. Clear it high, far and wide, then everybody steps OUT.</div></a>
+  </div>
+  <h3 class="cardgroup"><a href="#g-free">Free kicks</a></h3>
+  <div class="cards">
+    <a class="callcard" href="#tap"><div class="when">Our indirect free kick</div><div class="call">TAP &amp; BLAST!</div><div class="means">One girl taps it a little, the next girl shoots right away.</div></a>
+    <a class="callcard" href="#wall"><div class="when">Their indirect free kick</div><div class="call">WALL UP!</div><div class="means">Keeper calls the number. Wall blocks the near post. Charge on the first touch.</div></a>
   </div>
 
   <div class="legend" id="legend"></div>
 
-  <!-- ===================== STOMP ===================== -->
-  <section class="play" id="stomp">
-    <div class="playhead">
-      <div class="tag">Pressing · when the other team has the ball</div>
-      <div class="call">STOMP!</div>
-      <div class="means">Go get the ball back, together. One girl presses, one covers, the rest squeeze in.</div>
-    </div>
-    <div class="body">
-      <div class="picture">
-        <figure><div class="dg" data-d="stomp_pic"></div><figcaption>They have the ball near our right sideline. The faded circles show where we started.</figcaption></figure>
-        <div>
-          <h3>The picture in your head</h3>
-          <ul class="jobs">
-            <li><b>1 · STOMP</b>The <em>closest</em> girl sprints at the ball. Two big steps away, slow down, bend your knees, stand sideways.</li>
-            <li><b>Make her go to the line</b>Block the middle so she has to go to the sideline. The sideline is our extra defender.</li>
-            <li><b>2 · COVER</b>The next closest girl stands behind and to the side of the presser, about 4 big steps away. If she gets past #1, you're there.</li>
-            <li><b>3 · SQUEEZE</b>Everyone else moves toward the ball and steps up so the field gets small.</li>
-          </ul>
-          <p class="say"><strong>Presser shouts:</strong> "I've got ball!" &nbsp; <strong>Cover shouts:</strong> "I'm behind you!"</p>
-          <p class="say"><strong>Remember the retreat line:</strong> their keeper has the ball, or it's their goal kick? No STOMP yet. Coach yells <strong>"SET THE TRAP!"</strong> Run back to the retreat line and wait. When one of their players touches the keeper's pass, the ball is in play. Then spring the trap!</p>
-        </div>
-      </div>
-
-      <div class="drills">
-        <div class="drill">
-          <figure><div class="dg" data-d="stomp_d1"></div></figure>
-          <div>
-            <span class="num">DRILL 1</span>
-            <h3>1v1 Stomp to the Line</h3>
-            <p class="meta">Grid about 20 × 15 big steps · pairs · 8–10 min</p>
-            <ol>
-              <li>Defender (D) starts on the top line with the ball. Attacker (A) waits on the bottom line.</li>
-              <li>D passes to A, then yells <strong>"STOMP!"</strong> and sprints at her.</li>
-              <li>Two big steps away: brakes on. Small steps, knees bent, sideways stance.</li>
-              <li>D blocks the middle gate and pushes A toward a side Trap Zone.</li>
-              <li>A scores by dribbling through the middle gate. D scores by winning the ball or trapping A in a side zone.</li>
-              <li>Swap roles and go to the back of the line.</li>
-            </ol>
-            <div class="tips">
-              <p><strong>Remember:</strong> sprint, brake, sit. Don't dive in. Watch the ball, not her fancy feet.</p>
-              <p><strong>Harder:</strong> D starts further back, or A gets 2 tries.</p>
-            </div>
-          </div>
-        </div>
-        <div class="drill">
-          <figure><div class="dg" data-d="stomp_d2"></div></figure>
-          <div>
-            <span class="num">DRILL 2</span>
-            <h3>2v2 Press &amp; Cover</h3>
-            <p class="meta">Grid about 25 × 20 big steps · 2v2 · 10 min</p>
-            <ol>
-              <li>Two defenders on the top line, two attackers on the bottom line. Two small gates on the top line.</li>
-              <li>Coach passes to either attacker.</li>
-              <li>The closest defender yells <strong>"STOMP!"</strong> and presses.</li>
-              <li>The other defender yells <strong>"COVER!"</strong> and moves behind and to the side of her, not flat next to her.</li>
-              <li>If the attackers pass, switch jobs fast: the new closest girl presses, the other covers.</li>
-              <li>Attackers score by dribbling through a gate. Defenders score by winning it and dribbling over the bottom line.</li>
-            </ol>
-            <div class="tips">
-              <p><strong>Remember:</strong> cover makes a diagonal line, not a flat line. Talk the whole time.</p>
-              <p><strong>Harder:</strong> make it 3v2. The defenders have to press and cover even faster.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="grouphead" id="g-shape"><span class="gk">Team shape</span><span class="gs">Where we stand, all game long.</span></div>
 
   <!-- ===================== SHAPE UP ===================== -->
   <section class="play" id="shape">
@@ -331,67 +290,69 @@
     </div>
   </section>
 
-  <!-- ===================== WINGS OUT ===================== -->
-  <section class="play" id="wings">
+  <div class="grouphead" id="g-win"><span class="gk">Win the ball</span><span class="gs">They have it. Here's how we get it back.</span></div>
+
+  <!-- ===================== STOMP ===================== -->
+  <section class="play" id="stomp">
     <div class="playhead">
-      <div class="tag">Moving the ball forward · we just won it, or our keeper has it</div>
-      <div class="call">WINGS OUT!</div>
-      <div class="means">We've got it! Spread out like wings so the girl with the ball has lots of passes. Then move it forward. It's like <strong style="color:var(--green-hi)">BIG!</strong>, but fast.</div>
+      <div class="tag">Pressing · when the other team has the ball</div>
+      <div class="call">STOMP!</div>
+      <div class="means">Go get the ball back, together. One girl presses, one covers, the rest squeeze in.</div>
     </div>
     <div class="body">
       <div class="picture">
-        <figure><div class="dg" data-d="wings_pic"></div><figcaption>Our keeper has the ball. The other team has to go back behind the retreat line until the ball is in play.</figcaption></figure>
+        <figure><div class="dg" data-d="stomp_pic"></div><figcaption>They have the ball near our right sideline. The faded circles show where we started.</figcaption></figure>
         <div>
           <h3>The picture in your head</h3>
           <ul class="jobs">
-            <li><b>Wings</b>LB and RB: run to the sideline, as wide as you can go. LM and RM: wide and up the field.</li>
-            <li><b>Show</b>CM: come toward the ball in the middle so it can come to you. Striker: stay high and stretch them.</li>
-            <li><b>Ball girl</b>Head up. Pass to the open wing, or dribble into the space in front of you. Forward first!</li>
-            <li><b>GK</b>Wait until every red is behind the retreat line. No big boots: roll it, throw it, or pass it on the ground to a wide back.</li>
-            <li><b>Retreat line</b>They can't cross it until one of us touches the keeper's pass. That's free time. Use it!</li>
+            <li><b>1 · STOMP</b>The <em>closest</em> girl sprints at the ball. Two big steps away, slow down, bend your knees, stand sideways.</li>
+            <li><b>Make her go to the line</b>Block the middle so she has to go to the sideline. The sideline is our extra defender.</li>
+            <li><b>2 · COVER</b>The next closest girl stands behind and to the side of the presser, about 4 big steps away. If she gets past #1, you're there.</li>
+            <li><b>3 · SQUEEZE</b>Everyone else moves toward the ball and steps up so the field gets small.</li>
           </ul>
-          <p class="say"><strong>After STOMP!</strong> The girl who wins it yells <strong>"WINGS OUT!"</strong> Everyone else flies wide and forward right away, before they get back.</p>
+          <p class="say"><strong>Presser shouts:</strong> "I've got ball!" &nbsp; <strong>Cover shouts:</strong> "I'm behind you!"</p>
+          <p class="say"><strong>Remember the retreat line:</strong> their keeper has the ball, or it's their goal kick? No STOMP yet. Coach yells <strong>"SET THE TRAP!"</strong> Run back to the retreat line and wait. When one of their players touches the keeper's pass, the ball is in play. Then spring the trap!</p>
         </div>
       </div>
 
       <div class="drills">
         <div class="drill">
-          <figure><div class="dg" data-d="wings_d1"></div></figure>
+          <figure><div class="dg" data-d="stomp_d1"></div></figure>
           <div>
             <span class="num">DRILL 1</span>
-            <h3>Stomp &amp; Fly</h3>
-            <p class="meta">Grid about 30 × 20 big steps · 3 Stompers vs 2 · 10 min</p>
+            <h3>1v1 Stomp to the Line</h3>
+            <p class="meta">Grid about 20 × 15 big steps · pairs · 8–10 min</p>
             <ol>
-              <li>Mark a Wing Lane along each sideline with cones. Three Stompers start near our end line. Two red players start in the middle.</li>
-              <li>Coach passes to a red player.</li>
-              <li>The closest Stomper yells <strong>"STOMP!"</strong> and presses. The next girl covers.</li>
-              <li>When we win it, that girl yells <strong>"WINGS OUT!"</strong> The other two sprint into a Wing Lane, wide and forward.</li>
-              <li>Pass to a wing. She dribbles over the far end line = 1 point. Do it in 6 seconds = 2 points!</li>
-              <li>Reds score by dribbling over our end line. Swap teams after 5 tries.</li>
+              <li>Defender (D) starts on the top line with the ball. Attacker (A) waits on the bottom line.</li>
+              <li>D passes to A, then yells <strong>"STOMP!"</strong> and sprints at her.</li>
+              <li>Two big steps away: brakes on. Small steps, knees bent, sideways stance.</li>
+              <li>D blocks the middle gate and pushes A toward a side Trap Zone.</li>
+              <li>A scores by dribbling through the middle gate. D scores by winning the ball or trapping A in a side zone.</li>
+              <li>Swap roles and go to the back of the line.</li>
             </ol>
             <div class="tips">
-              <p><strong>Remember:</strong> the second we win it, fly wide. Don't stand and watch.</p>
-              <p><strong>Harder:</strong> add a third red player who chases from our end line.</p>
+              <p><strong>Remember:</strong> sprint, brake, sit. Don't dive in. Watch the ball, not her fancy feet.</p>
+              <p><strong>Harder:</strong> D starts further back, or A gets 2 tries.</p>
             </div>
           </div>
         </div>
         <div class="drill">
-          <figure><div class="dg" data-d="wings_d2"></div></figure>
+          <figure><div class="dg" data-d="stomp_d2"></div></figure>
           <div>
             <span class="num">DRILL 2</span>
-            <h3>Retreat Line Build-Out</h3>
-            <p class="meta">Our third of the field · GK + 2 backs + CM vs 3 · retreat line cones · 12 min</p>
+            <h3>2v2 Press &amp; Cover</h3>
+            <p class="meta">Grid about 25 × 20 big steps · 2v2 · 10 min</p>
             <ol>
-              <li>Put cones on the retreat line and two gates on the halfway line. Reds start near our box.</li>
-              <li>Coach rolls the ball to our GK. Reds jog back behind the retreat line.</li>
-              <li>Coach yells <strong>"WINGS OUT!"</strong> Backs run to the sideline, wide as the cones. CM comes to show in the middle.</li>
-              <li>GK waits until every red is behind the line, then passes on the ground to a wide back.</li>
-              <li>She touches it: now reds can cross! Dribble forward or pass to CM.</li>
-              <li>Through a halfway gate = 2 points. Reds win it and score = 1 point for them.</li>
+              <li>Two defenders on the top line, two attackers on the bottom line. Two small gates on the top line.</li>
+              <li>Coach passes to either attacker.</li>
+              <li>The closest defender yells <strong>"STOMP!"</strong> and presses.</li>
+              <li>The other defender yells <strong>"COVER!"</strong> and moves behind and to the side of her, not flat next to her.</li>
+              <li>If the attackers pass, switch jobs fast: the new closest girl presses, the other covers.</li>
+              <li>Attackers score by dribbling through a gate. Defenders score by winning it and dribbling over the bottom line.</li>
             </ol>
             <div class="tips">
-              <p><strong>Remember:</strong> no rush. The reds can't come until we touch the pass, so GK takes her time.</p>
-              <p><strong>Harder:</strong> add a fourth red, or start with a goal kick instead of a roll.</p>
+              <p><strong>Remember:</strong> cover makes a diagonal line, not a flat line. Talk the whole time.</p>
+              <p><strong>Harder:</strong> make it 3v2. The defenders have to press and cover even faster.</p>
             </div>
           </div>
         </div>
@@ -466,6 +427,278 @@
       </div>
     </div>
   </section>
+
+  <div class="grouphead" id="g-advance"><span class="gk">Advance the ball</span><span class="gs">We have it. Here's how we move it up the field.</span></div>
+
+  <!-- ===================== WINGS OUT ===================== -->
+  <section class="play" id="wings">
+    <div class="playhead">
+      <div class="tag">Moving the ball forward · we just won it, or our keeper has it</div>
+      <div class="call">WINGS OUT!</div>
+      <div class="means">We've got it! Spread out like wings so the girl with the ball has lots of passes. Then move it forward. It's like <strong style="color:var(--green-hi)">BIG!</strong>, but fast.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="wings_pic"></div><figcaption>Our keeper has the ball. The other team has to go back behind the retreat line until the ball is in play.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>Wings</b>LB and RB: run to the sideline, as wide as you can go. LM and RM: wide and up the field.</li>
+            <li><b>Show</b>CM: come toward the ball in the middle so it can come to you. Striker: stay high and stretch them.</li>
+            <li><b>Ball girl</b>Head up. Pass to the open wing, or dribble into the space in front of you. Forward first!</li>
+            <li><b>GK</b>Wait until every red is behind the retreat line. No big boots: roll it, throw it, or pass it on the ground to a wide back.</li>
+            <li><b>Retreat line</b>They can't cross it until one of us touches the keeper's pass. That's free time. Use it!</li>
+          </ul>
+          <p class="say"><strong>After STOMP!</strong> The girl who wins it yells <strong>"WINGS OUT!"</strong> Everyone else flies wide and forward right away, before they get back.</p>
+        </div>
+      </div>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="wings_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Stomp &amp; Fly</h3>
+            <p class="meta">Grid about 30 × 20 big steps · 3 Stompers vs 2 · 10 min</p>
+            <ol>
+              <li>Mark a Wing Lane along each sideline with cones. Three Stompers start near our end line. Two red players start in the middle.</li>
+              <li>Coach passes to a red player.</li>
+              <li>The closest Stomper yells <strong>"STOMP!"</strong> and presses. The next girl covers.</li>
+              <li>When we win it, that girl yells <strong>"WINGS OUT!"</strong> The other two sprint into a Wing Lane, wide and forward.</li>
+              <li>Pass to a wing. She dribbles over the far end line = 1 point. Do it in 6 seconds = 2 points!</li>
+              <li>Reds score by dribbling over our end line. Swap teams after 5 tries.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> the second we win it, fly wide. Don't stand and watch.</p>
+              <p><strong>Harder:</strong> add a third red player who chases from our end line.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="wings_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Retreat Line Build-Out</h3>
+            <p class="meta">Our third of the field · GK + 2 backs + CM vs 3 · retreat line cones · 12 min</p>
+            <ol>
+              <li>Put cones on the retreat line and two gates on the halfway line. Reds start near our box.</li>
+              <li>Coach rolls the ball to our GK. Reds jog back behind the retreat line.</li>
+              <li>Coach yells <strong>"WINGS OUT!"</strong> Backs run to the sideline, wide as the cones. CM comes to show in the middle.</li>
+              <li>GK waits until every red is behind the line, then passes on the ground to a wide back.</li>
+              <li>She touches it: now reds can cross! Dribble forward or pass to CM.</li>
+              <li>Through a halfway gate = 2 points. Reds win it and score = 1 point for them.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> no rush. The reds can't come until we touch the pass, so GK takes her time.</p>
+              <p><strong>Harder:</strong> add a fourth red, or start with a goal kick instead of a roll.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OVER THE TOP ===================== -->
+  <section class="play" id="overtop">
+    <div class="playhead">
+      <div class="tag">Advancing the ball · when they press us too high for WINGS OUT!</div>
+      <div class="call">OVER THE TOP!</div>
+      <div class="means">They're waiting right on top of our wings. So our keeper sends it high and far, into the big space behind them, and we race them to it.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="overtop_pic"></div><figcaption>Our keeper has the ball. The reds are lined up at the retreat line, marking every short pass.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>GK · Look, then go</b>Wings covered? Yell <strong>"OVER THE TOP!"</strong> Throw it or kick it high and far, into the space behind the reds. Aim toward a sideline, never across the front of our goal.</li>
+            <li><b>S · Spin</b>Turn and sprint into the space behind them. Race the red to the ball!</li>
+            <li><b>LM &amp; RM · Fly</b>When the ball is in the air, sprint forward on your side. Be ready if it lands near you.</li>
+            <li><b>CM · Second ball</b>Follow the ball up the field. If a red heads it or kicks it away, you're there to win it.</li>
+            <li><b>LB &amp; RB · Step up</b>Move up behind the play, ready if it comes back.</li>
+          </ul>
+          <p class="say"><strong>Rules:</strong> on a goal kick, the reds can cross the retreat line once the ball crosses it, so a long one gets past them fast. No drop kicks: Ontario Soccer recommends keepers don't drop-kick at this age. A throw or a kick from the ground is great.</p>
+        </div>
+      </div>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="overtop_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Throw &amp; Chase</h3>
+            <p class="meta">Grid about 35 × 25 big steps · GK + 2 runners vs 3 · 10 min</p>
+            <ol>
+              <li>Three reds stand on a line of cones, close to our runners. Behind them is a big zone: The Space.</li>
+              <li>GK has the ball. Short passes are blocked, so she yells <strong>"OVER THE TOP!"</strong></li>
+              <li>She throws or kicks it high, over the reds, into The Space.</li>
+              <li>As soon as the ball goes up, the runners spin and sprint. Reds can turn and chase.</li>
+              <li>Our runner gets there first and dribbles over the end line = 2 points. Red wins it = 1 point for them.</li>
+              <li>Rotate: everyone gets a turn as GK and runner.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> GK, aim for the space, not the girl. Runners, go the second it leaves her hands.</p>
+              <p><strong>Harder:</strong> the reds start one step closer to The Space.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="overtop_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Win the Second Ball</h3>
+            <p class="meta">Full field · 7v7 restarts from our keeper · 12 min</p>
+            <ol>
+              <li>Coach gives the ball to our GK. Reds line up at the retreat line and cover our wings.</li>
+              <li>GK yells <strong>"OVER THE TOP!"</strong> and kicks it long toward S.</li>
+              <li>S races a red back for it. CM follows the ball up the field.</li>
+              <li>The red gets a head or foot to it. The ball drops loose: that's the second ball!</li>
+              <li>CM wins the second ball, then passes to a wing in space. Go!</li>
+              <li>Win the second ball = a Stompers point. Score from it = 3 points.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> the first ball is a race. The second ball is a bigger race. CM, don't stop running!</p>
+              <p><strong>Harder:</strong> add a red midfielder who also chases the second ball.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grouphead" id="g-corners"><span class="gk">Corners</span><span class="gs">Corner kicks, ours and theirs.</span></div>
+
+  <!-- ===================== CRASH THE BOX ===================== -->
+  <section class="play" id="crash">
+    <div class="playhead">
+      <div class="tag">Taking a corner kick</div>
+      <div class="call">CRASH THE BOX!</div>
+      <div class="means">Kicker puts her hand up: get ready. Her hand comes down: GO! Runners attack three spots: near post, far post and the rebound.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="crash_pic"></div><figcaption>Corner from the right. We're attacking the goal at the top.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>K · Kicker</b>Wide mid on that side. Hand UP = get ready. Hand DOWN = GO! Aim for <em>The Spot</em>, the space in front of the goal.</li>
+            <li><b>Near post</b>Striker starts outside the box and runs hard to the front post.</li>
+            <li><b>Far post</b>Other wide mid runs to the back post for tap-ins.</li>
+            <li><b>Rebound</b>CM waits at the top of the box for anything that comes out. Shoot it!</li>
+            <li><b>Stay home</b>Both backs and the GK stay back to stop a fast break.</li>
+          </ul>
+          <p class="say"><strong>Start outside, then run in.</strong> Runners who are already moving are hard to mark.</p>
+        </div>
+      </div>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="crash_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Hit the Spot</h3>
+            <p class="meta">Corner flag · kickers line · 3 target zones · 8 min</p>
+            <ol>
+              <li>Kickers line up at the corner flag, each with a ball.</li>
+              <li>Put the ball in the corner arc. Take 3–4 steps back and a little to the side.</li>
+              <li>Plant foot next to the ball. Strike under the middle of the ball with your laces or the inside of your foot.</li>
+              <li>Land it in a zone: Near or Far = 1 point, The Spot = 2 points.</li>
+              <li>Switch to the other corner so both feet get practice.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> come in at an angle, lean back a little, follow through toward the target.</p>
+              <p><strong>U10 tip:</strong> a hard, low ball to the near post works great too!</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="crash_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Crash the Box</h3>
+            <p class="meta">Kicker + 3 runners vs 2 defenders + keeper · 10 min</p>
+            <ol>
+              <li>Runners start outside the top of the box.</li>
+              <li>Kicker puts her hand up. Runners get ready outside the box.</li>
+              <li>Kicker drops her hand: that's GO! Everyone yells <strong>"CRASH!"</strong> and sprints to their spots: near post, far post, rebound.</li>
+              <li>Try to arrive at the same time as the ball. Near post flicks it on, far post taps it in, rebound girl shoots.</li>
+              <li>5 corners, then rotate jobs. Goal = 1 point, rebound goal = 2.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> don't stand and wait in the box. Start outside, then run in.</p>
+              <p><strong>Harder:</strong> add a third defender.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOCK THE BOX ===================== -->
+  <section class="play" id="lock">
+    <div class="playhead">
+      <div class="tag">Defending a corner kick</div>
+      <div class="call">LOCK THE BOX!</div>
+      <div class="means">Everyone has a job: Post, Markers, Gate, Outlet. Clear it HIGH, FAR, WIDE, then everybody steps OUT.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="lock_pic"></div><figcaption>Our goal is at the top. Their corner comes from the right.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>GK</b>Middle of the goal, a little toward the back post. Shouts <strong>"KEEPER!"</strong> if she's catching it.</li>
+            <li><b>P · Post</b>Stands right next to the near post and kicks away anything that comes there.</li>
+            <li><b>M · Markers</b>Each one picks an attacker and stands goal-side, between her and our goal. Keep one hand lightly on her and your eyes on the ball.</li>
+            <li><b>G · Gate</b>Stands out toward the corner, the distance the ref sets, to block a short corner.</li>
+            <li><b>S · Outlet</b>Striker waits up the field for the clear. Go!</li>
+          </ul>
+          <p class="say"><strong>Clearing:</strong> HIGH, FAR, WIDE, out toward the sideline. Never kick it across the front of our goal. After the clear, everyone yells <strong>"OUT!"</strong> and steps up together.</p>
+        </div>
+      </div>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="lock_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Mark &amp; Clear</h3>
+            <p class="meta">Pairs in the box · Coach serves from the corner · 10 min</p>
+            <ol>
+              <li>Pair up: one attacker, one defender. The defender stands goal-side with one hand lightly on the attacker. No grabbing!</li>
+              <li>Coach serves from the corner. Throw it at first, then kick it.</li>
+              <li>Defender attacks the ball first, yells <strong>"MINE!"</strong> and clears it high and wide into a Clear Zone.</li>
+              <li>Into a Clear Zone = 2 points, any clear = 1. Attacker scores = 1 point for the attacker.</li>
+              <li>Swap roles.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> watch the ball and your girl. Kick through the bottom of the ball to get it high.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="lock_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Lock the Box Game</h3>
+            <p class="meta">Kicker + 3 attackers vs full corner defence · gates on halfway · 12 min</p>
+            <ol>
+              <li>Coach yells <strong>"LOCK THE BOX!"</strong> Defenders find their jobs: GK, Post, 3 Markers, Gate, Outlet.</li>
+              <li>Attackers take the corner and try to score.</li>
+              <li>Once it's cleared, every defender yells <strong>"OUT!"</strong> and sprints up to the top of the box together.</li>
+              <li>The Outlet gets the clear and dribbles through a halfway gate = 2 points. Any clear out of the box = 1 point. Attacker goal = 2 points for the attackers.</li>
+              <li>5 corners, then rotate so everyone tries Post, Marker, Gate and Outlet.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> stepping OUT together pushes their players away from our goal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grouphead" id="g-free"><span class="gk">Free kicks</span><span class="gs">Indirect free kicks, ours and theirs.</span></div>
 
   <!-- ===================== TAP & BLAST ===================== -->
   <section class="play" id="tap">
@@ -598,135 +831,6 @@
     </div>
   </section>
 
-  <!-- ===================== CRASH THE BOX ===================== -->
-  <section class="play" id="crash">
-    <div class="playhead">
-      <div class="tag">Taking a corner kick</div>
-      <div class="call">CRASH THE BOX!</div>
-      <div class="means">Kicker puts her hand up: get ready. Her hand comes down: GO! Runners attack three spots: near post, far post and the rebound.</div>
-    </div>
-    <div class="body">
-      <div class="picture">
-        <figure><div class="dg" data-d="crash_pic"></div><figcaption>Corner from the right. We're attacking the goal at the top.</figcaption></figure>
-        <div>
-          <h3>The picture in your head</h3>
-          <ul class="jobs">
-            <li><b>K · Kicker</b>Wide mid on that side. Hand UP = get ready. Hand DOWN = GO! Aim for <em>The Spot</em>, the space in front of the goal.</li>
-            <li><b>Near post</b>Striker starts outside the box and runs hard to the front post.</li>
-            <li><b>Far post</b>Other wide mid runs to the back post for tap-ins.</li>
-            <li><b>Rebound</b>CM waits at the top of the box for anything that comes out. Shoot it!</li>
-            <li><b>Stay home</b>Both backs and the GK stay back to stop a fast break.</li>
-          </ul>
-          <p class="say"><strong>Start outside, then run in.</strong> Runners who are already moving are hard to mark.</p>
-        </div>
-      </div>
-
-      <div class="drills">
-        <div class="drill">
-          <figure><div class="dg" data-d="crash_d1"></div></figure>
-          <div>
-            <span class="num">DRILL 1</span>
-            <h3>Hit the Spot</h3>
-            <p class="meta">Corner flag · kickers line · 3 target zones · 8 min</p>
-            <ol>
-              <li>Kickers line up at the corner flag, each with a ball.</li>
-              <li>Put the ball in the corner arc. Take 3–4 steps back and a little to the side.</li>
-              <li>Plant foot next to the ball. Strike under the middle of the ball with your laces or the inside of your foot.</li>
-              <li>Land it in a zone: Near or Far = 1 point, The Spot = 2 points.</li>
-              <li>Switch to the other corner so both feet get practice.</li>
-            </ol>
-            <div class="tips">
-              <p><strong>Remember:</strong> come in at an angle, lean back a little, follow through toward the target.</p>
-              <p><strong>U10 tip:</strong> a hard, low ball to the near post works great too!</p>
-            </div>
-          </div>
-        </div>
-        <div class="drill">
-          <figure><div class="dg" data-d="crash_d2"></div></figure>
-          <div>
-            <span class="num">DRILL 2</span>
-            <h3>Crash the Box</h3>
-            <p class="meta">Kicker + 3 runners vs 2 defenders + keeper · 10 min</p>
-            <ol>
-              <li>Runners start outside the top of the box.</li>
-              <li>Kicker puts her hand up. Runners get ready outside the box.</li>
-              <li>Kicker drops her hand: that's GO! Everyone yells <strong>"CRASH!"</strong> and sprints to their spots: near post, far post, rebound.</li>
-              <li>Try to arrive at the same time as the ball. Near post flicks it on, far post taps it in, rebound girl shoots.</li>
-              <li>5 corners, then rotate jobs. Goal = 1 point, rebound goal = 2.</li>
-            </ol>
-            <div class="tips">
-              <p><strong>Remember:</strong> don't stand and wait in the box. Start outside, then run in.</p>
-              <p><strong>Harder:</strong> add a third defender.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== LOCK THE BOX ===================== -->
-  <section class="play" id="lock">
-    <div class="playhead">
-      <div class="tag">Defending a corner kick</div>
-      <div class="call">LOCK THE BOX!</div>
-      <div class="means">Everyone has a job: Post, Markers, Gate, Outlet. Clear it HIGH, FAR, WIDE, then everybody steps OUT.</div>
-    </div>
-    <div class="body">
-      <div class="picture">
-        <figure><div class="dg" data-d="lock_pic"></div><figcaption>Our goal is at the top. Their corner comes from the right.</figcaption></figure>
-        <div>
-          <h3>The picture in your head</h3>
-          <ul class="jobs">
-            <li><b>GK</b>Middle of the goal, a little toward the back post. Shouts <strong>"KEEPER!"</strong> if she's catching it.</li>
-            <li><b>P · Post</b>Stands right next to the near post and kicks away anything that comes there.</li>
-            <li><b>M · Markers</b>Each one picks an attacker and stands goal-side, between her and our goal. Keep one hand lightly on her and your eyes on the ball.</li>
-            <li><b>G · Gate</b>Stands out toward the corner, the distance the ref sets, to block a short corner.</li>
-            <li><b>S · Outlet</b>Striker waits up the field for the clear. Go!</li>
-          </ul>
-          <p class="say"><strong>Clearing:</strong> HIGH, FAR, WIDE, out toward the sideline. Never kick it across the front of our goal. After the clear, everyone yells <strong>"OUT!"</strong> and steps up together.</p>
-        </div>
-      </div>
-
-      <div class="drills">
-        <div class="drill">
-          <figure><div class="dg" data-d="lock_d1"></div></figure>
-          <div>
-            <span class="num">DRILL 1</span>
-            <h3>Mark &amp; Clear</h3>
-            <p class="meta">Pairs in the box · Coach serves from the corner · 10 min</p>
-            <ol>
-              <li>Pair up: one attacker, one defender. The defender stands goal-side with one hand lightly on the attacker. No grabbing!</li>
-              <li>Coach serves from the corner. Throw it at first, then kick it.</li>
-              <li>Defender attacks the ball first, yells <strong>"MINE!"</strong> and clears it high and wide into a Clear Zone.</li>
-              <li>Into a Clear Zone = 2 points, any clear = 1. Attacker scores = 1 point for the attacker.</li>
-              <li>Swap roles.</li>
-            </ol>
-            <div class="tips">
-              <p><strong>Remember:</strong> watch the ball and your girl. Kick through the bottom of the ball to get it high.</p>
-            </div>
-          </div>
-        </div>
-        <div class="drill">
-          <figure><div class="dg" data-d="lock_d2"></div></figure>
-          <div>
-            <span class="num">DRILL 2</span>
-            <h3>Lock the Box Game</h3>
-            <p class="meta">Kicker + 3 attackers vs full corner defence · gates on halfway · 12 min</p>
-            <ol>
-              <li>Coach yells <strong>"LOCK THE BOX!"</strong> Defenders find their jobs: GK, Post, 3 Markers, Gate, Outlet.</li>
-              <li>Attackers take the corner and try to score.</li>
-              <li>Once it's cleared, every defender yells <strong>"OUT!"</strong> and sprints up to the top of the box together.</li>
-              <li>The Outlet gets the clear and dribbles through a halfway gate = 2 points. Any clear out of the box = 1 point. Attacker goal = 2 points for the attackers.</li>
-              <li>5 corners, then rotate so everyone tries Post, Marker, Gate and Outlet.</li>
-            </ol>
-            <div class="tips">
-              <p><strong>Remember:</strong> stepping OUT together pushes their players away from our goal.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </main>
 
@@ -1241,6 +1345,43 @@
         {s:'A red comes at her. Pass inside to CM!', m:[['ball',67.5,39.5]], d:900},
         {s:'CM turns and dribbles through a halfway gate. 2 points!', d:1500,
           m:[['cm',72,70,'drib'],['ball',72,73.5,'none'],['o2',80,62]]},
+      ]},
+
+    overtop_pic:{pitch:'full',
+      fixed:[['rline',51.3,4,51.3,96],['lbl',51.3,99,'RETREAT LINE','middle',2.2],['ogk',140,50],
+        ['p',26,12,'LB'],['p',26,88,'RB'],['o',100,38],['o',100,62]],
+      actors:[['gk',9,50,null,'gk'],['ball',13,50,null,'ball'],
+        ['p',46,16,'LM','lm'],['p',46,84,'RM','rm'],['p',36,50,'CM','cm'],['p',64,44,'S','s'],
+        ['o',56,18,'','r1'],['o',56,82,'','r2'],['o',56,50,'','r3'],['o',70,40,'','r4'],['o',70,62,'','r5']],
+      steps:[
+        {s:'We go WINGS OUT!, but the reds are waiting right on top of every pass.', h:1300, fx:[['tag',31,32,'ALL COVERED']]},
+        {s:'GK yells "OVER THE TOP!"', clear:true, h:700, fx:[['tag',20,64,'OVER THE TOP!']]},
+        {s:'High and far, into the space behind them. Everybody sprints!', d:1700,
+          m:[['ball',104,76,'shot',-10],['s',98,70],['rm',86,86],['lm',84,24],['cm',66,58],['r2',72,86],['r5',84,68]]},
+        {s:'S wins the race. Go to goal!', m:[['s',120,62,'drib'],['ball',123.5,61,'none']], d:1300, fx:[['tag',118,82,'WON THE RACE!']]},
+      ]},
+
+    overtop_d1:{size:[100,70],
+      fixed:[['zone',58,6,34,58,'THE SPACE'],['cone',40,6],['cone',40,64],['line',40,6,40,64],['cone',95,6],['cone',95,64],
+        ['lbl',95,68,'end line = 2 pts','end',2.2]],
+      actors:[['gk',8,35,null,'gk'],['ball',11.5,35,null,'ball'],['o',42,16,'','o1'],['o',42,35,'','o2'],['o',42,54,'','o3'],
+        ['p',34,24,'S','s'],['p',34,50,'RM','rm']],
+      steps:[
+        {s:'The reds are close. Short passes are blocked. GK yells "OVER THE TOP!"', h:1100, fx:[['tag',22,8,'OVER THE TOP!']]},
+        {s:'High over the reds, into The Space. Runners spin and sprint!', d:1500,
+          m:[['ball',73,48,'pass',-9],['rm',70,51],['s',72,22],['o3',54,56],['o2',52,40]]},
+        {s:'RM gets there first and dribbles over the end line. 2 points!', m:[['rm',91,50,'drib'],['ball',94.5,49.5,'none']], d:1200},
+      ]},
+
+    overtop_d2:{pitch:'full',
+      fixed:[['rline',51.3,4,51.3,96],['lbl',51.3,99,'RETREAT LINE','middle',2.2],['ogk',140,50],
+        ['p',40,20,'LB'],['p',40,80,'RB'],['o',56,18],['o',56,82],['o',104,62],['p',68,26,'LM']],
+      actors:[['gk',9,50,null,'gk'],['ball',13,50,null,'ball'],['p',84,50,'S','s'],['p',40,50,'CM','cm'],['p',68,74,'RM','rm'],['o',100,40,'','rb']],
+      steps:[
+        {s:'GK kicks it long toward S. CM follows the ball up the field.', d:1600,
+          m:[['ball',92,46,'pass',-6],['s',90,50],['rb',94,42],['cm',70,54]]},
+        {s:'A red gets to it first and knocks it away. It drops loose: the second ball!', m:[['ball',76,60]], d:800, fx:[['tag',62,70,'SECOND BALL']]},
+        {s:'CM wins it, then passes to RM in space. Go!', clear:true, m:[['cm',73,58,'none'],['ball',94,82],['rm',92,85]], d:1300},
       ]},
 
     trap_pic:{pitch:'full', still:3,
