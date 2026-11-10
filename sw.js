@@ -1,6 +1,6 @@
 // Offline cache so the playbook works at fields with no signal.
 // Bump VERSION whenever index.html changes so phones pick up the update.
-const VERSION = 'stompers-v7';
+const VERSION = 'stompers-v8';
 const ASSETS = [
   './',
   './index.html',
@@ -8,7 +8,9 @@ const ASSETS = [
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/apple-touch-icon.png',
-  './icons/favicon-32.png'
+  './icons/favicon-32.png',
+  './icons/favicon-16.png',
+  './icons/stompers-logo.png'
 ];
 
 self.addEventListener('install', (e) => {
