@@ -3,6 +3,11 @@
 Every change to the LaSalle Stompers 2017 Girls Black game calls playbook.
 Versions follow [semantic versioning](https://semver.org/): new calls or drills bump the minor number, and fixes bump the patch number.
 
+## [1.1.0] - 2026-11-09
+### Added
+- Feedback form. Every call now has a "💬 Feedback on this call" button that opens a short Google Form with that call already picked. The footer has a "Send feedback" link for the whole playbook. The buttons are hidden when printing.
+- `tools/create-feedback-form.gs`: the Apps Script that built the form.
+
 ## [1.0.0] - 2026-11-09
 First versioned release, made just for the LaSalle Stompers 2017 Girls Black team.
 
