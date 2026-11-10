@@ -2,12 +2,13 @@
 
 U10 girls · ECSL · Ontario Soccer
 
-A mobile-friendly playbook of six sideline calls. Each call has a picture of what to do and two practice drills:
+A mobile-friendly playbook of seven sideline calls. Each call has a picture of what to do and two practice drills:
 
 | Call | When |
 |---|---|
 | **STOMP!** | Pressing: they have the ball |
 | **SHAPE UP!** (BIG! / SMALL!) | Positioning |
+| **WINGS OUT!** | We just won it, or our keeper has it (retreat line) |
 | **TAP & BLAST!** | Our indirect free kick |
 | **WALL UP!** | Their indirect free kick |
 | **CRASH THE BOX!** | Our corner |
