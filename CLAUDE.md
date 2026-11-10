@@ -70,4 +70,5 @@ The `gh` CLI is at `/opt/homebrew/bin/gh`.
 - Responses Sheet: https://docs.google.com/spreadsheets/d/1yV4gXK69eBxayucU7uCctSTmkwFR8ZXoIEOUP71C2N0/edit
 - Pre-fill: "Which call?" is `entry.1089797194`. ("I am a…" is `entry.535876269`.) Each call's button is `<viewform>?usp=pp_url&entry.1089797194=<CALL, URL-encoded>`.
 - Built by `tools/create-feedback-form.gs` run from an Apps Script project in the user's account.
+- Email notifications for new responses are ON (set in the form's Responses tab, 2026-11-09).
 - **When you add a call:** also add its "💬 Feedback on this call" link (`p.fb.screen-only` at the end of the section's `.body`), and add the call to the form's "Which call?" dropdown (edit URL above) so the pre-fill matches.
