@@ -60,6 +60,14 @@
   .player .cap{font-size:14px;line-height:1.3;min-height:2.6em;display:flex;align-items:center;gap:8px}
   .player .stp{flex:0 0 auto;font-size:11px;font-weight:900;color:var(--gold);letter-spacing:.05em}
   .player .stp:empty{display:none}
+  .player .cap{flex:1 1 auto}
+  .player button.fsb{background:#2a2b30;color:#fff;font-size:17px}
+  html.fs-lock,html.fs-lock body{overflow:hidden;overscroll-behavior:none}
+  .dg.fs{position:fixed;inset:0;z-index:1000;background:#0b0b0c;display:flex;flex-direction:column;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+  .dg.fs svg{flex:1 1 0;min-height:0;width:100%;height:100%;border-radius:0}
+  .dg.fs .player{border-radius:0;flex:0 0 auto;padding:8px 14px}
+  .dg.fs .player .cap{font-size:16px}
   figcaption{font-size:13px;color:var(--muted);margin-top:6px}
   .drills{display:grid;gap:18px;margin:18px 0 16px}
   .drill{border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:1fr 1.05fr;gap:20px;align-items:start}
@@ -113,7 +121,7 @@
     <div class="kicker">ECSL · Ontario Soccer · U10 Girls</div>
     <h1>LaSalle Stompers 2017 Black<br>Game Calls Playbook</h1>
     <p>Six words Coach yells from the sideline. Each one matches a picture in your head and two drills we do at practice. Hear the call, see the picture, do your job.</p>
-    <p style="color:var(--gold);font-weight:700">Every diagram plays like a short video. Tap a diagram to pause it, or ↺ to watch again.</p>
+    <p style="color:var(--gold);font-weight:700">Every diagram plays like a short video. Tap a diagram to pause it, ↺ to watch again, ⛶ for full screen. On a phone, turn it sideways to go full screen.</p>
   </div>
 </header>
 
@@ -709,6 +717,43 @@
     }
   }
 
+  // ---------- Full screen ----------
+  const FS = { player:null, auto:false, real:false };
+  const STANDALONE = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  function enterFs(pl, auto){
+    if (FS.player) exitFs(true);
+    FS.player = pl; FS.auto = !!auto; FS.real = false;
+    pl.host.classList.add('fs');
+    document.documentElement.classList.add('fs-lock');
+    pl.fsb.textContent = '✕'; pl.fsb.setAttribute('aria-label','Exit full screen');
+    const req = pl.host.requestFullscreen || pl.host.webkitRequestFullscreen;
+    if (!auto && req && !STANDALONE){
+      try { const r = req.call(pl.host); FS.real = true; if (r && r.catch) r.catch(() => { FS.real = false; }); } catch(e){ FS.real = false; }
+    }
+    pl.P.userPaused = false;
+    if (!pl.P.started) pl.start();
+    players.forEach(p => p.sync());
+    try { history.pushState({stompFs:1}, ''); } catch(e){}
+  }
+  function exitFs(fromPop){
+    const pl = FS.player; if (!pl) return;
+    FS.player = null; FS.auto = false;
+    pl.host.classList.remove('fs');
+    document.documentElement.classList.remove('fs-lock');
+    pl.fsb.textContent = '⛶'; pl.fsb.setAttribute('aria-label','Full screen');
+    const fe = document.fullscreenElement || document.webkitFullscreenElement;
+    if (fe){ const ex = document.exitFullscreen || document.webkitExitFullscreen; try { const r = ex.call(document); if (r && r.catch) r.catch(()=>{}); } catch(e){} }
+    FS.real = false;
+    players.forEach(p => p.sync());
+    if (!fromPop && history.state && history.state.stompFs) history.back();
+    pl.host.scrollIntoView({block:'center'});
+  }
+  ['fullscreenchange','webkitfullscreenchange'].forEach(ev => document.addEventListener(ev, () => {
+    if (!(document.fullscreenElement || document.webkitFullscreenElement) && FS.player && FS.real) exitFs();
+  }));
+  window.addEventListener('popstate', () => { if (FS.player) exitFs(true); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && FS.player) exitFs(); });
+
   const ease = t => t<.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2;
   const fade = (e,on) => { if (e) e.style.opacity = on ? 1 : 0; };
   const players = [];
@@ -781,9 +826,9 @@
     // Player bar
     const bar = document.createElement('div');
     bar.className = 'player';
-    bar.innerHTML = '<button class="pp" type="button" aria-label="Play">▶</button><button class="rp" type="button" aria-label="Replay from the start">↺</button><div class="cap"><span class="stp"></span><span class="txt"></span></div>';
+    bar.innerHTML = '<button class="pp" type="button" aria-label="Play">▶</button><button class="rp" type="button" aria-label="Replay from the start">↺</button><div class="cap"><span class="stp"></span><span class="txt"></span></div><button class="fsb" type="button" aria-label="Full screen">⛶</button>';
     host.appendChild(bar);
-    const pp = bar.querySelector('.pp'), rp = bar.querySelector('.rp'), stp = bar.querySelector('.stp'), txt = bar.querySelector('.txt');
+    const fsb = bar.querySelector('.fsb'), pp = bar.querySelector('.pp'), rp = bar.querySelector('.rp'), stp = bar.querySelector('.stp'), txt = bar.querySelector('.txt');
     const cap = (i, s) => { stp.textContent = i ? `${i}/${steps.length}` : ''; txt.textContent = s || ''; };
 
     const allFade = [];
@@ -804,8 +849,9 @@
 
     // Playback with a pausable virtual clock
     const P = {playing:false, userPaused:REDUCED, inView:false, started:false, run:0};
+    let me = null;
     const sync = () => {
-      P.playing = P.inView && !P.userPaused;
+      P.playing = (FS.player ? FS.player === me : P.inView) && !P.userPaused;
       pp.textContent = P.userPaused ? '▶' : '❚❚';
       pp.setAttribute('aria-label', P.userPaused ? 'Play' : 'Pause');
     };
@@ -859,10 +905,12 @@
     showStatic(still);
     cap(0, REDUCED ? 'Tap ▶ to watch the drill' : '');
     sync();
-    players.push({
-      host, P, sync, start,
+    me = {
+      host, P, sync, start, fsb, ratio:0, ratioPortrait:0,
       toStatic(){ P.run++; P.started = false; showStatic(still); cap(0,'Tap ▶ to watch the drill'); }
-    });
+    };
+    fsb.addEventListener('click', e => { e.stopPropagation(); FS.player === me ? exitFs() : enterFs(me, false); });
+    players.push(me);
   }
 
   // ---------------------------------------------------------------
@@ -1093,15 +1141,30 @@
     if (D[key]) build(D[key], h, (cap && cap.textContent) || key);
   });
 
-  // Autoplay while on screen, pause when scrolled away
+  // Autoplay while on screen, pause when scrolled away. Track how visible each one is.
+  const LAND = window.matchMedia ? window.matchMedia('(orientation: landscape) and (max-height: 540px) and (pointer: coarse)') : null;
   if ('IntersectionObserver' in window){
     const io = new IntersectionObserver(es => es.forEach(e => {
       const pl = players.find(p => p.host === e.target); if (!pl) return;
-      pl.P.inView = e.isIntersecting; pl.sync();
-      if (e.isIntersecting && !pl.P.started && !pl.P.userPaused) pl.start();
-    }), {threshold:.45});
+      pl.ratio = e.intersectionRatio;
+      if (!LAND || !LAND.matches) pl.ratioPortrait = e.intersectionRatio;
+      pl.P.inView = e.intersectionRatio >= .45; pl.sync();
+      if (pl.P.inView && !pl.P.started && !pl.P.userPaused) pl.start();
+    }), {threshold:[0,.2,.45,.7,1]});
     players.forEach(p => io.observe(p.host));
   } else players.forEach(p => { p.P.inView = true; p.sync(); });
+
+  // Phone turned sideways: open the diagram you were looking at in full screen. Turn back: close it.
+  if (LAND){
+    const onRotate = () => {
+      if (LAND.matches){
+        if (FS.player) return;
+        const best = players.filter(p => p.ratioPortrait > 0).sort((a,b) => b.ratioPortrait - a.ratioPortrait)[0];
+        if (best) enterFs(best, true);
+      } else if (FS.player && FS.auto) exitFs();
+    };
+    LAND.addEventListener ? LAND.addEventListener('change', onRotate) : LAND.addListener(onRotate);
+  }
 
   window.addEventListener('beforeprint', () => players.forEach(p => p.toStatic()));
 
