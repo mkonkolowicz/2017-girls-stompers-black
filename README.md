@@ -1,6 +1,6 @@
 # LaSalle Stompers 2017 Girls Black: Game Calls Playbook
 
-U10 girls · ECSL · Ontario Soccer · **Playbook v1.1.0** ([changelog](CHANGELOG.md))
+U10 girls · ECSL · Ontario Soccer · **Playbook v1.0.0** ([changelog](CHANGELOG.md))
 
 A mobile-friendly playbook of nine sideline calls, grouped by situation. Each call has a picture of what to do and two practice drills:
 

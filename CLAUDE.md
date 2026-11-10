@@ -12,7 +12,7 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 - `2017-girls-stompers-black-playbook.pdf`: printable version. Regenerate with `node tools/make-pdf.mjs` (needs `playwright-core` and the installed Google Chrome).
 - `CHANGELOG.md`: Keep a Changelog format with semver.
 
-## Calls and groups (current: v1.1.0)
+## Calls and groups (current: v1.0.0)
 | Group | Calls (section id) |
 |---|---|
 | Team shape | SHAPE UP! (`shape`) |
@@ -64,7 +64,7 @@ The `gh` CLI is at `/opt/homebrew/bin/gh`.
 - The two backs are LB and RB. The user once wrote "CB and RB" and meant the two backs.
 - Still open: a redirect repo at the old `stompers-playbook` Pages URL. The user hasn't asked for it.
 
-## Feedback form (added in v1.1.0)
+## Feedback form (added in v1.0.0)
 - Responder: https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform
 - Edit: https://docs.google.com/forms/d/19hS3ltEuyuXB5gfMM1Cr3_7H2elPXB-uGp-pZesuTCs/edit
 - Responses Sheet: https://docs.google.com/spreadsheets/d/1yV4gXK69eBxayucU7uCctSTmkwFR8ZXoIEOUP71C2N0/edit
