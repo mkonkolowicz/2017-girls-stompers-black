@@ -22,5 +22,11 @@ A mobile-friendly playbook of seven sideline calls. Each call has a picture of w
 
 Once you've opened it, it works offline at the field.
 
+## Print
+- **Printable PDF:** [stompers-playbook.pdf](stompers-playbook.pdf), 15 pages, Letter size. There's also a download button at the top of the site.
+- **Print button** on the site prints the current page with every diagram shown as its finished picture.
+
 ## Editing
 Everything lives in `index.html`. Diagram data is in the `D` object near the bottom of the file. After you change it, bump `VERSION` in `sw.js` so installed phones pick up the update.
+
+After you change the content, regenerate the PDF: `npm i playwright-core && node tools/make-pdf.mjs` (it uses your installed Google Chrome).
