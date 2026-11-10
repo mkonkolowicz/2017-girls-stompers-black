@@ -14,6 +14,7 @@ First versioned release, made just for the LaSalle Stompers 2017 Girls Black tea
 ### Added
 - Version number and a "What's new" link in the page footer.
 - Feedback form. Every call has a "💬 Feedback on this call" button that opens a short Google Form with that call already picked. The footer has a "Send feedback" link for the whole playbook. The buttons are hidden when printing.
+- "💬 Feedback? Tell us" button at the top of the page, and a big "💡 Got an idea for a new call? Tell us" button at the bottom. The form now has an "Idea for a new call" choice.
 - `tools/create-feedback-form.gs`: the Apps Script that built the form.
 - This changelog.
 

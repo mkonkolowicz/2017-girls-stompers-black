@@ -11,6 +11,7 @@
 function createStompersFeedbackForm() {
   const CALLS = [
     'General / whole playbook',
+    'Idea for a new call',
     'SHAPE UP!', 'STOMP!', 'SET THE TRAP!', 'WINGS OUT!', 'OVER THE TOP!',
     'CRASH THE BOX!', 'LOCK THE BOX!', 'TAP & BLAST!', 'WALL UP!'
   ];
