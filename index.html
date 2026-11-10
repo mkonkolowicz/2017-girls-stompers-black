@@ -136,7 +136,7 @@
     <a class="callcard" href="#shape"><div class="when">Any time</div><div class="call">SHAPE UP!</div><div class="means">Get back in your 2-3-1 spot. Make triangles. "BIG" with the ball, "SMALL" without it.</div></a>
     <a class="callcard" href="#tap"><div class="when">Our indirect free kick</div><div class="call">TAP &amp; BLAST!</div><div class="means">One girl taps it a little, the next girl shoots right away.</div></a>
     <a class="callcard" href="#wall"><div class="when">Their indirect free kick</div><div class="call">WALL UP!</div><div class="means">Keeper calls the number. Wall blocks the near post. Charge on the first touch.</div></a>
-    <a class="callcard" href="#crash"><div class="when">Our corner kick</div><div class="call">CRASH THE BOX!</div><div class="means">Hand goes up, runners attack near post, far post and the rebound spot.</div></a>
+    <a class="callcard" href="#crash"><div class="when">Our corner kick</div><div class="call">CRASH THE BOX!</div><div class="means">Kicker's hand up = get ready. Hand DOWN = GO! Runners attack near post, far post and the rebound spot.</div></a>
     <a class="callcard" href="#lock"><div class="when">Their corner kick</div><div class="call">LOCK THE BOX!</div><div class="means">Post, mark, gate, outlet. Clear it high, far and wide, then everybody steps OUT.</div></a>
   </div>
 
@@ -408,7 +408,7 @@
     <div class="playhead">
       <div class="tag">Taking a corner kick</div>
       <div class="call">CRASH THE BOX!</div>
-      <div class="means">Kicker puts her hand up. Runners attack three spots: near post, far post and the rebound.</div>
+      <div class="means">Kicker puts her hand up: get ready. Her hand comes down: GO! Runners attack three spots: near post, far post and the rebound.</div>
     </div>
     <div class="body">
       <div class="picture">
@@ -416,7 +416,7 @@
         <div>
           <h3>The picture in your head</h3>
           <ul class="jobs">
-            <li><b>K · Kicker</b>Wide mid on that side. Hand up means GO. Aim for <em>The Spot</em>, the space in front of the goal.</li>
+            <li><b>K · Kicker</b>Wide mid on that side. Hand UP = get ready. Hand DOWN = GO! Aim for <em>The Spot</em>, the space in front of the goal.</li>
             <li><b>Near post</b>Striker starts outside the box and runs hard to the front post.</li>
             <li><b>Far post</b>Other wide mid runs to the back post for tap-ins.</li>
             <li><b>Rebound</b>CM waits at the top of the box for anything that comes out. Shoot it!</li>
@@ -454,8 +454,8 @@
             <p class="meta">Kicker + 3 runners vs 2 defenders + keeper · 10 min</p>
             <ol>
               <li>Runners start outside the top of the box.</li>
-              <li>Kicker puts her hand up and yells <strong>"CRASH!"</strong></li>
-              <li>Runners count "1, 2", then sprint to their spots: near post, far post, rebound.</li>
+              <li>Kicker puts her hand up. Runners get ready outside the box.</li>
+              <li>Kicker drops her hand: that's GO! Everyone yells <strong>"CRASH!"</strong> and sprints to their spots: near post, far post, rebound.</li>
               <li>Try to arrive at the same time as the ball. Near post flicks it on, far post taps it in, rebound girl shoots.</li>
               <li>5 corners, then rotate jobs. Goal = 1 point, rebound goal = 2.</li>
             </ol>
@@ -1000,7 +1000,8 @@
         ['p',36,62,'LB'],['p',64,62,'RB'],['lbl',50,70,'Backs + GK stay home','middle',2.6]],
       actors:[['p',94,8.5,'K','k'],['ball',96.5,5.5,null,'ball'],['p',72,32,'S','s'],['p',30,32,'LM','lm'],['p',50,38,'CM','cm']],
       steps:[
-        {s:'The Kicker puts her hand up. That means GO!', fx:[['tag',84,16,'Hand up = GO!']], h:1000},
+        {s:'The Kicker puts her hand UP. Runners get ready outside the box.', fx:[['tag',84,16,'Hand UP = ready']], h:1000},
+        {s:'Her hand comes DOWN. That means GO!', clear:true, fx:[['tag',84,16,'Hand DOWN = GO!']], h:500},
         {s:'Runners CRASH the box as the ball comes in: near post, far post, rebound.', m:[['s',58,9.5],['lm',40,11],['cm',50,28],['ball',51,14,'pass',-9]], d:1600,
           fx:[['tag',70,5,'NEAR'],['tag',28,8,'FAR'],['tag',37,38,'REBOUND']]},
         {s:'Attack the ball and score!', m:[['ball',46,3,'shot']], d:600},
@@ -1021,8 +1022,8 @@
         ['lbl',72,40,'1 = near post','start',2.5],['lbl',72,44,'2 = far post','start',2.5],['lbl',72,48,'3 = rebound','start',2.5]],
       actors:[['p',94,8.5,'K','k'],['ball',96.5,5.5,null,'ball'],['p',62,32,'1','r1'],['p',40,32,'2','r2'],['p',51,35,'3','r3']],
       steps:[
-        {s:'The Kicker puts her hand up: "CRASH!"', fx:[['tag',84,16,"'CRASH!'"]], h:800},
-        {s:'Runners count "1, 2"…', fx:[['tag',50,58,'Count 1, 2, then GO']], h:900},
+        {s:'The Kicker puts her hand UP. Runners get ready outside the box.', fx:[['tag',84,16,'Hand UP = ready']], h:900},
+        {s:'Hand comes DOWN: "CRASH!" GO!', clear:true, fx:[['tag',84,16,'Hand DOWN = GO!']], h:500},
         {s:'GO! Arrive at the same time as the ball.', m:[['r1',58,9.5],['r2',40,11],['r3',50,27],['ball',56,12.5,'pass',-6]], d:1500},
         {s:'Near post flicks it on…', m:[['ball',42.5,13]], d:600},
         {s:'…far post taps it in. GOAL!', m:[['ball',45,3.5,'shot']], d:500},
