@@ -63,3 +63,27 @@ The `gh` CLI is at `/opt/homebrew/bin/gh`.
 - Credit line: "Beta tested by #9 Victoria K." with no "thank you".
 - The two backs are LB and RB. The user once wrote "CB and RB" and meant the two backs.
 - Still open: a redirect repo at the old `stompers-playbook` Pages URL. The user hasn't asked for it.
+
+## NEXT UP (left off 2026-11-09): feedback form → v1.1.0
+Goal: give parents and coaches a feedback loop through a Google Form, with a "💬 Feedback on this call" button under every call.
+
+1. **Build the Google Form** in the user's Google account. The spec is in `tools/create-feedback-form.gs`:
+   - Title: "Stompers 2017 Girls Black: Playbook Feedback"
+   - Questions: "Which call?" (dropdown with all 9 calls plus "General / whole playbook", required), "Was it easy to understand?" (Easy / OK / Confusing), "What's confusing, wrong, or missing? Any ideas?" (paragraph), "I am a…" (Parent / Coach / Player / Other), "Your name" (optional).
+   - Settings: no email collection, no sign-in, published. Responses go to the Sheet "Stompers Playbook Feedback (Responses)".
+   - **Preferred route:** Claude in Chrome. The extension is installed in Chrome "Profile 1", and the native host is registered. The session must be started with `claude --chrome`. Load the `anthropic-skills:chrome-browser` skill first.
+   - **Fallback:** the user pastes `tools/create-feedback-form.gs` into script.google.com, runs `createStompersFeedbackForm`, and sends back the `>>` log lines (responder URL, edit URL, sheet URL, pre-filled example).
+   - The Google Drive connector can't add form questions, so don't use it to build the form.
+2. **Get the pre-fill entry ID** for "Which call?" from a pre-filled link. Each button URL is `<viewform>?usp=pp_url&entry.<ID>=<CALL, URL-encoded>`.
+3. **Add to index.html:**
+   - A small "💬 Feedback on this call" link under each call's `.say` box. Each link pre-fills that call's name. Hide it in print (`screen-only`).
+   - A "Send feedback" link in the footer.
+4. **Release v1.1.0:**
+   - CHANGELOG entry "Added: feedback form".
+   - Footer version → v1.1.0.
+   - `sw.js` VERSION → stompers-v14.
+   - Regenerate the PDF.
+   - Commit, push, and watch Pages.
+   - Tag v1.1.0 and create a gh release with the PDF.
+5. Once the form exists, record its URLs in this file.
+6. Commit `tools/create-feedback-form.gs` if it isn't committed already.
