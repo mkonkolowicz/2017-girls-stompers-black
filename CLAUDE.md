@@ -12,7 +12,7 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 - `2017-girls-stompers-black-playbook.pdf`: printable version. Regenerate with `node tools/make-pdf.mjs` (needs `playwright-core` and the installed Google Chrome).
 - `CHANGELOG.md`: Keep a Changelog format with semver.
 
-## Calls and groups (current: v1.0.0)
+## Calls and groups (current: v1.1.0)
 | Group | Calls (section id) |
 |---|---|
 | Team shape | SHAPE UP! (`shape`) |
@@ -21,7 +21,7 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 | Corners | CRASH THE BOX! (`crash`), LOCK THE BOX! (`lock`) |
 | Free kicks | TAP & BLAST! (`tap`), WALL UP! (`wall`) |
 
-Each call has a "picture in your head" diagram and two drills. When you add a call, update all of these: the section, its call card, its nav chip, the "N calls" count in the hero, the README table, the CHANGELOG, its feedback link, and the form's dropdown.
+Each call has a "picture in your head" diagram and at least two drills (SHAPE UP! has three). When you add a call, update all of these: the section, its call card, its nav chip, the "N calls" count in the hero, the README table, the CHANGELOG, its feedback link, and the form's dropdown.
 
 ## Diagram engine (the `const D = {...}` object in index.html)
 - `pitch:'full'` is 150×100, horizontal, with our goal on the LEFT and the team attacking right. `pitch:'half'` is 100×80 with the goal at the TOP and the halfway line at y=77. `size:[w,h]` gives a plain grid.

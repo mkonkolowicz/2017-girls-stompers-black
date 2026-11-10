@@ -3,6 +3,10 @@
 Every change to the LaSalle Stompers 2017 Girls Black game calls playbook.
 Versions follow [semantic versioning](https://semver.org/): new calls or drills bump the minor number, and fixes bump the patch number.
 
+## [1.1.0] - 2026-11-10
+### Added
+- **SHAPE UP! Drill 3: Round the Gate (Third-Girl Run).** The ball goes through a gate of two tall cones, and the runner goes round it. L starts her run on G's pass, not on the through ball. Added at the head coach's request, adapted from a Teloframe drill video.
+
 ## [1.0.0] - 2026-11-09
 First versioned release, made just for the LaSalle Stompers 2017 Girls Black team. This is the version we're sharing to ask for feedback.
 

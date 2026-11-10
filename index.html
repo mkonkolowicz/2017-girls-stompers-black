@@ -182,7 +182,7 @@
     <img class="club-logo" src="icons/stompers-logo.png" width="132" height="132" alt="LaSalle Stompers logo">
     <div class="kicker">ECSL · Ontario Soccer · U10 Girls</div>
     <h1>LaSalle Stompers 2017 Girls Black<br>Game Calls Playbook</h1>
-    <p>Nine calls Coach yells from the sideline. Each one matches a picture in your head and two drills we do at practice. Hear the call, see the picture, do your job.</p>
+    <p>Nine calls Coach yells from the sideline. Each one matches a picture in your head and drills we do at practice. Hear the call, see the picture, do your job.</p>
     <p class="screen-only" style="color:var(--green-hi);font-weight:700">Every diagram plays like a short video. Tap a diagram to pause it, ↺ to watch again, ⛶ for full screen. On a phone, turn it sideways to go full screen.</p>
     <p class="screen-only printbar"><a class="pbtn" href="2017-girls-stompers-black-playbook.pdf" download>⬇ Printable PDF</a><button class="pbtn ghost" type="button" onclick="window.print()">🖨 Print</button><a class="pbtn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Feedback? Tell us</a></p>
   </div>
@@ -289,6 +289,28 @@
             <div class="tips">
               <p><strong>Remember:</strong> wide players should be close to the sideline when we have the ball.</p>
               <p><strong>Harder:</strong> Coach only gives 3 seconds to fix it.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="shape_d3"></div></figure>
+          <div>
+            <span class="num">DRILL 3</span>
+            <h3>Round the Gate (Third-Girl Run)</h3>
+            <p class="meta">Top of their box · 5+ players and a keeper · 10 min · 2 tall cones, 2 markers, lots of balls</p>
+            <ol>
+              <li>Two tall cones about 6 big steps apart at the top of the box make the <strong>gate</strong>. One girl stands in front of the gate (G). One girl waits at a marker on each side: Right (R) and Left (L). Everyone else lines up with a ball.</li>
+              <li>The first girl in line takes a touch and passes into G.</li>
+              <li>G passes it back first time to R, who is running in.</li>
+              <li>L <strong>goes on G's pass</strong>. She runs round the outside of the left cone.</li>
+              <li>R passes first time through the gate, into the space in front of L.</li>
+              <li>L takes one touch across and shoots!</li>
+              <li>Rotate: passer to R, R to G, G to L, L to the back of the line.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> the ball goes through the gate, the runner goes round it. L, wait level with your cone, then go on G's pass. If you wait for the through ball, you're too late.</p>
+              <p><strong>Pass into space:</strong> put it past the gate where L is running, not at her feet.</p>
+              <p><strong>Harder:</strong> switch sides so L and R swap jobs, or add a defender behind the gate.</p>
             </div>
           </div>
         </div>
@@ -850,7 +872,7 @@
 </main>
 
 <p class="idea screen-only"><a class="pbtn" href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=Idea%20for%20a%20new%20call" target="_blank" rel="noopener">💡 Got an idea for a new call? Tell us</a></p>
-<footer>LaSalle Stompers 2017 Girls Black · ECSL · U10 · Hear the call, see the picture, do your job.<br><span class="ver">Playbook v1.0.0 · 2026-11-09 · <a href="https://github.com/mkonkolowicz/2017-girls-stompers-black/blob/main/CHANGELOG.md">What's new</a><span class="screen-only"> · <a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Send feedback</a></span></span><br><span class="credit">Beta tested by <strong>#9 Victoria K.</strong></span></footer>
+<footer>LaSalle Stompers 2017 Girls Black · ECSL · U10 · Hear the call, see the picture, do your job.<br><span class="ver">Playbook v1.1.0 · 2026-11-10 · <a href="https://github.com/mkonkolowicz/2017-girls-stompers-black/blob/main/CHANGELOG.md">What's new</a><span class="screen-only"> · <a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Send feedback</a></span></span><br><span class="credit">Beta tested by <strong>#9 Victoria K.</strong></span></footer>
 
 <script>
 (function(){
@@ -1305,6 +1327,23 @@
         {s:'Scrimmage… Coach yells "FREEZE!" Everyone becomes a statue.', fx:[['tag',24,10,'FREEZE!']], h:1200},
         {s:'LM is bunched up next to CM. Fix it: get wide!', m:[['lm',82,14]], fx:[['tag',112,22,'FIX IT: get wide!']]},
         {s:'Now LM, CM and S make a triangle, so there\'s always a pass.', fx:[['tri',[82,14],[70,46],[104,52]]]},
+      ]},
+
+    // Third-girl run: the ball goes through the gate, the runner goes round it. Gate cones at the top of the box (y=28).
+    shape_d3:{pitch:'half', still:4,
+      fixed:[['gk',50,7],['cone',44,28],['cone',56,28],['lbl',58.5,28.9,'GATE','start',2.2],['cone',29,37],['cone',71,41],
+        ['p',50,57.5,''],['p',50,64,''],['lbl',55,61,'Line','start',2.4]],
+      actors:[['p',50,50,'P','p'],['ball',50,46.5,null,'ball'],['p',50,33,'G','g'],['p',71,38,'R','r'],['p',29,34,'L','l']],
+      steps:[
+        {s:'The passer (P) takes a touch and passes into G.', m:[['ball',50,37]], d:900, h:700},
+        {s:'G passes it back first time to R, who runs in. L GOES on this pass!', d:1100,
+          m:[['r',63,41.5],['ball',60,38.5],['l',37,30]], fx:[['tag',15,27,'L: GO now!']]},
+        {s:'R passes first time through the gate, into space. L runs round the outside of the cone.', d:1100,
+          m:[['ball',45,18.5],['l',41.5,21]], fx:[['tag',78,20,'Into space, not to feet']]},
+        {s:'One touch across, then SHOOT!', m:[['l',47,18,'drib'],['ball',49.5,16.5,'none']], d:700},
+        {s:'Goal! Ball through the gate, runner round it.', m:[['ball',54.5,3,'shot']], d:700},
+        {s:'Rotate: P to R, R to G, G to L, L to the back of the line.', d:1500,
+          m:[['p',71,38,'none'],['r',50,33,'none'],['g',29,34,'none'],['l',50,70.5,'none'],['ball',50,46.5,'reset']]},
       ]},
 
     // Full pitch retreat line: x = 4 + 142/3 = 51.3. Half pitch: y = 4 + 146/3 = 52.7.
