@@ -53,6 +53,13 @@
   .say strong{color:#000}
   figure{margin:0}
   figure svg{width:100%;height:auto;display:block;border-radius:12px}
+  .dg svg{border-radius:12px 12px 0 0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .player{display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:0 0 12px 12px;padding:8px 10px}
+  .player button{flex:0 0 auto;width:36px;height:36px;border-radius:999px;border:0;background:var(--gold);color:var(--ink);font-size:15px;font-weight:900;cursor:pointer;line-height:1}
+  .player button.rp{background:#2a2b30;color:var(--gold)}
+  .player .cap{font-size:14px;line-height:1.3;min-height:2.6em;display:flex;align-items:center;gap:8px}
+  .player .stp{flex:0 0 auto;font-size:11px;font-weight:900;color:var(--gold);letter-spacing:.05em}
+  .player .stp:empty{display:none}
   figcaption{font-size:13px;color:var(--muted);margin-top:6px}
   .drills{display:grid;gap:18px;margin:18px 0 16px}
   .drill{border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:1fr 1.05fr;gap:20px;align-items:start}
@@ -94,7 +101,7 @@
     .callcard .means{font-size:13px}
     .callcard .when{font-size:10px}
   }
-  @media print{nav.quick{display:none}}
+  @media print{nav.quick{display:none} .player{display:none} .dg svg{border-radius:12px}}
 </style>
 </head>
 <body>
@@ -104,6 +111,7 @@
     <div class="kicker">ECSL · Ontario Soccer · U10 Girls</div>
     <h1>LaSalle Stompers 2017 Black<br>Game Calls Playbook</h1>
     <p>Six words Coach yells from the sideline. Each one matches a picture in your head and two drills we do at practice. Hear the call, see the picture, do your job.</p>
+    <p style="color:var(--gold);font-weight:700">Every diagram plays like a short video. Tap a diagram to pause it, or ↺ to watch again.</p>
   </div>
 </header>
 
@@ -534,11 +542,12 @@
   const NS = 'http://www.w3.org/2000/svg';
   const C = { ours:'#111214', ourTxt:'#ffffff', gk:'#ffd23f', opp:'#e5484d', coach:'#8a8d94',
               pass:'#ffffff', run:'#ffd23f', orun:'#ffb3b5', grass:'#3d8b4d', grass2:'#43944f', line:'rgba(255,255,255,.85)' };
-  let uid = 0; let K = 1;
+  const REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let uid = 0, K = 1;
 
   function el(tag, attrs, parent, text){
     const e = document.createElementNS(NS, tag);
-    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    for (const k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]);
     if (text != null) e.textContent = text;
     if (parent) parent.appendChild(e);
     return e;
@@ -551,7 +560,7 @@
         markerUnits:'userSpaceOnUse', orient:'auto-start-reverse'}, d);
       el('path', {d:'M0,0 L10,5 L0,10 z', fill:color}, m);
     };
-    mk('aw', C.pass, 3); mk('ay', C.run, 3); mk('ar', C.orun, 3); mk('as', C.pass, 3.8);
+    mk('aw', C.pass, 3*K); mk('ay', C.run, 3*K); mk('ar', C.orun, 3*K); mk('as', C.pass, 3.8*K);
   }
 
   function pitchHalf(g){
@@ -585,45 +594,39 @@
     el('text', {x:144,y:99,'font-size':2.6,fill:'rgba(255,255,255,.8)','text-anchor':'end'}, g, 'we attack ▶');
   }
 
-  function pitchGrid(g, w, h){
-    el('rect', {x:0,y:0,width:w,height:h,fill:C.grass}, g);
+  function ctrl(x1,y1,x2,y2,curve){
+    const dx=x2-x1, dy=y2-y1, len=Math.hypot(dx,dy)||1;
+    return [(x1+x2)/2 - dy/len*(curve||0), (y1+y2)/2 + dx/len*(curve||0)];
   }
 
-  // geometry helpers
-  function trimPts(x1,y1,x2,y2,curve,s,e){
-    const mx=(x1+x2)/2, my=(y1+y2)/2, dx=x2-x1, dy=y2-y1, len=Math.hypot(dx,dy)||1;
-    const nx=-dy/len, ny=dx/len;
-    const cx=mx+nx*(curve||0), cy=my+ny*(curve||0);
-    const mv=(ax,ay,bx,by,d)=>{const l=Math.hypot(bx-ax,by-ay)||1;return [ax+(bx-ax)/l*d, ay+(by-ay)/l*d];};
-    const [sx,sy]=mv(x1,y1,cx,cy,s), [ex,ey]=mv(x2,y2,cx,cy,e);
-    return {sx,sy,ex,ey,cx,cy};
-  }
-
+  // Draws an arrow. Returns the path, or null if too short to draw after trimming.
   function arrow(g, id, type, a){
     const [x1,y1,x2,y2,curve,opt] = a;
     const o = Object.assign({pass:{s:3.4,e:3.6},shot:{s:1.8,e:.4},run:{s:3.4,e:3.8},orun:{s:3.4,e:3.8},drib:{s:3.4,e:3.8}}[type], opt||{});
-    const p = trimPts(x1,y1,x2,y2,curve,o.s,o.e);
+    if (Math.hypot(x2-x1,y2-y1) < o.s + o.e + 1.2) return null;
+    const [cx,cy] = ctrl(x1,y1,x2,y2,curve);
+    const mv=(ax,ay,bx,by,d)=>{const l=Math.hypot(bx-ax,by-ay)||1;return [ax+(bx-ax)/l*d, ay+(by-ay)/l*d];};
+    const [sx,sy]=mv(x1,y1,cx,cy,o.s), [ex,ey]=mv(x2,y2,cx,cy,o.e);
     let d;
     if (type==='drib'){
-      const dx=p.ex-p.sx, dy=p.ey-p.sy, L=Math.hypot(dx,dy), ux=dx/L, uy=dy/L, nx=-uy, ny=ux;
+      const dx=ex-sx, dy=ey-sy, L=Math.hypot(dx,dy), ux=dx/L, uy=dy/L, nx=-uy, ny=ux;
       const steps=Math.max(4,Math.floor((L-3)/1.6));
-      d=`M${p.sx},${p.sy}`;
+      d=`M${sx},${sy}`;
       for(let i=1;i<=steps;i++){const t=i*(L-3)/steps, amp=(i%2?1:-1)*1.1;
-        d+=` L${p.sx+ux*t+nx*amp},${p.sy+uy*t+ny*amp}`;}
-      d+=` L${p.ex},${p.ey}`;
+        d+=` L${sx+ux*t+nx*amp},${sy+uy*t+ny*amp}`;}
+      d+=` L${ex},${ey}`;
     } else {
-      d=`M${p.sx},${p.sy} Q${p.cx},${p.cy} ${p.ex},${p.ey}`;
+      d=`M${sx},${sy} Q${cx},${cy} ${ex},${ey}`;
     }
     const st = {
-      pass:{stroke:C.pass,'stroke-width':.7,marker:'aw'},
-      shot:{stroke:C.pass,'stroke-width':1.2,marker:'as'},
-      run:{stroke:C.run,'stroke-width':.7,dash:'1.6 1.1',marker:'ay'},
-      orun:{stroke:C.orun,'stroke-width':.7,dash:'1.6 1.1',marker:'ar'},
-      drib:{stroke:C.pass,'stroke-width':.6,marker:'aw'}
+      pass:{stroke:C.pass,w:.7,marker:'aw'},
+      shot:{stroke:C.pass,w:1.2,marker:'as'},
+      run:{stroke:C.run,w:.7,dash:'1.6 1.1',marker:'ay'},
+      orun:{stroke:C.orun,w:.7,dash:'1.6 1.1',marker:'ar'},
+      drib:{stroke:C.pass,w:.6,marker:'aw'}
     }[type];
-    const attrs={d,fill:'none',stroke:st.stroke,'stroke-width':st['stroke-width'],'stroke-linecap':'round','stroke-linejoin':'round','marker-end':`url(#${st.marker}${id})`};
-    if (st.dash) attrs['stroke-dasharray']=st.dash;
-    el('path', attrs, g);
+    return el('path', {d,fill:'none',stroke:st.stroke,'stroke-width':st.w*Math.min(K,1.2),'stroke-linecap':'round','stroke-linejoin':'round',
+      'marker-end':`url(#${st.marker}${id})`,'stroke-dasharray':st.dash||null}, g);
   }
 
   function token(g, x, y, fill, txt, txtFill, opts){
@@ -632,6 +635,26 @@
     el('circle', {cx:x,cy:y,r:3.1*K,fill,stroke: opts.stroke||'#fff','stroke-width':.6, 'stroke-dasharray': opts.ghost ? '1 .8':'none'}, grp);
     if (txt) el('text', {x, y:y+.05, 'font-size': (txt.length>1 ? 2.4 : 3)*K, 'font-weight':800, fill:txtFill,
       'text-anchor':'middle','dominant-baseline':'central','font-family':'system-ui,sans-serif'}, grp, txt);
+    return grp;
+  }
+
+  function ball(g,x,y,ghost){
+    const b = el('g',{opacity: ghost?.35:1},g);
+    el('circle',{cx:x,cy:y,r:1.5*K,fill:'#fff',stroke:'#111','stroke-width':.4},b);
+    el('circle',{cx:x,cy:y,r:.55*K,fill:'#111'},b);
+    return b;
+  }
+
+  function actor(g,type,lab,x,y,ghost){
+    const o={ghost};
+    switch(type){
+      case 'p':   return token(g,x,y,C.ours,lab||'',C.ourTxt,o);
+      case 'gk':  return token(g,x,y,C.gk,'GK','#111',Object.assign(o,{stroke:'#111'}));
+      case 'o':   return token(g,x,y,C.opp,lab||'','#fff',o);
+      case 'ogk': return token(g,x,y,'#f2a3a5','GK','#7a1012',Object.assign(o,{stroke:C.opp}));
+      case 'c':   return token(g,x,y,C.coach,'C','#fff',o);
+      case 'ball':return ball(g,x,y,ghost);
+    }
   }
 
   function label(g,x,y,t,anchor,size){
@@ -645,298 +668,421 @@
     el('text',{x,y:y-.15*K,'font-size':2.5*K,'font-weight':900,fill:'#111','text-anchor':'middle','dominant-baseline':'central','font-family':'system-ui,sans-serif'},g,t);
   }
 
-  const LAYER = {zone:0,czone:0,line:1,tri:1,pass:2,shot:2,run:2,orun:2,drib:2,cone:3,g:4,p:5,gk:5,o:5,ogk:5,c:5,ball:6,lbl:7,tag:8,n:9};
+  const LAYER = {zone:0,czone:0,line:1,tri:1,cone:3,p:5,gk:5,o:5,ogk:5,c:5,ball:6,lbl:7,tag:8,n:9};
 
-  function render(spec, host, title){
-    const id = ++uid;
-    const vb = spec.pitch==='full' ? [150,100] : spec.pitch==='half' ? [100,80] : (spec.size||[100,70]);
-    K = spec.pitch==='full' ? 1.3 : 1;
-    const svg = el('svg', {viewBox:`0 0 ${vb[0]} ${vb[1]}`, role:'img', 'aria-label': title||'diagram'});
-    defs(svg, id);
-    const g = el('g', {}, svg);
-    if (spec.pitch==='full') pitchFull(g); else if (spec.pitch==='half') pitchHalf(g); else pitchGrid(g, vb[0], vb[1]);
-    const items = spec.items.map((it,i)=>({it,i})).sort((a,b)=>(LAYER[a.it[0]]-LAYER[b.it[0]])||(a.i-b.i));
-    for (const {it} of items){
-      const [t,...a]=it;
-      switch(t){
-        case 'p':  token(g,a[0],a[1],C.ours,a[2]||'',C.ourTxt); break;
-        case 'g':  token(g,a[0],a[1],C.ours,a[2]||'',C.ourTxt,{ghost:true}); break;
-        case 'gk': token(g,a[0],a[1],C.gk,'GK','#111',{stroke:'#111'}); break;
-        case 'o':  token(g,a[0],a[1],C.opp,a[2]||'','#fff'); break;
-        case 'ogk':token(g,a[0],a[1],'#f2a3a5','GK','#7a1012',{stroke:C.opp}); break;
-        case 'c':  token(g,a[0],a[1],C.coach,'C','#fff'); break;
-        case 'ball':
-          el('circle',{cx:a[0],cy:a[1],r:1.5,fill:'#fff',stroke:'#111','stroke-width':.4},g);
-          el('circle',{cx:a[0],cy:a[1],r:.55,fill:'#111'},g); break;
-        case 'cone': el('path',{d:`M${a[0]},${a[1]-1.6} L${a[0]+1.4},${a[1]+1} L${a[0]-1.4},${a[1]+1} z`,fill:'#ff8a1f',stroke:'#7a3a00','stroke-width':.25},g); break;
-        case 'pass': case 'shot': case 'run': case 'orun': case 'drib': arrow(g,id,t,a); break;
-        case 'zone':
-          el('rect',{x:a[0],y:a[1],width:a[2],height:a[3],rx:1.2,fill:'rgba(255,210,63,.20)',stroke:C.run,'stroke-width':.4,'stroke-dasharray':'1.2 .9'},g);
-          if (a[4]) label(g,a[0]+a[2]/2,a[1]+a[3]/2+1,a[4],'middle',2.5); break;
-        case 'czone':
-          el('circle',{cx:a[0],cy:a[1],r:a[2],fill:'rgba(255,210,63,.22)',stroke:C.run,'stroke-width':.4,'stroke-dasharray':'1.2 .9'},g);
-          if (a[3]) label(g,a[0],a[1]+a[2]+3,a[3],'middle',2.4); break;
-        case 'line': el('line',{x1:a[0],y1:a[1],x2:a[2],y2:a[3],stroke:'rgba(255,255,255,.55)','stroke-width':.4,'stroke-dasharray':'.8 .8'},g); break;
-        case 'tri': el('polygon',{points:a.map(p=>p.join(',')).join(' '),fill:'rgba(255,210,63,.10)',stroke:'rgba(255,210,63,.75)','stroke-width':.45},g); break;
-        case 'lbl': label(g,a[0],a[1],a[2],a[3],a[4]); break;
-        case 'tag': tag(g,a[0],a[1],a[2]); break;
-        case 'n':
-          el('circle',{cx:a[0],cy:a[1],r:1.9,fill:'#111',stroke:C.gk,'stroke-width':.4},g);
-          el('text',{x:a[0],y:a[1]+.05,'font-size':2.4,'font-weight':900,fill:C.gk,'text-anchor':'middle','dominant-baseline':'central','font-family':'system-ui,sans-serif'},g,String(a[2])); break;
-      }
+  function drawItem(g, it){
+    const [t,...a]=it;
+    switch(t){
+      case 'p': case 'o': case 'c': actor(g,t,a[2],a[0],a[1]); break;
+      case 'gk': case 'ogk': case 'ball': actor(g,t,null,a[0],a[1]); break;
+      case 'cone': el('path',{d:`M${a[0]},${a[1]-1.6} L${a[0]+1.4},${a[1]+1} L${a[0]-1.4},${a[1]+1} z`,fill:'#ff8a1f',stroke:'#7a3a00','stroke-width':.25},g); break;
+      case 'zone':
+        el('rect',{x:a[0],y:a[1],width:a[2],height:a[3],rx:1.2,fill:'rgba(255,210,63,.20)',stroke:C.run,'stroke-width':.4,'stroke-dasharray':'1.2 .9'},g);
+        if (a[4]) label(g,a[0]+a[2]/2,a[1]+a[3]/2+1,a[4],'middle',2.5); break;
+      case 'czone':
+        el('circle',{cx:a[0],cy:a[1],r:a[2],fill:'rgba(255,210,63,.22)',stroke:C.run,'stroke-width':.4,'stroke-dasharray':'1.2 .9'},g);
+        if (a[3]) label(g,a[0],a[1]+a[2]+3,a[3],'middle',2.4); break;
+      case 'line': el('line',{x1:a[0],y1:a[1],x2:a[2],y2:a[3],stroke:'rgba(255,255,255,.55)','stroke-width':.4,'stroke-dasharray':'.8 .8'},g); break;
+      case 'tri': el('polygon',{points:a.map(p=>p.join(',')).join(' '),fill:'rgba(255,210,63,.12)',stroke:'rgba(255,210,63,.8)','stroke-width':.45},g); break;
+      case 'lbl': label(g,a[0],a[1],a[2],a[3],a[4]); break;
+      case 'tag': tag(g,a[0],a[1],a[2]); break;
+      case 'n':
+        el('circle',{cx:a[0],cy:a[1],r:1.9,fill:'#111',stroke:C.gk,'stroke-width':.4},g);
+        el('text',{x:a[0],y:a[1]+.05,'font-size':2.4,'font-weight':900,fill:C.gk,'text-anchor':'middle','dominant-baseline':'central','font-family':'system-ui,sans-serif'},g,String(a[2])); break;
     }
-    host.appendChild(svg);
   }
 
-  // Base 2-3-1, attacking right on full pitch
+  const ease = t => t<.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2;
+  const fade = (e,on) => { if (e) e.style.opacity = on ? 1 : 0; };
+  const players = [];
+
+  function build(spec, host, title){
+    const id = ++uid;
+    K = spec.pitch==='full' ? 1.3 : 1;
+    const vb = spec.pitch==='full' ? [150,100] : spec.pitch==='half' ? [100,80] : (spec.size||[100,70]);
+    const svg = el('svg', {viewBox:`0 0 ${vb[0]} ${vb[1]}`, role:'img', 'aria-label': title||'diagram'});
+    defs(svg, id);
+    const root = el('g', {}, svg);
+    if (spec.pitch==='full') pitchFull(root); else if (spec.pitch==='half') pitchHalf(root);
+    else el('rect', {x:0,y:0,width:vb[0],height:vb[1],fill:C.grass}, root);
+
+    const L = {};
+    ['low','fxLow','arrows','ghosts','fixedTok','actors','balls','top','fxHigh'].forEach(n => L[n] = el('g',{},root));
+
+    (spec.fixed||[]).forEach(it => {
+      const lv = LAYER[it[0]];
+      drawItem(lv<=3 ? L.low : lv<=6 ? L.fixedTok : L.top, it);
+    });
+
+    // Actors: drawn at origin, moved with transform
+    const A = {}, pos = {};
+    (spec.actors||[]).forEach(([type,x,y,lab,aid]) => {
+      const g = el('g',{}, type==='ball' ? L.balls : L.actors);
+      actor(g,type,lab,0,0);
+      A[aid] = {type,lab,x0:x,y0:y,g,ghost:null};
+      pos[aid] = [x,y];
+    });
+    const setPos = (aid,x,y) => A[aid].g.setAttribute('transform',`translate(${x},${y})`);
+
+    // Pre-build every step's arrows, ghosts and extras
+    const init = JSON.parse(JSON.stringify(pos));
+    const steps = (spec.steps||[]).map(st => {
+      const S = {s:st.s, d:st.d||1300, h:st.h||1000, clear:!!st.clear, moves:[], resets:[], show:[], fx:[]};
+      (st.m||[]).forEach(([aid,x,y,kind,curve,opt]) => {
+        const a = A[aid]; if (!a) { console.warn('no actor', aid); return; }
+        if (kind==='reset'){ S.resets.push([aid,x,y]); pos[aid]=[x,y]; return; }
+        const from = pos[aid].slice(), isBall = a.type==='ball';
+        if (kind!=='none'){
+          const type = isBall ? (kind==='shot'?'shot':'pass') : kind==='drib' ? 'drib' : (a.type==='o'||a.type==='ogk') ? 'orun' : 'run';
+          const dflt = isBall ? {s:1.8*K, e: type==='shot' ? .4 : 1.6*K} : {s:3.4*K, e:3.8*K};
+          const p = arrow(L.arrows, id, type, [from[0],from[1],x,y,curve||0,Object.assign(dflt,opt||{})]);
+          if (p) S.show.push(p);
+          if (!isBall && !a.ghost){ a.ghost = actor(L.ghosts,a.type,a.lab,a.x0,a.y0,true); S.show.push(a.ghost); }
+        }
+        S.moves.push({aid, from, to:[x,y], curve: isBall ? (curve||0) : 0});
+        pos[aid] = [x,y];
+      });
+      if (st.fx){
+        const lo = el('g',{},L.fxLow), hi = el('g',{},L.fxHigh);
+        st.fx.forEach(it => drawItem(LAYER[it[0]]<=1 ? lo : hi, it));
+        S.fx = [lo,hi];
+      }
+      S.after = JSON.parse(JSON.stringify(pos));
+      return S;
+    });
+    const still = spec.still!=null ? spec.still : steps.length;
+
+    host.appendChild(svg);
+
+    // Player bar
+    const bar = document.createElement('div');
+    bar.className = 'player';
+    bar.innerHTML = '<button class="pp" type="button" aria-label="Play">▶</button><button class="rp" type="button" aria-label="Replay from the start">↺</button><div class="cap"><span class="stp"></span><span class="txt"></span></div>';
+    host.appendChild(bar);
+    const pp = bar.querySelector('.pp'), rp = bar.querySelector('.rp'), stp = bar.querySelector('.stp'), txt = bar.querySelector('.txt');
+    const cap = (i, s) => { stp.textContent = i ? `${i}/${steps.length}` : ''; txt.textContent = s || ''; };
+
+    const allFade = [];
+    steps.forEach(S => { S.show.forEach(e => allFade.push(e)); S.fx.forEach(e => allFade.push(e)); });
+    allFade.forEach(e => e.style.transition = 'opacity .35s ease');
+
+    function showStatic(n){
+      steps.forEach(S => { S.show.forEach(e=>fade(e,false)); S.fx.forEach(e=>fade(e,false)); });
+      let visibleFx = [];
+      for (let i=0;i<n;i++){
+        const S = steps[i];
+        if (S.clear){ visibleFx.forEach(e=>fade(e,false)); visibleFx = []; }
+        S.show.forEach(e=>fade(e,true)); S.fx.forEach(e=>{fade(e,true); visibleFx.push(e);});
+      }
+      const p = n ? steps[n-1].after : init;
+      Object.keys(A).forEach(k => setPos(k, p[k][0], p[k][1]));
+    }
+
+    // Playback with a pausable virtual clock
+    const P = {playing:false, userPaused:REDUCED, inView:false, started:false, run:0};
+    const sync = () => {
+      P.playing = P.inView && !P.userPaused;
+      pp.textContent = P.userPaused ? '▶' : '❚❚';
+      pp.setAttribute('aria-label', P.userPaused ? 'Play' : 'Pause');
+    };
+    const tick = (ms, rid, onFrame) => new Promise(res => {
+      let acc = 0, last = null;
+      const f = ts => {
+        if (rid !== P.run) return;
+        if (last != null && P.playing) acc += Math.min(ts-last, 64);
+        last = ts;
+        if (onFrame) onFrame(Math.min(acc/ms,1));
+        if (acc >= ms) res(); else requestAnimationFrame(f);
+      };
+      requestAnimationFrame(f);
+    });
+
+    async function loop(rid){
+      while (rid === P.run){
+        showStatic(0);
+        cap(0, 'Watch the drill…');
+        await tick(700, rid);
+        let visibleFx = [];
+        for (let i=0;i<steps.length;i++){
+          const S = steps[i];
+          cap(i+1, S.s);
+          if (S.clear){ visibleFx.forEach(e=>fade(e,false)); visibleFx = []; }
+          S.resets.forEach(([aid,x,y]) => setPos(aid,x,y));
+          S.show.forEach(e=>fade(e,true));
+          await tick(350, rid);
+          if (S.moves.length){
+            await tick(S.d, rid, t => {
+              const e = ease(t);
+              S.moves.forEach(m => {
+                const [x1,y1]=m.from, [x2,y2]=m.to, [cx,cy]=ctrl(x1,y1,x2,y2,m.curve);
+                const u = 1-e;
+                setPos(m.aid, u*u*x1 + 2*u*e*cx + e*e*x2, u*u*y1 + 2*u*e*cy + e*e*y2);
+              });
+            });
+          }
+          S.fx.forEach(e=>{fade(e,true); visibleFx.push(e);});
+          await tick(S.h + Math.min(1600, S.s.length*22), rid);
+        }
+        await tick(2200, rid);
+      }
+    }
+    const start = () => { P.run++; P.started = true; loop(P.run); };
+
+    pp.addEventListener('click', () => { P.userPaused = !P.userPaused; sync(); if (!P.userPaused && !P.started) start(); });
+    svg.addEventListener('click', () => pp.click());
+    rp.addEventListener('click', () => { P.userPaused = false; sync(); start(); });
+
+    showStatic(still);
+    cap(0, REDUCED ? 'Tap ▶ to watch the drill' : '');
+    sync();
+    players.push({
+      host, P, sync, start,
+      toStatic(){ P.run++; P.started = false; showStatic(still); cap(0,'Tap ▶ to watch the drill'); }
+    });
+  }
+
+  // ---------------------------------------------------------------
+  // Diagram scripts. fixed = never moves. actors = [type,x,y,label,id].
+  // steps: s = caption, m = moves [id,x,y,kind,curve,opts], fx = extras that appear after the step.
+  // kind: players run (default) | 'drib' | 'none'; ball pass (default) | 'shot' | 'none' | 'reset'.
+  // ---------------------------------------------------------------
   const D = {
-    stomp_pic:{pitch:'full', items:[
-      ['zone',70,88,44,8,'SIDELINE = TRAP'],
-      ['gk',9,50],
-      ['g',66,76,'RM'],['run',66,76,80,81],['p',80,81,'RM'],
-      ['g',60,50,'CM'],['run',60,50,71,67],['p',71,67,'CM'],
-      ['g',100,50,'S'],['run',100,50,97,69],['p',97,69,'S'],
-      ['g',64,22,'LM'],['run',64,22,66,44],['p',66,44,'LM'],
-      ['g',32,32,'LB'],['run',32,32,44,50],['p',44,50,'LB'],
-      ['g',32,68,'RB'],['run',32,68,48,74],['p',48,74,'RB'],
-      ['o',87,86],['ball',84,88.5],['o',105,74],['o',112,40],['o',90,48],['o',124,58],['o',100,24],['ogk',140,50],
-      ['tag',80,75,'1 STOMP!'],['tag',71,61,'2 COVER'],['tag',56,40,'3 SQUEEZE'],
-    ]},
+    stomp_pic:{pitch:'full', still:4,
+      fixed:[['zone',70,88,44,8,'SIDELINE = TRAP'],['gk',9,50],
+        ['o',105,74],['o',112,40],['o',90,48],['o',124,58],['o',100,24],['ogk',140,50]],
+      actors:[['o',96,84,'','opp'],['ball',93,87,null,'ball'],['p',66,76,'RM','rm'],['p',60,50,'CM','cm'],
+        ['p',100,50,'S','s'],['p',64,22,'LM','lm'],['p',32,32,'LB','lb'],['p',32,68,'RB','rb']],
+      steps:[
+        {s:'They have the ball near our sideline. Coach yells "STOMP!"', m:[['opp',87,86,'drib'],['ball',84,88.5,'none']]},
+        {s:'1 · The closest girl sprints at the ball, then brakes two big steps away.', m:[['rm',80,81]], fx:[['tag',80,75,'1 STOMP!']]},
+        {s:'2 · The next closest girl COVERS, behind and to the side.', m:[['cm',71,67]], fx:[['tag',71,61,'2 COVER']]},
+        {s:'3 · Everyone else SQUEEZES toward the ball.', m:[['lm',66,44],['s',97,69],['lb',44,50],['rb',48,74]], d:1500, fx:[['tag',56,40,'3 SQUEEZE']]},
+        {s:'She\'s trapped against the sideline. Win it back!', m:[['ball',81,86.5,'none']], d:600},
+      ]},
 
-    stomp_d1:{size:[100,70], items:[
-      ['cone',10,8],['cone',90,8],['cone',10,62],['cone',90,62],
-      ['cone',40,8],['cone',60,8],['lbl',50,5,'MIDDLE GATE'],
-      ['zone',10,8,14,54,'TRAP'],['zone',76,8,14,54,'TRAP'],
-      ['p',50,13,'D'],['ball',50,56.5],['o',50,60,'A'],
-      ['pass',50,13,50,57,0,{s:3.4,e:2}],
-      ['run',50,13,50,38],['p',50,38,'D'],
-      ['drib',50,57,70,36,0,{s:3.6,e:3}],
-      ['tag',50,31.5,'2 big steps: BRAKE'],
-      ['n',43,22,1],['n',57,46,2],
-    ]},
+    stomp_d1:{size:[100,70],
+      fixed:[['cone',10,8],['cone',90,8],['cone',10,62],['cone',90,62],['cone',40,8],['cone',60,8],
+        ['lbl',50,5,'MIDDLE GATE'],['zone',10,8,14,54,'TRAP'],['zone',76,8,14,54,'TRAP']],
+      actors:[['p',50,13,'D','d'],['o',50,60,'A','a'],['ball',50,17,null,'ball']],
+      steps:[
+        {s:'D passes to A.', m:[['ball',50,56.5]]},
+        {s:'D yells "STOMP!", sprints, then brakes two big steps away.', m:[['d',50,38]], d:1100, fx:[['tag',40,50,'2 big steps: BRAKE']]},
+        {s:'A attacks. D blocks the middle gate and pushes her to the side.', m:[['a',70,42,'drib'],['ball',72,39.5,'none'],['d',62,32]], d:1500},
+        {s:'Into the Trap Zone: a point for D!', m:[['a',83,46,'drib'],['ball',84.5,43,'none'],['d',74,38]], fx:[['tag',83,57,'TRAPPED!']]},
+      ]},
 
-    stomp_d2:{size:[100,70], items:[
-      ['cone',8,6],['cone',92,6],['cone',8,64],['cone',92,64],
-      ['cone',20,6],['cone',34,6],['cone',66,6],['cone',80,6],
-      ['lbl',27,3.6,'GATE'],['lbl',73,3.6,'GATE'],
-      ['c',50,66],['pass',50,66,33,56,-3,{s:3.4,e:2}],
-      ['ball',33,55],['o',30,57,'A'],['o',70,56,'A'],
-      ['g',32,12,'D'],['run',32,12,33,40],['p',33,40,'D'],
-      ['g',68,12,'D'],['run',68,12,47,30],['p',47,30,'D'],
-      ['line',33,40,47,30],
-      ['tag',22,40,'STOMP!'],['tag',58,26,'COVER!'],
-    ]},
+    stomp_d2:{size:[100,70], still:2,
+      fixed:[['cone',8,6],['cone',92,6],['cone',8,64],['cone',92,64],['cone',20,6],['cone',34,6],['cone',66,6],['cone',80,6],
+        ['lbl',27,3.6,'GATE'],['lbl',73,3.6,'GATE'],['c',50,66]],
+      actors:[['ball',47,63,null,'ball'],['o',30,57,'A','a1'],['o',70,56,'A','a2'],['p',32,12,'D','d1'],['p',68,12,'D','d2']],
+      steps:[
+        {s:'Coach passes to an attacker.', m:[['ball',33,54.5,'pass',-3]]},
+        {s:'Closest defender: "STOMP!" Other defender: "COVER!" (behind, on a diagonal).', m:[['d1',33,40],['d2',47,30]], d:1400,
+          fx:[['line',33,40,47,30],['tag',20,40,'STOMP!'],['tag',58,25,'COVER!']]},
+        {s:'The attacker passes across. Switch jobs!', clear:true, m:[['ball',67,54]]},
+        {s:'The new closest girl STOMPs, the other COVERs.', m:[['d2',66,40],['d1',52,30]], d:1400,
+          fx:[['line',66,40,52,30],['tag',80,40,'STOMP!'],['tag',40,25,'COVER!']]},
+      ]},
 
-    shape_big:{pitch:'full', items:[
-      ['tri',[9,50],[30,20],[30,80]],
-      ['tri',[30,20],[66,10],[60,50]],
-      ['tri',[30,80],[66,90],[60,50]],
-      ['tri',[66,10],[112,50],[60,50]],
-      ['tri',[66,90],[112,50],[60,50]],
-      ['gk',9,50],['p',30,20,'LB'],['p',30,80,'RB'],['p',66,10,'LM'],['p',60,50,'CM'],['p',66,90,'RM'],['p',112,50,'S'],
-      ['ball',63.5,52],['tag',75,30,'BIG!'],
-    ]},
+    shape_big:{pitch:'full',
+      fixed:[['gk',9,50]],
+      actors:[['p',28,40,'LB','lb'],['p',28,60,'RB','rb'],['p',45,32,'LM','lm'],['p',40,50,'CM','cm'],
+        ['p',45,68,'RM','rm'],['p',62,50,'S','s'],['ball',43.5,52,null,'ball']],
+      steps:[
+        {s:'We win the ball. Coach yells "BIG!"', fx:[['tag',80,30,'BIG!']], h:600},
+        {s:'Spread wide to the sidelines and deep up the field.', m:[['lb',30,20],['rb',30,80],['lm',66,10],['cm',60,50,'drib'],
+          ['ball',63.5,52,'none'],['rm',66,90],['s',112,50]], d:1700},
+        {s:'Triangles everywhere = always a pass.', fx:[['tri',[9,50],[30,20],[30,80]],['tri',[30,20],[66,10],[60,50]],
+          ['tri',[30,80],[66,90],[60,50]],['tri',[66,10],[112,50],[60,50]],['tri',[66,90],[112,50],[60,50]]]},
+      ]},
 
-    shape_small:{pitch:'full', items:[
-      ['zone',22,26,46,48,''],
-      ['tri',[9,50],[28,40],[28,60]],
-      ['tri',[28,40],[45,32],[40,50]],
-      ['tri',[28,60],[45,68],[40,50]],
-      ['tri',[45,32],[62,50],[40,50]],
-      ['tri',[45,68],[62,50],[40,50]],
-      ['gk',9,50],['p',28,40,'LB'],['p',28,60,'RB'],['p',45,32,'LM'],['p',40,50,'CM'],['p',45,68,'RM'],['p',62,50,'S'],
-      ['o',80,40],['ball',77,42],['o',96,62],['o',102,30],['o',110,50],['o',120,72],['o',88,82],['ogk',140,50],
-      ['tag',45,20,'SMALL!'],
-    ]},
+    shape_small:{pitch:'full',
+      fixed:[['gk',9,50],['o',80,40],['ball',77,42],['o',96,62],['o',102,30],['o',110,50],['o',120,72],['o',88,82],['ogk',140,50]],
+      actors:[['p',30,20,'LB','lb'],['p',30,80,'RB','rb'],['p',66,10,'LM','lm'],['p',60,50,'CM','cm'],['p',66,90,'RM','rm'],['p',112,50,'S','s']],
+      steps:[
+        {s:'They have the ball. Coach yells "SMALL!"', fx:[['tag',45,16,'SMALL!']], h:600},
+        {s:'Squeeze together, between the ball and our goal.', m:[['lb',28,40],['rb',28,60],['lm',45,32],['cm',40,50],['rm',45,68],['s',62,50]], d:1700},
+        {s:'Compact and close: no gaps for them to play through.', fx:[['zone',22,26,46,48,''],['tri',[9,50],[28,40],[28,60]],
+          ['tri',[28,40],[45,32],[40,50]],['tri',[28,60],[45,68],[40,50]],['tri',[45,32],[62,50],[40,50]],['tri',[45,68],[62,50],[40,50]]]},
+      ]},
 
-    shape_d1:{pitch:'full', items:[
-      ['gk',11,56],
-      ['g',32,32,'LB'],['run',32,32,42,48],['p',42,48,'LB'],
-      ['g',32,68,'RB'],['run',32,68,46,74],['p',46,74,'RB'],
-      ['g',62,20,'LM'],['run',62,20,70,42],['p',70,42,'LM'],
-      ['g',58,50,'CM'],['run',58,50,74,62],['p',74,62,'CM'],
-      ['g',62,80,'RM'],['run',62,80,86,86],['p',86,86,'RM'],
-      ['g',96,50,'S'],['run',96,50,104,64],['p',104,64,'S'],
-      ['c',104,82],['ball',107.5,84],
-      ['g',88,28,'C'],['drib',88,28,104,82,0,{s:3.4,e:3.8}],
-      ['tag',120,74,'Ball moves'],['tag',36,90,'Team slides together'],
-    ]},
+    shape_d1:{pitch:'full',
+      fixed:[],
+      actors:[['gk',9,50,null,'gk'],['p',32,32,'LB','lb'],['p',32,68,'RB','rb'],['p',62,20,'LM','lm'],['p',58,50,'CM','cm'],
+        ['p',62,80,'RM','rm'],['p',96,50,'S','s'],['c',88,28,'C','c'],['ball',91,30,null,'ball']],
+      steps:[
+        {s:'Everyone in their 2-3-1 spot. Coach has the ball.', h:900},
+        {s:'Coach moves the ball. The whole team slides together, like a rubber band.', d:2400,
+          m:[['c',104,82,'drib'],['ball',107,84,'none'],['gk',11,56,'none'],['lb',42,48],['rb',46,74],['lm',70,42],['cm',74,62],['rm',86,86],['s',104,64]],
+          fx:[['tag',122,72,'Ball moves'],['tag',36,90,'Team slides together']]},
+        {s:'"FREEZE!" Can you see the ball? Are you in a triangle?', fx:[['tri',[74,62],[86,86],[104,64]],['tag',30,10,'FREEZE!']]},
+      ]},
 
-    shape_d2:{pitch:'full', items:[
-      ['tri',[70,46],[86,74],[104,52]],
-      ['gk',10,50],['p',36,34,'LB'],['p',40,70,'RB'],['p',70,46,'CM'],['ball',73,48],['p',86,74,'RM'],['p',104,52,'S'],
-      ['p',76,36,'LM'],['run',76,36,82,14],['g',82,14,'LM'],
-      ['o',88,46],['o',96,66],['o',110,36],['o',118,60],['o',60,60],['o',126,26],['ogk',140,50],
-      ['tag',24,10,'FREEZE!'],['tag',100,12,'FIX IT: get wide!'],
-      ['lbl',86,96.5,'triangle = always a pass','middle',2.4],
-    ]},
+    shape_d2:{pitch:'full',
+      fixed:[['gk',10,50],['p',36,34,'LB'],['p',40,70,'RB'],['p',70,46,'CM'],['ball',73,48],['p',86,74,'RM'],['p',104,52,'S'],
+        ['o',88,46],['o',96,66],['o',110,36],['o',118,60],['o',60,60],['o',126,26],['ogk',140,50]],
+      actors:[['p',76,36,'LM','lm']],
+      steps:[
+        {s:'Scrimmage… Coach yells "FREEZE!" Everyone becomes a statue.', fx:[['tag',24,10,'FREEZE!']], h:1200},
+        {s:'LM is bunched up next to CM. Fix it: get wide!', m:[['lm',82,14]], fx:[['tag',112,22,'FIX IT: get wide!']]},
+        {s:'Now LM, CM and S make a triangle, so there\'s always a pass.', fx:[['tri',[82,14],[70,46],[104,52]]]},
+      ]},
 
-    tap_pic:{pitch:'half', items:[
-      ['ogk',50,7],['o',38,22],['o',43,22],['o',48,22],['o',66,18],['o',28,30],
-      ['ball',44,35],['p',40,37.5,'T'],
-      ['pass',44,35,51,36,0,{s:1.8,e:1.8}],
-      ['p',54,42,'B'],['run',54,42,51.5,38.5,0,{s:3.2,e:1.5}],
-      ['shot',51,36,56.5,5.5,2],
-      ['p',66,34,'R'],['run',66,34,59,13],
-      ['p',34,64,'LB'],['p',66,64,'RB'],
-      ['lbl',50,71,'Backs stay home','middle',2.6],
-      ['tag',22,46,'REF ARM UP'],['lbl',22,51,'= INDIRECT','middle',2.6],
-      ['n',47,32,1],['n',57,28,2],['n',69,24,3],
-    ]},
+    tap_pic:{pitch:'half',
+      fixed:[['ogk',50,7],['o',38,22],['o',43,22],['o',48,22],['o',66,18],['o',28,30],
+        ['p',34,64,'LB'],['p',66,64,'RB'],['lbl',50,71,'Backs stay home','middle',2.6],
+        ['tag',22,46,'REF ARM UP'],['lbl',22,51,'= INDIRECT','middle',2.6]],
+      actors:[['p',40,37.5,'T','t'],['ball',44,35,null,'ball'],['p',57,45,'B','b'],['p',66,34,'R','r']],
+      steps:[
+        {s:'Ref\'s arm is up: INDIRECT. Tapper next to the ball, Blaster 3 big steps back.', h:1000},
+        {s:'TAP! One small roll to the side. The Blaster is already running.', m:[['ball',51,36,'pass',0,{e:1.8}],['b',52.5,39.5,'run',0,{e:1.5}]], d:900},
+        {s:'BLAST! Low into the corner. The Rebound girl crashes in.', m:[['ball',56.5,5.5,'shot',2],['r',59,13]], d:1000},
+      ]},
 
-    tap_d1:{pitch:'half', items:[
-      ['gk',50,7],
-      ['cone',48,37.6],['ball',48,36],
-      ['p',44,38.5,'T'],['p',36,46,'T'],['p',32,51,'T'],
-      ['pass',48,36,54,37,0,{s:1.8,e:1.8}],
-      ['p',60,44,'B'],['p',64,49,'B'],['p',68,54,'B'],
-      ['run',60,44,55.5,40,0,{s:3.2,e:1.8}],
-      ['shot',54,37,45,5,-3],
-      ['lbl',32,58,'Tapper line','middle',2.5],['lbl',70,60,'Blaster line','middle',2.5],
-      ['tag',50,68,'Tapper → Blaster line → Tapper line'],
-      ['n',51,33,1],['n',58,39,2],['n',46,24,3],
-    ]},
+    tap_d1:{pitch:'half', still:2,
+      fixed:[['gk',50,7],['cone',48,37.6],['p',36,46,'T'],['p',32,51,'T'],['p',64,49,'B'],['p',68,54,'B'],
+        ['lbl',22,44,'Tapper line','middle',2.5],['lbl',80,44,'Blaster line','middle',2.5],
+        ['tag',50,68,'Tapper → Blaster line → Tapper line']],
+      actors:[['p',44,38.5,'T','t'],['ball',48,36,null,'ball'],['p',60,44,'B','b']],
+      steps:[
+        {s:'The Blaster calls "TAP!" The Tapper rolls it one small step sideways.', m:[['ball',54,37,'pass',0,{e:1.8}],['b',56,40.5,'run',0,{e:1.6}]], d:900},
+        {s:'The Blaster shoots first time, low, at a corner.', m:[['ball',45,5,'shot',-3]], d:900},
+        {s:'Rotate: Tapper to the back of the Blaster line, Blaster to the back of the Tapper line.', m:[['t',72,59,'none'],['b',28,56,'none']], d:1500},
+      ]},
 
-    tap_d2:{pitch:'half', items:[
-      ['ogk',50,7],['o',40,23,'W'],['o',45,23,'W'],['o',50,23,'W'],
-      ['orun',45,23,49,31],['orun',50,23,54,30],
-      ['ball',46,36],['p',42,38.5,'T'],
-      ['pass',46,36,53,37,0,{s:1.8,e:1.8}],
-      ['p',57,43,'B'],['run',57,43,54,39.5,0,{s:3.2,e:1.5}],
-      ['shot',53,37,57,5.5,3],
-      ['p',68,34,'R'],['run',68,34,60,13],
-      ['tag',25,24,'Wall charges on TAP'],
-      ['tag',72,56,'Shoot before it gets there!'],
-    ]},
+    tap_d2:{pitch:'half',
+      fixed:[['ogk',50,7]],
+      actors:[['o',40,23,'W','w1'],['o',45,23,'W','w2'],['o',50,23,'W','w3'],['p',42,38.5,'T','t'],['ball',46,36,null,'ball'],
+        ['p',58,45,'B','b'],['p',68,34,'R','r']],
+      steps:[
+        {s:'Ref: "Indirect!" The wall has to wait for the first touch.', fx:[['tag',20,31,'Wall waits for TAP']], h:1000},
+        {s:'TAP! Now the wall charges.', m:[['ball',53,37,'pass',0,{e:1.8}],['b',55,40.5,'run',0,{e:1.5}],['w2',47,29,'none'],['w3',50.5,29,'none']], d:900},
+        {s:'BLAST before the wall gets there! Rebound girl follows the shot.', m:[['ball',57,5.5,'shot',3],['r',60,13]], d:900,
+          fx:[['tag',72,56,'Shoot before it gets there!']]},
+      ]},
 
-    wall_pic:{pitch:'half', items:[
-      ['line',40,36,43,4],
-      ['gk',53,6.5],
-      ['p',40,21,'W'],['p',44.5,21,'W'],['p',49,21,'W'],
-      ['p',55,25,'CH'],['run',55,25,46,33],
-      ['p',61,22,'M'],['o',64,27],
-      ['o',36,39],['ball',40,36],['o',47,42],
-      ['p',50,62,'S'],
-      ['tag',75,8,"GK: 'WALL, 3!'"],
-      ['tag',22,17,'Wall Captain on post line'],
-      ['tag',68,34,'Charge on 1st touch'],
-      ['lbl',50,69,'Outlet waits for the clear','middle',2.5],
-    ]},
+    wall_pic:{pitch:'half',
+      fixed:[['line',40,36,43,4],['gk',53,6.5],['p',61,22,'M'],['o',64,27],['o',36,39],['o',47,42],
+        ['p',50,62,'S'],['lbl',50,69,'Outlet waits for the clear','middle',2.5]],
+      actors:[['p',22,26,'W','w1'],['p',34,9,'W','w2'],['p',72,12,'W','w3'],['p',55,25,'CH','ch'],['ball',40,36,null,'ball']],
+      steps:[
+        {s:'Their indirect free kick. GK shouts "WALL, 3!"', fx:[['tag',75,8,"GK: 'WALL, 3!'"]], h:1000},
+        {s:'The Wall Captain stands on the line from the ball to the near post. Two teammates squeeze in beside her.',
+          m:[['w1',40,21],['w2',44.5,21],['w3',49,21]], d:1500, fx:[['tag',24,36,'Wall Captain on post line']]},
+        {s:'They touch it: the Charger sprints out to block the shot!', m:[['ball',45.5,40],['ch',46,34]], d:900,
+          fx:[['tag',70,34,'Charge on 1st touch']]},
+      ]},
 
-    wall_d1:{pitch:'half', items:[
-      ['cone',28,35.5],['n',28,40,1],
-      ['cone',50,41.5],['n',50,46,2],
-      ['ball',72,34],['n',76,37.5,3],['c',77,31],
-      ['line',72,34,57,4],
-      ['gk',46,6.5],
-      ['g',40,62,'W'],['run',40,62,56,20],['p',56,20,'W'],
-      ['g',54,66,'W'],['run',54,66,60.5,20],['p',60.5,20,'W'],
-      ['g',68,62,'W'],['run',68,62,65,20],['p',65,20,'W'],
-      ['tag',25,8,"GK: 'WALL, 3!'"],
-      ['tag',80,24,'Captain on post line'],
-      ['lbl',50,74,'Coach times it: beat the record!','middle',2.6],
-    ]},
+    wall_d1:{pitch:'half',
+      fixed:[['cone',28,35.5],['n',28,40,1],['cone',50,41.5],['n',50,46,2],['n',76,37.5,3],['c',77,31],['line',72,34,57,4],
+        ['gk',46,6.5],['ball',72,34],['lbl',50,74,'Coach times it: beat the record!','middle',2.6]],
+      actors:[['p',40,62,'W','w1'],['p',54,66,'W','w2'],['p',68,62,'W','w3']],
+      steps:[
+        {s:'Coach puts the ball on spot 3 and yells "WALL UP!"', fx:[['tag',25,8,"GK: 'WALL, 3!'"]], h:1000},
+        {s:'Sprint! The Captain finds the near-post line, two more squeeze in next to her.', m:[['w3',65,20],['w2',60.5,20],['w1',56,20]], d:1400,
+          fx:[['tag',82,26,'Captain on post line']]},
+        {s:'Arms crossed, feet together, eyes up. Stop the clock. Beat the record!', h:1200},
+      ]},
 
-    wall_d2:{pitch:'half', items:[
-      ['gk',54,6.5],
-      ['p',41,22,'W'],['p',45.5,22,'W'],['p',50,22,'W'],
-      ['p',56,25,'CH'],['run',56,25,52,34],
-      ['ball',46,37],['o',42,39.5,'T'],['pass',46,37,52,38.5,0,{s:1.8,e:1.8}],
-      ['o',58,44,'B'],['orun',58,44,54.5,41,0,{s:3.2,e:1.5}],
-      ['tag',75,28,'CHARGE on 1st touch!'],
-      ['tag',22,14,'Wall holds still'],
-      ['lbl',50,60,'Block or save = 1 pt · Goal = 1 pt','middle',2.6],
-    ]},
+    wall_d2:{pitch:'half',
+      fixed:[['gk',54,6.5],['p',41,22,'W'],['p',45.5,22,'W'],['p',50,22,'W'],['o',42,39.5,'T'],
+        ['tag',22,14,'Wall holds still'],['lbl',50,62,'Block or save = 1 pt · Goal = 1 pt','middle',2.6]],
+      actors:[['p',57,24,'CH','ch'],['ball',46,37,null,'ball'],['o',60,46,'B','b']],
+      steps:[
+        {s:'The wall is set. The Charger is ready just off the wall.', h:900},
+        {s:'First touch: CHARGE! The Charger sprints at the shooter.', m:[['ball',52,38.5,'pass',0,{e:1.8}],['ch',52,33],['b',54.5,41,'run',0,{e:1.5}]], d:900,
+          fx:[['tag',78,19,'CHARGE on 1st touch!']]},
+        {s:'Blocked with her body! Everyone attacks the rebound.', m:[['ball',66,30]], d:800},
+      ]},
 
-    crash_pic:{pitch:'half', items:[
-      ['czone',50,14,5.5,'THE SPOT'],
-      ['ogk',49,7],['o',56,17],['o',44,19],['o',62,25],['o',38,28],
-      ['ball',96.5,5.5],['p',94,8.5,'K'],
-      ['pass',96.5,5.5,51,14,-9,{s:1.6,e:1}],
-      ['g',72,32,'S'],['run',72,32,58,9.5],['p',58,9.5,'S'],
-      ['g',30,32,'LM'],['run',30,32,40,11],['p',40,11,'LM'],
-      ['g',50,38,'CM'],['run',50,38,50,28],['p',50,28,'CM'],
-      ['p',36,62,'LB'],['p',64,62,'RB'],
-      ['lbl',50,70,'Backs + GK stay home','middle',2.6],
-      ['tag',84,16,'Hand up = GO!'],
-      ['tag',70,5,'NEAR'],['tag',28,8,'FAR'],['tag',37,38,'REBOUND'],
-    ]},
+    crash_pic:{pitch:'half',
+      fixed:[['czone',50,14,5.5,'THE SPOT'],['ogk',49,7],['o',56,17],['o',44,19],['o',62,25],['o',38,28],
+        ['p',36,62,'LB'],['p',64,62,'RB'],['lbl',50,70,'Backs + GK stay home','middle',2.6]],
+      actors:[['p',94,8.5,'K','k'],['ball',96.5,5.5,null,'ball'],['p',72,32,'S','s'],['p',30,32,'LM','lm'],['p',50,38,'CM','cm']],
+      steps:[
+        {s:'The Kicker puts her hand up. That means GO!', fx:[['tag',84,16,'Hand up = GO!']], h:1000},
+        {s:'Runners CRASH the box as the ball comes in: near post, far post, rebound.', m:[['s',58,9.5],['lm',40,11],['cm',50,28],['ball',51,14,'pass',-9]], d:1600,
+          fx:[['tag',70,5,'NEAR'],['tag',28,8,'FAR'],['tag',37,38,'REBOUND']]},
+        {s:'Attack the ball and score!', m:[['ball',46,3,'shot']], d:600},
+      ]},
 
-    crash_d1:{pitch:'half', items:[
-      ['czone',61,11,4,'NEAR · 1'],
-      ['czone',50,17,5,'THE SPOT · 2'],
-      ['czone',39,11,4,'FAR · 1'],
-      ['ball',96.5,5.5],
-      ['p',94,11,'K'],['p',91,15.5,'K'],['p',88,20,'K'],
-      ['pass',96.5,5.5,61.5,10.5,-3,{s:1.6,e:1}],
-      ['pass',96.5,5.5,51,16,-7,{s:1.6,e:1}],
-      ['pass',96.5,5.5,40,10.5,-12,{s:1.6,e:1}],
-      ['lbl',90,27,'Kickers line','middle',2.5],
-      ['tag',50,48,'Then switch corners!'],
-    ]},
+    crash_d1:{pitch:'half',
+      fixed:[['czone',61,11,4,'NEAR · 1'],['czone',50,17,5,'THE SPOT · 2'],['czone',39,11,4,'FAR · 1'],
+        ['p',91,15.5,'K'],['p',88,20,'K'],['lbl',90,27,'Kickers line','middle',2.5],['tag',50,48,'Then switch corners!']],
+      actors:[['p',94,11,'K','k'],['ball',96.5,5.5,null,'ball']],
+      steps:[
+        {s:'Kick into the NEAR zone = 1 point.', m:[['ball',61.5,10.5,'pass',-3]], d:1100},
+        {s:'Land it in THE SPOT = 2 points!', m:[['ball',96.5,5.5,'reset'],['ball',51,16,'pass',-7]], d:1200},
+        {s:'FAR zone = 1 point. Then switch to the other corner.', m:[['ball',96.5,5.5,'reset'],['ball',40,10.5,'pass',-12]], d:1300},
+      ]},
 
-    crash_d2:{pitch:'half', items:[
-      ['ogk',49,7],['o',53,13,'D'],['o',45,16,'D'],
-      ['ball',96.5,5.5],['p',94,8.5,'K'],
-      ['pass',96.5,5.5,51,14,-9,{s:1.6,e:1}],
-      ['g',62,32,'1'],['run',62,32,58,9.5],['p',58,9.5,'1'],
-      ['g',40,32,'2'],['run',40,32,40,11],['p',40,11,'2'],
-      ['g',51,35,'3'],['run',51,35,50,27],['p',50,27,'3'],
-      ['tag',84,16,"'CRASH!'"],
-      ['lbl',72,40,'1 = near post','start',2.5],['lbl',72,44,'2 = far post','start',2.5],['lbl',72,48,'3 = rebound','start',2.5],
-      ['tag',50,58,'Count 1, 2, then GO'],
-    ]},
+    crash_d2:{pitch:'half',
+      fixed:[['ogk',49,7],['o',52,19,'D'],['o',44,21,'D'],
+        ['lbl',72,40,'1 = near post','start',2.5],['lbl',72,44,'2 = far post','start',2.5],['lbl',72,48,'3 = rebound','start',2.5]],
+      actors:[['p',94,8.5,'K','k'],['ball',96.5,5.5,null,'ball'],['p',62,32,'1','r1'],['p',40,32,'2','r2'],['p',51,35,'3','r3']],
+      steps:[
+        {s:'The Kicker puts her hand up: "CRASH!"', fx:[['tag',84,16,"'CRASH!'"]], h:800},
+        {s:'Runners count "1, 2"…', fx:[['tag',50,58,'Count 1, 2, then GO']], h:900},
+        {s:'GO! Arrive at the same time as the ball.', m:[['r1',58,9.5],['r2',40,11],['r3',50,27],['ball',56,12.5,'pass',-6]], d:1500},
+        {s:'Near post flicks it on…', m:[['ball',42.5,13]], d:600},
+        {s:'…far post taps it in. GOAL!', m:[['ball',45,3.5,'shot']], d:500},
+      ]},
 
-    lock_pic:{pitch:'half', items:[
-      ['gk',48,6],['p',58,6,'P'],
-      ['o',56,17],['p',54,13,'M'],
-      ['o',44,20],['p',44.5,16,'M'],
-      ['o',52,27],['p',51,23,'M'],
-      ['p',84,13,'G'],
-      ['o',94,8.5],['ball',96.5,5.5],
-      ['p',62,56,'S'],
-      ['shot',50,11,10,34,6,{s:2,e:.4}],
-      ['tag',16,40,'HIGH · FAR · WIDE'],
-      ['tag',84,20,'Block short'],
-      ['lbl',62,63,'Outlet','middle',2.6],
-      ['lbl',75,12,'ref distance','middle',2.2],
-    ]},
+    lock_pic:{pitch:'half',
+      fixed:[['gk',48,6],['p',58,6,'P'],['o',56,17],['p',54,13,'M'],['o',44,20],['p',44.5,16,'M'],['o',52,27],['p',51,23,'M'],
+        ['p',84,13,'G'],['o',94,8.5],['p',62,56,'S'],['lbl',62,63,'Outlet','middle',2.6]],
+      actors:[['ball',96.5,5.5,null,'ball']],
+      steps:[
+        {s:'LOCK THE BOX! Everyone has a job: GK, Post, Markers, Gate, Outlet.', fx:[['tag',84,20,'Block short'],['lbl',75,10,'ref distance','middle',2.2]], h:1300},
+        {s:'The corner comes in. Markers stay goal-side and watch the ball.', m:[['ball',51,12,'pass',-8]], d:1200},
+        {s:'Clear it HIGH, FAR, WIDE. Never across our goal!', m:[['ball',10,34,'shot',6]], d:900, fx:[['tag',16,40,'HIGH · FAR · WIDE']]},
+      ]},
 
-    lock_d1:{pitch:'half', items:[
-      ['zone',4,16,16,34,'CLEAR'],['zone',80,22,16,34,'CLEAR'],
-      ['gk',49,5.5],
-      ['o',53,16],['p',53,11.5,'M'],
-      ['o',42,20],['p',42.5,15.5,'M'],
-      ['c',94,9],['ball',96.5,5.5],
-      ['pass',96.5,5.5,53.5,13.5,-6,{s:1.6,e:1}],
-      ['shot',51,12,14,30,7,{s:2,e:.4}],
-      ['tag',30,8,"'MINE!'"],
-      ['lbl',50,40,'Defender stays goal-side','middle',2.6],
-    ]},
+    lock_d1:{pitch:'half',
+      fixed:[['zone',4,16,16,34,'CLEAR'],['zone',80,22,16,34,'CLEAR'],['gk',49,5.5],['o',53,16],['p',53,11.5,'M'],
+        ['o',42,20],['p',42.5,15.5,'M'],['c',94,9],['lbl',50,40,'Defender stays goal-side','middle',2.6]],
+      actors:[['ball',96.5,5.5,null,'ball']],
+      steps:[
+        {s:'Defender stands goal-side, one hand lightly on the attacker.', h:1000},
+        {s:'Coach serves it in from the corner.', m:[['ball',53.5,14,'pass',-6]], d:1200},
+        {s:'"MINE!" Attack the ball first and clear it high and wide into a Clear Zone.', m:[['ball',12,30,'shot',7]], d:900, fx:[['tag',30,8,"'MINE!'"]]},
+      ]},
 
-    lock_d2:{pitch:'half', items:[
-      ['cone',22,76],['cone',34,76],['cone',66,76],['cone',78,76],
-      ['gk',48,6],['p',58,6,'P'],
-      ['o',56,17],['p',54,13,'M'],
-      ['o',45,20],['g',45,16,'M'],['run',45,16,40,34],['p',40,34,'M'],
-      ['o',52,28],['g',51,23,'M'],['run',51,23,56,38],['p',56,38,'M'],
-      ['p',84,13,'G'],
-      ['o',94,8.5,'K'],['ball',96.5,5.5],
-      ['shot',54,12,22,46,8,{s:2,e:.4}],
-      ['g',50,56,'S'],['run',50,56,26,50],['p',26,50,'S'],['drib',26,50,28,74,0,{s:3.4,e:1}],
-      ['tag',70,32,"'OUT!'"],
-      ['lbl',28,79.3,'gate = 2 pts','middle',2.2],['lbl',72,79.3,'gate = 2 pts','middle',2.2],
-    ]},
+    lock_d2:{pitch:'half',
+      fixed:[['cone',22,76],['cone',34,76],['cone',66,76],['cone',78,76],['gk',48,6],['p',58,6,'P'],
+        ['o',56,17],['p',54,13,'M'],['o',45,20],['o',52,28],['p',84,13,'G'],['o',94,8.5,'K'],
+        ['lbl',28,79.3,'gate = 2 pts','middle',2.2],['lbl',72,79.3,'gate = 2 pts','middle',2.2]],
+      actors:[['ball',96.5,5.5,null,'ball'],['p',45,16,'M','m2'],['p',51,23,'M','m3'],['p',50,56,'S','s']],
+      steps:[
+        {s:'LOCK THE BOX! The corner comes in.', m:[['ball',53,11,'pass',-8]], d:1200},
+        {s:'Cleared high and wide. Everybody yells "OUT!" and steps up together.', m:[['ball',24,47,'shot',8],['m2',40,34],['m3',56,38]], d:1300,
+          fx:[['tag',70,32,"'OUT!'"]]},
+        {s:'The Outlet collects it…', m:[['s',27,50]], d:900},
+        {s:'…and dribbles through a halfway gate = 2 points!', m:[['s',28,72,'drib'],['ball',28,75.5,'none']], d:1300},
+      ]},
   };
 
   document.querySelectorAll('.dg').forEach(h => {
     const key = h.dataset.d;
     const cap = h.parentElement.querySelector('figcaption');
-    if (D[key]) render(D[key], h, (cap && cap.textContent) || key);
+    if (D[key]) build(D[key], h, (cap && cap.textContent) || key);
   });
 
+  // Autoplay while on screen, pause when scrolled away
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      const pl = players.find(p => p.host === e.target); if (!pl) return;
+      pl.P.inView = e.isIntersecting; pl.sync();
+      if (e.isIntersecting && !pl.P.started && !pl.P.userPaused) pl.start();
+    }), {threshold:.45});
+    players.forEach(p => io.observe(p.host));
+  } else players.forEach(p => { p.P.inView = true; p.sync(); });
+
+  window.addEventListener('beforeprint', () => players.forEach(p => p.toStatic()));
+
   // Legend
-  const lg = document.getElementById('legend'); K = 1;
+  K = 1;
+  const lg = document.getElementById('legend');
   const mini = (draw, txt) => {
     const span = document.createElement('span');
     const s = el('svg',{viewBox:'0 0 16 8',width:40,height:20});
@@ -950,7 +1096,7 @@
   mini((s)=>token(s,8,4,C.opp,'',''),'Other team');
   mini((s)=>token(s,8,4,C.ours,'','',{ghost:true}),'Where she started');
   mini((s)=>token(s,8,4,C.coach,'C','#fff'),'Coach');
-  mini((s)=>{el('circle',{cx:8,cy:4,r:1.5,fill:'#fff',stroke:'#111','stroke-width':.4},s);},'Ball');
+  mini((s)=>ball(s,8,4),'Ball');
   mini((s)=>el('path',{d:'M8,2.4 L9.4,5 L6.6,5 z',fill:'#ff8a1f'},s),'Cone');
   mini((s,id)=>arrow(s,id,'pass',[1,4,15,4,0,{s:0,e:0}]),'Pass / kick');
   mini((s,id)=>arrow(s,id,'shot',[1,4,15,4,0,{s:0,e:0}]),'Shot / clear');
@@ -959,10 +1105,10 @@
 
   // Highlight current call in the quick nav
   const links=[...document.querySelectorAll('nav.quick a')];
-  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){
+  const nio=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){
     links.forEach(a=>{const on=a.getAttribute('href')==='#'+e.target.id; a.classList.toggle('on',on); if(on){const r=a.parentElement; r.scrollTo({left:a.offsetLeft-(r.clientWidth-a.offsetWidth)/2,behavior:'smooth'});}});
   }}),{rootMargin:'-40% 0px -55% 0px'});
-  document.querySelectorAll('section.play').forEach(s=>io.observe(s));
+  document.querySelectorAll('section.play').forEach(s=>nio.observe(s));
 
   if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
     navigator.serviceWorker.register('sw.js');
