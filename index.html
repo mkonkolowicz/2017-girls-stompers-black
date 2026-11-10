@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111214">
+<meta name="description" content="LaSalle Stompers 2017 Black game calls playbook: pictures and drills for each sideline call.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Stompers">
+<title>LaSalle Stompers 2017 Black — Game Calls Playbook</title>
+<style>
+  :root{
+    --ink:#111214; --paper:#ffffff; --soft:#f4f4f2; --line:#dcdcd6;
+    --gold:#ffd23f; --red:#e5484d; --muted:#5b5d63;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-rounded,"SF Pro Rounded",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--soft);line-height:1.45}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+  header.hero{background:var(--ink);color:#fff;padding:40px 0 34px;border-bottom:8px solid var(--gold)}
+  .hero .kicker{letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--gold);font-weight:700}
+  .hero h1{font-size:clamp(30px,5vw,52px);margin:6px 0 4px;line-height:1.05;font-weight:900}
+  .hero p{margin:6px 0 0;color:#cfd0d4;max-width:720px}
+  h2,h3{line-height:1.15}
+  .intro{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:24px 0}
+  .intro h2{margin:0 0 8px;font-size:22px}
+  .intro ol{margin:6px 0 0 0;padding-left:20px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin:18px 0 8px}
+  .callcard{background:var(--ink);color:#fff;border-radius:14px;padding:16px 18px;text-decoration:none;display:block;border-left:8px solid var(--gold)}
+  .callcard .when{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#a9abb1}
+  .callcard .call{font-size:30px;font-weight:900;color:var(--gold);margin:2px 0 4px}
+  .callcard .means{font-size:15px;color:#eee}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 18px;margin:14px 0 28px;font-size:14px}
+  .legend svg{vertical-align:middle;margin-right:6px}
+  section.play{background:#fff;border:1px solid var(--line);border-radius:18px;margin:0 0 34px;overflow:hidden}
+  .playhead{background:var(--ink);color:#fff;padding:20px 24px 18px;display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline}
+  .playhead .tag{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#a9abb1;width:100%}
+  .playhead .call{font-size:clamp(38px,7vw,64px);font-weight:900;color:var(--gold);line-height:1}
+  .playhead .means{font-size:18px;color:#e8e8e8;max-width:560px}
+  .body{padding:20px 24px 8px}
+  .picture{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;align-items:start;margin-bottom:10px}
+  .picture.two{grid-template-columns:1fr 1fr}
+  .picture h3,.drill h3{margin:0 0 6px;font-size:20px}
+  .jobs{list-style:none;padding:0;margin:0}
+  .jobs li{padding:7px 0 7px 0;border-bottom:1px dashed var(--line)}
+  .jobs li:last-child{border-bottom:0}
+  .jobs b{display:inline-block;min-width:0;background:var(--gold);color:var(--ink);border-radius:6px;padding:0 6px;margin-right:6px;font-size:13px}
+  .say{background:var(--soft);border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:15px}
+  .say strong{color:#000}
+  figure{margin:0}
+  figure svg{width:100%;height:auto;display:block;border-radius:12px}
+  figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+  .drills{display:grid;gap:18px;margin:18px 0 16px}
+  .drill{border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:1fr 1.05fr;gap:20px;align-items:start}
+  .drill .num{display:inline-block;background:var(--ink);color:var(--gold);font-weight:900;border-radius:999px;padding:2px 10px;font-size:13px;margin-bottom:6px;letter-spacing:.06em}
+  .meta{font-size:13px;color:var(--muted);margin:0 0 8px}
+  .drill ol{margin:4px 0 8px;padding-left:22px}
+  .drill ol li{margin:3px 0}
+  .tips{font-size:14px;background:#fff8d9;border-radius:10px;padding:8px 12px;margin:6px 0 0}
+  .tips p{margin:3px 0}
+  footer{color:var(--muted);font-size:13px;text-align:center;padding:10px 0 40px}
+  @media (max-width:780px){
+    .picture,.picture.two,.drill{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff}
+    section.play{break-before:page;border:0}
+    .drill{break-inside:avoid}
+    .cards{break-inside:avoid}
+    header.hero,.playhead,.callcard,.jobs b,.drill .num{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    figure svg{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+  nav.quick{position:sticky;top:0;z-index:10;background:var(--ink);border-bottom:3px solid var(--gold);padding-top:env(safe-area-inset-top)}
+  nav.quick .row{display:flex;gap:8px;overflow-x:auto;padding:10px 18px;max-width:1040px;margin:0 auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  nav.quick .row::-webkit-scrollbar{display:none}
+  nav.quick a{flex:0 0 auto;color:var(--gold);text-decoration:none;font-weight:900;font-size:14px;letter-spacing:.02em;border:1.5px solid #3a3b40;border-radius:999px;padding:7px 13px;white-space:nowrap}
+  nav.quick a:active,nav.quick a.on{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  section.play{scroll-margin-top:64px}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  @media (max-width:600px){
+    .wrap{padding:0 12px}
+    header.hero{padding:26px 0 22px}
+    .body{padding:16px 14px 6px}
+    .playhead{padding:16px 16px 14px}
+    .playhead .means{font-size:16px}
+    .drill{padding:14px 12px}
+    .cards{grid-template-columns:1fr 1fr;gap:10px}
+    .callcard{padding:12px 12px;border-left-width:5px}
+    .callcard .call{font-size:20px}
+    .callcard .means{font-size:13px}
+    .callcard .when{font-size:10px}
+  }
+  @media print{nav.quick{display:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">ECSL · Ontario Soccer · U10 Girls</div>
+    <h1>LaSalle Stompers 2017 Black<br>Game Calls Playbook</h1>
+    <p>Six words Coach yells from the sideline. Each one matches a picture in your head and two drills we do at practice. Hear the call, see the picture, do your job.</p>
+  </div>
+</header>
+
+<nav class="quick" aria-label="Jump to a call"><div class="row">
+  <a href="#stomp">STOMP!</a><a href="#shape">SHAPE UP!</a><a href="#tap">TAP &amp; BLAST!</a><a href="#wall">WALL UP!</a><a href="#crash">CRASH THE BOX!</a><a href="#lock">LOCK THE BOX!</a>
+</div></nav>
+
+<main class="wrap">
+
+  <div class="intro">
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Learn the picture.</strong> Every call has one big picture showing where everyone goes.</li>
+      <li><strong>Do the drills.</strong> At practice, Coach uses the same call during the drill so it sticks.</li>
+      <li><strong>Hear it in a game? Act fast.</strong> No thinking. Call, picture, go.</li>
+      <li><strong>Repeat it.</strong> When Coach yells a call, say it out loud to your teammates too.</li>
+    </ol>
+  </div>
+
+  <div class="cards">
+    <a class="callcard" href="#stomp"><div class="when">They have the ball</div><div class="call">STOMP!</div><div class="means">Closest girl presses the ball. Next girl covers. Everyone squeezes in.</div></a>
+    <a class="callcard" href="#shape"><div class="when">Any time</div><div class="call">SHAPE UP!</div><div class="means">Get back in your 2-3-1 spot. Make triangles. "BIG" with the ball, "SMALL" without it.</div></a>
+    <a class="callcard" href="#tap"><div class="when">Our indirect free kick</div><div class="call">TAP &amp; BLAST!</div><div class="means">One girl taps it a little, the next girl shoots right away.</div></a>
+    <a class="callcard" href="#wall"><div class="when">Their indirect free kick</div><div class="call">WALL UP!</div><div class="means">Keeper calls the number. Wall blocks the near post. Charge on the first touch.</div></a>
+    <a class="callcard" href="#crash"><div class="when">Our corner kick</div><div class="call">CRASH THE BOX!</div><div class="means">Hand goes up, runners attack near post, far post and the rebound spot.</div></a>
+    <a class="callcard" href="#lock"><div class="when">Their corner kick</div><div class="call">LOCK THE BOX!</div><div class="means">Post, mark, gate, outlet. Clear it high, far and wide, then everybody steps OUT.</div></a>
+  </div>
+
+  <div class="legend" id="legend"></div>
+
+  <!-- ===================== STOMP ===================== -->
+  <section class="play" id="stomp">
+    <div class="playhead">
+      <div class="tag">Pressing · when the other team has the ball</div>
+      <div class="call">STOMP!</div>
+      <div class="means">Go get the ball back, together. One girl presses, one covers, the rest squeeze in.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="stomp_pic"></div><figcaption>They have the ball near our right sideline. The faded circles show where we started.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>1 · STOMP</b>The <em>closest</em> girl sprints at the ball. Two big steps away, slow down, bend your knees, stand sideways.</li>
+            <li><b>Make her go to the line</b>Block the middle so she has to go to the sideline. The sideline is our extra defender.</li>
+            <li><b>2 · COVER</b>The next closest girl stands behind and to the side of the presser, about 4 big steps away. If she gets past #1, you're there.</li>
+            <li><b>3 · SQUEEZE</b>Everyone else moves toward the ball and steps up so the field gets small.</li>
+          </ul>
+          <p class="say"><strong>Presser shouts:</strong> "I've got ball!" &nbsp; <strong>Cover shouts:</strong> "I'm behind you!"</p>
+        </div>
+      </div>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="stomp_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>1v1 Stomp to the Line</h3>
+            <p class="meta">Grid about 20 × 15 big steps · pairs · 8–10 min</p>
+            <ol>
+              <li>Defender (D) starts on the top line with the ball. Attacker (A) waits on the bottom line.</li>
+              <li>D passes to A, then yells <strong>"STOMP!"</strong> and sprints at her.</li>
+              <li>Two big steps away: brakes on. Small steps, knees bent, sideways stance.</li>
+              <li>D blocks the middle gate and pushes A toward a side Trap Zone.</li>
+              <li>A scores by dribbling through the middle gate. D scores by winning the ball or trapping A in a side zone.</li>
+              <li>Swap roles and go to the back of the line.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> sprint, brake, sit. Don't dive in. Watch the ball, not her fancy feet.</p>
+              <p><strong>Harder:</strong> D starts further back, or A gets 2 tries.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="stomp_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>2v2 Press &amp; Cover</h3>
+            <p class="meta">Grid about 25 × 20 big steps · 2v2 · 10 min</p>
+            <ol>
+              <li>Two defenders on the top line, two attackers on the bottom line. Two small gates on the top line.</li>
+              <li>Coach passes to either attacker.</li>
+              <li>The closest defender yells <strong>"STOMP!"</strong> and presses.</li>
+              <li>The other defender yells <strong>"COVER!"</strong> and moves behind and to the side of her, not flat next to her.</li>
+              <li>If the attackers pass, switch jobs fast: the new closest girl presses, the other covers.</li>
+              <li>Attackers score by dribbling through a gate. Defenders score by winning it and dribbling over the bottom line.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> cover makes a diagonal line, not a flat line. Talk the whole time.</p>
+              <p><strong>Harder:</strong> make it 3v2. The defenders have to press and cover even faster.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SHAPE UP ===================== -->
+  <section class="play" id="shape">
+    <div class="playhead">
+      <div class="tag">Positioning · any time</div>
+      <div class="call">SHAPE UP!</div>
+      <div class="means">Find your spot in our 2-3-1. Make triangles. Then Coach may add <strong style="color:var(--gold)">BIG!</strong> or <strong style="color:var(--gold)">SMALL!</strong></div>
+    </div>
+    <div class="body">
+      <div class="picture two">
+        <figure><div class="dg" data-d="shape_big"></div><figcaption><strong>"BIG!"</strong> We have the ball: spread wide to the lines and deep up the field.</figcaption></figure>
+        <figure><div class="dg" data-d="shape_small"></div><figcaption><strong>"SMALL!"</strong> They have the ball: squeeze together between the ball and our goal.</figcaption></figure>
+      </div>
+      <ul class="jobs" style="margin-bottom:6px">
+        <li><b>Our spots</b>GK · 2 backs (LB, RB) · 3 mids (LM, CM, RM) · 1 striker (S).</li>
+        <li><b>Triangles</b>Look around. Can you see two teammates making a triangle with you? That means you always have a pass.</li>
+        <li><b>Don't bunch</b>If two Stompers are close enough to high-five, one of you is in the wrong spot.</li>
+        <li><b>Rubber band</b>We're all tied together. When the ball moves, the whole team slides together.</li>
+      </ul>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="shape_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Shadow Shape (Rubber Band)</h3>
+            <p class="meta">Half or full field · whole team · 8 min · no opponents</p>
+            <ol>
+              <li>Everyone stands in their 2-3-1 spot.</li>
+              <li>Coach (C) carries the ball and walks, then jogs, to a new spot on the field.</li>
+              <li>The whole team slides together toward the ball side. Nobody stays behind.</li>
+              <li>Coach yells <strong>"BIG!"</strong> and everyone spreads wide and long. Coach yells <strong>"SMALL!"</strong> and everyone squeezes in, between the ball and our goal.</li>
+              <li>Coach yells <strong>"FREEZE!"</strong> Check: can you see the ball? Are you in a triangle?</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> watch the ball, then look at your neighbours.</p>
+              <p><strong>Harder:</strong> two coaches pass the ball around fast, so the team has to keep sliding.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="shape_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Freeze-Frame Scrimmage</h3>
+            <p class="meta">Small-sided or 7v7 scrimmage · 12 min</p>
+            <ol>
+              <li>Play a normal scrimmage.</li>
+              <li>Coach blows the whistle and yells <strong>"FREEZE!"</strong> Everyone becomes a statue.</li>
+              <li>Coach picks a girl: "Are you in your spot?" If not, she walks to the right spot.</li>
+              <li>The girl with the ball points to her two triangle teammates.</li>
+              <li>Coach yells <strong>"SHAPE UP!"</strong> Everyone fixes their spot, then play starts again.</li>
+              <li>3 perfect freezes = a Stompers point.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> wide players should be close to the sideline when we have the ball.</p>
+              <p><strong>Harder:</strong> Coach only gives 3 seconds to fix it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TAP & BLAST ===================== -->
+  <section class="play" id="tap">
+    <div class="playhead">
+      <div class="tag">Taking an indirect free kick</div>
+      <div class="call">TAP &amp; BLAST!</div>
+      <div class="means">Ref's arm is up, so you can't score straight from the kick. Someone else has to touch it first. Tap it, then blast it.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="tap_pic"></div><figcaption>We're attacking the goal at the top. The ref's arm goes up for an indirect kick.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>T · Tapper</b>Stands next to the ball. Rolls it one small step to the side. Just enough so it moves.</li>
+            <li><b>B · Blaster</b>Waits 3 big steps back. Starts running as the tapper touches it. Shoots first time at a low corner.</li>
+            <li><b>R · Rebound</b>One girl starts wide and crashes to the goal when the shot goes, in case the keeper drops it.</li>
+            <li><b>Backs stay home</b>Our two backs and GK stay back in case they get the ball.</li>
+          </ul>
+          <p class="say"><strong>Why:</strong> on an indirect kick, a goal only counts if another player touched the ball first. The tap is that touch.</p>
+        </div>
+      </div>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="tap_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Tap &amp; Blast Lines</h3>
+            <p class="meta">Edge of the box · two lines + keeper · 10 min</p>
+            <ol>
+              <li>Ball on a cone at the edge of the box. Tappers line up on the left, Blasters on the right.</li>
+              <li>The Blaster calls <strong>"TAP!"</strong></li>
+              <li>The Tapper rolls the ball one small step sideways. Not too far!</li>
+              <li>The Blaster runs onto it and shoots first time, low, at a corner.</li>
+              <li>Tapper joins the Blaster line. Blaster gets her ball and joins the Tapper line.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> soft tap. Laces, toe pointed down, land on your shooting foot.</p>
+              <p><strong>Harder:</strong> put a wall of cones in front, or count to 3: shoot before "3".</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="tap_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Beat the Wall</h3>
+            <p class="meta">3 attackers vs wall of 3 + keeper · 10 min</p>
+            <ol>
+              <li>Coach puts the ball down, raises an arm and says <strong>"Indirect!"</strong></li>
+              <li>Attackers pick jobs: Tapper, Blaster, Rebound. Use a secret hand signal for which side to tap.</li>
+              <li>The wall can't move until the first touch. Then it charges!</li>
+              <li>The Blaster has to shoot before the wall gets there. Rebound girl follows the shot in.</li>
+              <li>Goal = 2 points, rebound goal = 3. Block by the wall = 1 point for the wall.</li>
+              <li>Rotate so everyone tries every job.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> fast and sneaky. The longer you wait, the closer the wall gets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WALL UP ===================== -->
+  <section class="play" id="wall">
+    <div class="playhead">
+      <div class="tag">Defending an indirect free kick</div>
+      <div class="call">WALL UP!</div>
+      <div class="means">Build a wall that blocks the near post. Keeper sees the ball. When they touch it, we CHARGE.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="wall_pic"></div><figcaption>Our goal is at the top. They have an indirect kick outside our box.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>GK · Boss</b>Shouts <strong>"WALL, 3!"</strong> and lines them up. Stands where she can see the ball.</li>
+            <li><b>W · Wall</b>The Wall Captain stands on the line from the ball to the near post. Two teammates squeeze in next to her, toward the middle. Shoulder to shoulder, arms crossed over your chest, eyes on the ball.</li>
+            <li><b>CH · Charger</b>Our fastest girl stands just off the wall. On the <em>first touch</em> she sprints at the ball to block the shot.</li>
+            <li><b>M · Marker</b>Stays goal-side of any open attacker.</li>
+            <li><b>S · Outlet</b>Striker stays up field, ready for the clearance.</li>
+          </ul>
+          <p class="say"><strong>Distance:</strong> back up until the referee says stop. Don't move until they kick it.</p>
+        </div>
+      </div>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="wall_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Wall-Up Race</h3>
+            <p class="meta">Around our box · whole team · 8 min · use a stopwatch</p>
+            <ol>
+              <li>Mark 3 ball spots around the box (1, 2, 3). Team jogs around the middle of the field.</li>
+              <li>Coach puts the ball on a spot and yells <strong>"WALL UP!"</strong></li>
+              <li>GK shouts <strong>"WALL, 3!"</strong> and names the three girls.</li>
+              <li>The Wall Captain finds the near-post line. Two more squeeze in next to her toward the middle.</li>
+              <li>Arms crossed, feet together, eyes up. Charger and Marker find their spots.</li>
+              <li>Coach times it. Beat the team record!</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> the keeper must still see the ball. Tallest girl on the outside.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="wall_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Charge the Tap</h3>
+            <p class="meta">Wall of 3 + Charger + GK vs Tapper &amp; Shooter · 10 min</p>
+            <ol>
+              <li>Wall, Charger and GK set up on <strong>"WALL UP!"</strong></li>
+              <li>Attackers do their tap-and-shoot.</li>
+              <li>On the first touch, the Charger sprints out and blocks the shot with her body (not her hands!).</li>
+              <li>The wall holds still for the shot, then everyone attacks the rebound.</li>
+              <li>Block or save = 1 point for the defenders. Goal = 1 point for the attackers.</li>
+              <li>Rotate Charger and Wall Captain.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> charge on the <em>touch</em>, not before. Too early and the ref makes us do it again.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CRASH THE BOX ===================== -->
+  <section class="play" id="crash">
+    <div class="playhead">
+      <div class="tag">Taking a corner kick</div>
+      <div class="call">CRASH THE BOX!</div>
+      <div class="means">Kicker puts her hand up. Runners attack three spots: near post, far post and the rebound.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="crash_pic"></div><figcaption>Corner from the right. We're attacking the goal at the top.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>K · Kicker</b>Wide mid on that side. Hand up means GO. Aim for <em>The Spot</em>, the space in front of the goal.</li>
+            <li><b>Near post</b>Striker starts outside the box and runs hard to the front post.</li>
+            <li><b>Far post</b>Other wide mid runs to the back post for tap-ins.</li>
+            <li><b>Rebound</b>CM waits at the top of the box for anything that comes out. Shoot it!</li>
+            <li><b>Stay home</b>Both backs and the GK stay back to stop a fast break.</li>
+          </ul>
+          <p class="say"><strong>Start outside, then run in.</strong> Runners who are already moving are hard to mark.</p>
+        </div>
+      </div>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="crash_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Hit the Spot</h3>
+            <p class="meta">Corner flag · kickers line · 3 target zones · 8 min</p>
+            <ol>
+              <li>Kickers line up at the corner flag, each with a ball.</li>
+              <li>Put the ball in the corner arc. Take 3–4 steps back and a little to the side.</li>
+              <li>Plant foot next to the ball. Strike under the middle of the ball with your laces or the inside of your foot.</li>
+              <li>Land it in a zone: Near or Far = 1 point, The Spot = 2 points.</li>
+              <li>Switch to the other corner so both feet get practice.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> come in at an angle, lean back a little, follow through toward the target.</p>
+              <p><strong>U10 tip:</strong> a hard, low ball to the near post works great too!</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="crash_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Crash the Box</h3>
+            <p class="meta">Kicker + 3 runners vs 2 defenders + keeper · 10 min</p>
+            <ol>
+              <li>Runners start outside the top of the box.</li>
+              <li>Kicker puts her hand up and yells <strong>"CRASH!"</strong></li>
+              <li>Runners count "1, 2", then sprint to their spots: near post, far post, rebound.</li>
+              <li>Try to arrive at the same time as the ball. Near post flicks it on, far post taps it in, rebound girl shoots.</li>
+              <li>5 corners, then rotate jobs. Goal = 1 point, rebound goal = 2.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> don't stand and wait in the box. Start outside, then run in.</p>
+              <p><strong>Harder:</strong> add a third defender.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOCK THE BOX ===================== -->
+  <section class="play" id="lock">
+    <div class="playhead">
+      <div class="tag">Defending a corner kick</div>
+      <div class="call">LOCK THE BOX!</div>
+      <div class="means">Everyone has a job: Post, Markers, Gate, Outlet. Clear it HIGH, FAR, WIDE, then everybody steps OUT.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="lock_pic"></div><figcaption>Our goal is at the top. Their corner comes from the right.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>GK</b>Middle of the goal, a little toward the back post. Shouts <strong>"KEEPER!"</strong> if she's catching it.</li>
+            <li><b>P · Post</b>Stands right next to the near post and kicks away anything that comes there.</li>
+            <li><b>M · Markers</b>Each one picks an attacker and stands goal-side, between her and our goal. Keep one hand lightly on her and your eyes on the ball.</li>
+            <li><b>G · Gate</b>Stands out toward the corner, the distance the ref sets, to block a short corner.</li>
+            <li><b>S · Outlet</b>Striker waits up the field for the clear. Go!</li>
+          </ul>
+          <p class="say"><strong>Clearing:</strong> HIGH, FAR, WIDE, out toward the sideline. Never kick it across the front of our goal. After the clear, everyone yells <strong>"OUT!"</strong> and steps up together.</p>
+        </div>
+      </div>
+
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="lock_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Mark &amp; Clear</h3>
+            <p class="meta">Pairs in the box · Coach serves from the corner · 10 min</p>
+            <ol>
+              <li>Pair up: one attacker, one defender. The defender stands goal-side with one hand lightly on the attacker. No grabbing!</li>
+              <li>Coach serves from the corner. Throw it at first, then kick it.</li>
+              <li>Defender attacks the ball first, yells <strong>"MINE!"</strong> and clears it high and wide into a Clear Zone.</li>
+              <li>Into a Clear Zone = 2 points, any clear = 1. Attacker scores = 1 point for the attacker.</li>
+              <li>Swap roles.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> watch the ball and your girl. Kick through the bottom of the ball to get it high.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="lock_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Lock the Box Game</h3>
+            <p class="meta">Kicker + 3 attackers vs full corner defence · gates on halfway · 12 min</p>
+            <ol>
+              <li>Coach yells <strong>"LOCK THE BOX!"</strong> Defenders find their jobs: GK, Post, 3 Markers, Gate, Outlet.</li>
+              <li>Attackers take the corner and try to score.</li>
+              <li>Once it's cleared, every defender yells <strong>"OUT!"</strong> and sprints up to the top of the box together.</li>
+              <li>The Outlet gets the clear and dribbles through a halfway gate = 2 points. Any clear out of the box = 1 point. Attacker goal = 2 points for the attackers.</li>
+              <li>5 corners, then rotate so everyone tries Post, Marker, Gate and Outlet.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> stepping OUT together pushes their players away from our goal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>LaSalle Stompers 2017 Black · ECSL · U10 Girls · Hear the call, see the picture, do your job.</footer>
+
+<script>
+(function(){
+  const NS = 'http://www.w3.org/2000/svg';
+  const C = { ours:'#111214', ourTxt:'#ffffff', gk:'#ffd23f', opp:'#e5484d', coach:'#8a8d94',
+              pass:'#ffffff', run:'#ffd23f', orun:'#ffb3b5', grass:'#3d8b4d', grass2:'#43944f', line:'rgba(255,255,255,.85)' };
+  let uid = 0; let K = 1;
+
+  function el(tag, attrs, parent, text){
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (text != null) e.textContent = text;
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+
+  function defs(svg, id){
+    const d = el('defs', {}, svg);
+    const mk = (name, color, size) => {
+      const m = el('marker', {id: name + id, viewBox:'0 0 10 10', refX:'7', refY:'5', markerWidth:size, markerHeight:size,
+        markerUnits:'userSpaceOnUse', orient:'auto-start-reverse'}, d);
+      el('path', {d:'M0,0 L10,5 L0,10 z', fill:color}, m);
+    };
+    mk('aw', C.pass, 3); mk('ay', C.run, 3); mk('ar', C.orun, 3); mk('as', C.pass, 3.8);
+  }
+
+  function pitchHalf(g){
+    el('rect', {x:0,y:0,width:100,height:80,fill:C.grass}, g);
+    for (let i=0;i<8;i++) if (i%2) el('rect',{x:3,y:4+i*9.125,width:94,height:9.125,fill:C.grass2},g);
+    const L = {fill:'none', stroke:C.line, 'stroke-width':.5};
+    el('rect', Object.assign({x:3,y:4,width:94,height:73}, L), g);
+    el('rect', Object.assign({x:29,y:4,width:42,height:20}, L), g);
+    el('rect', Object.assign({x:41,y:4,width:18,height:7}, L), g);
+    el('rect', {x:43,y:1,width:14,height:3,fill:'rgba(255,255,255,.25)',stroke:'#fff','stroke-width':.6}, g);
+    el('circle', {cx:50,cy:17,r:.5,fill:C.line}, g);
+    el('path', Object.assign({d:'M38,77 A12,12 0 0 1 62,77'}, L), g);
+    el('path', Object.assign({d:'M3,6 A2,2 0 0 0 5,4 M95,4 A2,2 0 0 0 97,6'}, L), g);
+    el('text', {x:96,y:79.4,'font-size':2.2,fill:'rgba(255,255,255,.7)','text-anchor':'end'}, g, 'halfway line');
+  }
+
+  function pitchFull(g){
+    el('rect', {x:0,y:0,width:150,height:100,fill:C.grass}, g);
+    for (let i=0;i<10;i++) if (i%2) el('rect',{x:4+i*14.2,y:4,width:14.2,height:92,fill:C.grass2},g);
+    const L = {fill:'none', stroke:C.line, 'stroke-width':.6};
+    el('rect', Object.assign({x:4,y:4,width:142,height:92}, L), g);
+    el('line', Object.assign({x1:75,y1:4,x2:75,y2:96}, L), g);
+    el('circle', Object.assign({cx:75,cy:50,r:12}, L), g);
+    el('rect', Object.assign({x:4,y:29,width:20,height:42}, L), g);
+    el('rect', Object.assign({x:4,y:41,width:7,height:18}, L), g);
+    el('rect', Object.assign({x:126,y:29,width:20,height:42}, L), g);
+    el('rect', Object.assign({x:139,y:41,width:7,height:18}, L), g);
+    el('rect', {x:1,y:43,width:3,height:14,fill:'rgba(255,255,255,.25)',stroke:'#fff','stroke-width':.6}, g);
+    el('rect', {x:146,y:43,width:3,height:14,fill:'rgba(255,255,255,.25)',stroke:'#fff','stroke-width':.6}, g);
+    el('text', {x:6,y:99,'font-size':2.6,fill:'rgba(255,255,255,.8)'}, g, '◀ our goal');
+    el('text', {x:144,y:99,'font-size':2.6,fill:'rgba(255,255,255,.8)','text-anchor':'end'}, g, 'we attack ▶');
+  }
+
+  function pitchGrid(g, w, h){
+    el('rect', {x:0,y:0,width:w,height:h,fill:C.grass}, g);
+  }
+
+  // geometry helpers
+  function trimPts(x1,y1,x2,y2,curve,s,e){
+    const mx=(x1+x2)/2, my=(y1+y2)/2, dx=x2-x1, dy=y2-y1, len=Math.hypot(dx,dy)||1;
+    const nx=-dy/len, ny=dx/len;
+    const cx=mx+nx*(curve||0), cy=my+ny*(curve||0);
+    const mv=(ax,ay,bx,by,d)=>{const l=Math.hypot(bx-ax,by-ay)||1;return [ax+(bx-ax)/l*d, ay+(by-ay)/l*d];};
+    const [sx,sy]=mv(x1,y1,cx,cy,s), [ex,ey]=mv(x2,y2,cx,cy,e);
+    return {sx,sy,ex,ey,cx,cy};
+  }
+
+  function arrow(g, id, type, a){
+    const [x1,y1,x2,y2,curve,opt] = a;
+    const o = Object.assign({pass:{s:3.4,e:3.6},shot:{s:1.8,e:.4},run:{s:3.4,e:3.8},orun:{s:3.4,e:3.8},drib:{s:3.4,e:3.8}}[type], opt||{});
+    const p = trimPts(x1,y1,x2,y2,curve,o.s,o.e);
+    let d;
+    if (type==='drib'){
+      const dx=p.ex-p.sx, dy=p.ey-p.sy, L=Math.hypot(dx,dy), ux=dx/L, uy=dy/L, nx=-uy, ny=ux;
+      const steps=Math.max(4,Math.floor((L-3)/1.6));
+      d=`M${p.sx},${p.sy}`;
+      for(let i=1;i<=steps;i++){const t=i*(L-3)/steps, amp=(i%2?1:-1)*1.1;
+        d+=` L${p.sx+ux*t+nx*amp},${p.sy+uy*t+ny*amp}`;}
+      d+=` L${p.ex},${p.ey}`;
+    } else {
+      d=`M${p.sx},${p.sy} Q${p.cx},${p.cy} ${p.ex},${p.ey}`;
+    }
+    const st = {
+      pass:{stroke:C.pass,'stroke-width':.7,marker:'aw'},
+      shot:{stroke:C.pass,'stroke-width':1.2,marker:'as'},
+      run:{stroke:C.run,'stroke-width':.7,dash:'1.6 1.1',marker:'ay'},
+      orun:{stroke:C.orun,'stroke-width':.7,dash:'1.6 1.1',marker:'ar'},
+      drib:{stroke:C.pass,'stroke-width':.6,marker:'aw'}
+    }[type];
+    const attrs={d,fill:'none',stroke:st.stroke,'stroke-width':st['stroke-width'],'stroke-linecap':'round','stroke-linejoin':'round','marker-end':`url(#${st.marker}${id})`};
+    if (st.dash) attrs['stroke-dasharray']=st.dash;
+    el('path', attrs, g);
+  }
+
+  function token(g, x, y, fill, txt, txtFill, opts){
+    opts = opts||{};
+    const grp = el('g', {opacity: opts.ghost ? .35 : 1}, g);
+    el('circle', {cx:x,cy:y,r:3.1*K,fill,stroke: opts.stroke||'#fff','stroke-width':.6, 'stroke-dasharray': opts.ghost ? '1 .8':'none'}, grp);
+    if (txt) el('text', {x, y:y+.05, 'font-size': (txt.length>1 ? 2.4 : 3)*K, 'font-weight':800, fill:txtFill,
+      'text-anchor':'middle','dominant-baseline':'central','font-family':'system-ui,sans-serif'}, grp, txt);
+  }
+
+  function label(g,x,y,t,anchor,size){
+    el('text',{x,y,'font-size':(size||2.7)*K,'font-weight':700,fill:'#fff','text-anchor':anchor||'middle',
+      'paint-order':'stroke',stroke:'rgba(0,0,0,.6)','stroke-width':.8,'stroke-linejoin':'round','font-family':'system-ui,sans-serif'},g,t);
+  }
+
+  function tag(g,x,y,t){
+    const w=(t.length*1.55+3)*K;
+    el('rect',{x:x-w/2,y:y-2.3*K,width:w,height:4.2*K,rx:2.1*K,fill:C.gk,stroke:'#111','stroke-width':.25},g);
+    el('text',{x,y:y-.15*K,'font-size':2.5*K,'font-weight':900,fill:'#111','text-anchor':'middle','dominant-baseline':'central','font-family':'system-ui,sans-serif'},g,t);
+  }
+
+  const LAYER = {zone:0,czone:0,line:1,tri:1,pass:2,shot:2,run:2,orun:2,drib:2,cone:3,g:4,p:5,gk:5,o:5,ogk:5,c:5,ball:6,lbl:7,tag:8,n:9};
+
+  function render(spec, host, title){
+    const id = ++uid;
+    const vb = spec.pitch==='full' ? [150,100] : spec.pitch==='half' ? [100,80] : (spec.size||[100,70]);
+    K = spec.pitch==='full' ? 1.3 : 1;
+    const svg = el('svg', {viewBox:`0 0 ${vb[0]} ${vb[1]}`, role:'img', 'aria-label': title||'diagram'});
+    defs(svg, id);
+    const g = el('g', {}, svg);
+    if (spec.pitch==='full') pitchFull(g); else if (spec.pitch==='half') pitchHalf(g); else pitchGrid(g, vb[0], vb[1]);
+    const items = spec.items.map((it,i)=>({it,i})).sort((a,b)=>(LAYER[a.it[0]]-LAYER[b.it[0]])||(a.i-b.i));
+    for (const {it} of items){
+      const [t,...a]=it;
+      switch(t){
+        case 'p':  token(g,a[0],a[1],C.ours,a[2]||'',C.ourTxt); break;
+        case 'g':  token(g,a[0],a[1],C.ours,a[2]||'',C.ourTxt,{ghost:true}); break;
+        case 'gk': token(g,a[0],a[1],C.gk,'GK','#111',{stroke:'#111'}); break;
+        case 'o':  token(g,a[0],a[1],C.opp,a[2]||'','#fff'); break;
+        case 'ogk':token(g,a[0],a[1],'#f2a3a5','GK','#7a1012',{stroke:C.opp}); break;
+        case 'c':  token(g,a[0],a[1],C.coach,'C','#fff'); break;
+        case 'ball':
+          el('circle',{cx:a[0],cy:a[1],r:1.5,fill:'#fff',stroke:'#111','stroke-width':.4},g);
+          el('circle',{cx:a[0],cy:a[1],r:.55,fill:'#111'},g); break;
+        case 'cone': el('path',{d:`M${a[0]},${a[1]-1.6} L${a[0]+1.4},${a[1]+1} L${a[0]-1.4},${a[1]+1} z`,fill:'#ff8a1f',stroke:'#7a3a00','stroke-width':.25},g); break;
+        case 'pass': case 'shot': case 'run': case 'orun': case 'drib': arrow(g,id,t,a); break;
+        case 'zone':
+          el('rect',{x:a[0],y:a[1],width:a[2],height:a[3],rx:1.2,fill:'rgba(255,210,63,.20)',stroke:C.run,'stroke-width':.4,'stroke-dasharray':'1.2 .9'},g);
+          if (a[4]) label(g,a[0]+a[2]/2,a[1]+a[3]/2+1,a[4],'middle',2.5); break;
+        case 'czone':
+          el('circle',{cx:a[0],cy:a[1],r:a[2],fill:'rgba(255,210,63,.22)',stroke:C.run,'stroke-width':.4,'stroke-dasharray':'1.2 .9'},g);
+          if (a[3]) label(g,a[0],a[1]+a[2]+3,a[3],'middle',2.4); break;
+        case 'line': el('line',{x1:a[0],y1:a[1],x2:a[2],y2:a[3],stroke:'rgba(255,255,255,.55)','stroke-width':.4,'stroke-dasharray':'.8 .8'},g); break;
+        case 'tri': el('polygon',{points:a.map(p=>p.join(',')).join(' '),fill:'rgba(255,210,63,.10)',stroke:'rgba(255,210,63,.75)','stroke-width':.45},g); break;
+        case 'lbl': label(g,a[0],a[1],a[2],a[3],a[4]); break;
+        case 'tag': tag(g,a[0],a[1],a[2]); break;
+        case 'n':
+          el('circle',{cx:a[0],cy:a[1],r:1.9,fill:'#111',stroke:C.gk,'stroke-width':.4},g);
+          el('text',{x:a[0],y:a[1]+.05,'font-size':2.4,'font-weight':900,fill:C.gk,'text-anchor':'middle','dominant-baseline':'central','font-family':'system-ui,sans-serif'},g,String(a[2])); break;
+      }
+    }
+    host.appendChild(svg);
+  }
+
+  // Base 2-3-1, attacking right on full pitch
+  const D = {
+    stomp_pic:{pitch:'full', items:[
+      ['zone',70,88,44,8,'SIDELINE = TRAP'],
+      ['gk',9,50],
+      ['g',66,76,'RM'],['run',66,76,80,81],['p',80,81,'RM'],
+      ['g',60,50,'CM'],['run',60,50,71,67],['p',71,67,'CM'],
+      ['g',100,50,'S'],['run',100,50,97,69],['p',97,69,'S'],
+      ['g',64,22,'LM'],['run',64,22,66,44],['p',66,44,'LM'],
+      ['g',32,32,'LB'],['run',32,32,44,50],['p',44,50,'LB'],
+      ['g',32,68,'RB'],['run',32,68,48,74],['p',48,74,'RB'],
+      ['o',87,86],['ball',84,88.5],['o',105,74],['o',112,40],['o',90,48],['o',124,58],['o',100,24],['ogk',140,50],
+      ['tag',80,75,'1 STOMP!'],['tag',71,61,'2 COVER'],['tag',56,40,'3 SQUEEZE'],
+    ]},
+
+    stomp_d1:{size:[100,70], items:[
+      ['cone',10,8],['cone',90,8],['cone',10,62],['cone',90,62],
+      ['cone',40,8],['cone',60,8],['lbl',50,5,'MIDDLE GATE'],
+      ['zone',10,8,14,54,'TRAP'],['zone',76,8,14,54,'TRAP'],
+      ['p',50,13,'D'],['ball',50,56.5],['o',50,60,'A'],
+      ['pass',50,13,50,57,0,{s:3.4,e:2}],
+      ['run',50,13,50,38],['p',50,38,'D'],
+      ['drib',50,57,70,36,0,{s:3.6,e:3}],
+      ['tag',50,31.5,'2 big steps: BRAKE'],
+      ['n',43,22,1],['n',57,46,2],
+    ]},
+
+    stomp_d2:{size:[100,70], items:[
+      ['cone',8,6],['cone',92,6],['cone',8,64],['cone',92,64],
+      ['cone',20,6],['cone',34,6],['cone',66,6],['cone',80,6],
+      ['lbl',27,3.6,'GATE'],['lbl',73,3.6,'GATE'],
+      ['c',50,66],['pass',50,66,33,56,-3,{s:3.4,e:2}],
+      ['ball',33,55],['o',30,57,'A'],['o',70,56,'A'],
+      ['g',32,12,'D'],['run',32,12,33,40],['p',33,40,'D'],
+      ['g',68,12,'D'],['run',68,12,47,30],['p',47,30,'D'],
+      ['line',33,40,47,30],
+      ['tag',22,40,'STOMP!'],['tag',58,26,'COVER!'],
+    ]},
+
+    shape_big:{pitch:'full', items:[
+      ['tri',[9,50],[30,20],[30,80]],
+      ['tri',[30,20],[66,10],[60,50]],
+      ['tri',[30,80],[66,90],[60,50]],
+      ['tri',[66,10],[112,50],[60,50]],
+      ['tri',[66,90],[112,50],[60,50]],
+      ['gk',9,50],['p',30,20,'LB'],['p',30,80,'RB'],['p',66,10,'LM'],['p',60,50,'CM'],['p',66,90,'RM'],['p',112,50,'S'],
+      ['ball',63.5,52],['tag',75,30,'BIG!'],
+    ]},
+
+    shape_small:{pitch:'full', items:[
+      ['zone',22,26,46,48,''],
+      ['tri',[9,50],[28,40],[28,60]],
+      ['tri',[28,40],[45,32],[40,50]],
+      ['tri',[28,60],[45,68],[40,50]],
+      ['tri',[45,32],[62,50],[40,50]],
+      ['tri',[45,68],[62,50],[40,50]],
+      ['gk',9,50],['p',28,40,'LB'],['p',28,60,'RB'],['p',45,32,'LM'],['p',40,50,'CM'],['p',45,68,'RM'],['p',62,50,'S'],
+      ['o',80,40],['ball',77,42],['o',96,62],['o',102,30],['o',110,50],['o',120,72],['o',88,82],['ogk',140,50],
+      ['tag',45,20,'SMALL!'],
+    ]},
+
+    shape_d1:{pitch:'full', items:[
+      ['gk',11,56],
+      ['g',32,32,'LB'],['run',32,32,42,48],['p',42,48,'LB'],
+      ['g',32,68,'RB'],['run',32,68,46,74],['p',46,74,'RB'],
+      ['g',62,20,'LM'],['run',62,20,70,42],['p',70,42,'LM'],
+      ['g',58,50,'CM'],['run',58,50,74,62],['p',74,62,'CM'],
+      ['g',62,80,'RM'],['run',62,80,86,86],['p',86,86,'RM'],
+      ['g',96,50,'S'],['run',96,50,104,64],['p',104,64,'S'],
+      ['c',104,82],['ball',107.5,84],
+      ['g',88,28,'C'],['drib',88,28,104,82,0,{s:3.4,e:3.8}],
+      ['tag',120,74,'Ball moves'],['tag',36,90,'Team slides together'],
+    ]},
+
+    shape_d2:{pitch:'full', items:[
+      ['tri',[70,46],[86,74],[104,52]],
+      ['gk',10,50],['p',36,34,'LB'],['p',40,70,'RB'],['p',70,46,'CM'],['ball',73,48],['p',86,74,'RM'],['p',104,52,'S'],
+      ['p',76,36,'LM'],['run',76,36,82,14],['g',82,14,'LM'],
+      ['o',88,46],['o',96,66],['o',110,36],['o',118,60],['o',60,60],['o',126,26],['ogk',140,50],
+      ['tag',24,10,'FREEZE!'],['tag',100,12,'FIX IT: get wide!'],
+      ['lbl',86,96.5,'triangle = always a pass','middle',2.4],
+    ]},
+
+    tap_pic:{pitch:'half', items:[
+      ['ogk',50,7],['o',38,22],['o',43,22],['o',48,22],['o',66,18],['o',28,30],
+      ['ball',44,35],['p',40,37.5,'T'],
+      ['pass',44,35,51,36,0,{s:1.8,e:1.8}],
+      ['p',54,42,'B'],['run',54,42,51.5,38.5,0,{s:3.2,e:1.5}],
+      ['shot',51,36,56.5,5.5,2],
+      ['p',66,34,'R'],['run',66,34,59,13],
+      ['p',34,64,'LB'],['p',66,64,'RB'],
+      ['lbl',50,71,'Backs stay home','middle',2.6],
+      ['tag',22,46,'REF ARM UP'],['lbl',22,51,'= INDIRECT','middle',2.6],
+      ['n',47,32,1],['n',57,28,2],['n',69,24,3],
+    ]},
+
+    tap_d1:{pitch:'half', items:[
+      ['gk',50,7],
+      ['cone',48,37.6],['ball',48,36],
+      ['p',44,38.5,'T'],['p',36,46,'T'],['p',32,51,'T'],
+      ['pass',48,36,54,37,0,{s:1.8,e:1.8}],
+      ['p',60,44,'B'],['p',64,49,'B'],['p',68,54,'B'],
+      ['run',60,44,55.5,40,0,{s:3.2,e:1.8}],
+      ['shot',54,37,45,5,-3],
+      ['lbl',32,58,'Tapper line','middle',2.5],['lbl',70,60,'Blaster line','middle',2.5],
+      ['tag',50,68,'Tapper → Blaster line → Tapper line'],
+      ['n',51,33,1],['n',58,39,2],['n',46,24,3],
+    ]},
+
+    tap_d2:{pitch:'half', items:[
+      ['ogk',50,7],['o',40,23,'W'],['o',45,23,'W'],['o',50,23,'W'],
+      ['orun',45,23,49,31],['orun',50,23,54,30],
+      ['ball',46,36],['p',42,38.5,'T'],
+      ['pass',46,36,53,37,0,{s:1.8,e:1.8}],
+      ['p',57,43,'B'],['run',57,43,54,39.5,0,{s:3.2,e:1.5}],
+      ['shot',53,37,57,5.5,3],
+      ['p',68,34,'R'],['run',68,34,60,13],
+      ['tag',25,24,'Wall charges on TAP'],
+      ['tag',72,56,'Shoot before it gets there!'],
+    ]},
+
+    wall_pic:{pitch:'half', items:[
+      ['line',40,36,43,4],
+      ['gk',53,6.5],
+      ['p',40,21,'W'],['p',44.5,21,'W'],['p',49,21,'W'],
+      ['p',55,25,'CH'],['run',55,25,46,33],
+      ['p',61,22,'M'],['o',64,27],
+      ['o',36,39],['ball',40,36],['o',47,42],
+      ['p',50,62,'S'],
+      ['tag',75,8,"GK: 'WALL, 3!'"],
+      ['tag',22,17,'Wall Captain on post line'],
+      ['tag',68,34,'Charge on 1st touch'],
+      ['lbl',50,69,'Outlet waits for the clear','middle',2.5],
+    ]},
+
+    wall_d1:{pitch:'half', items:[
+      ['cone',28,35.5],['n',28,40,1],
+      ['cone',50,41.5],['n',50,46,2],
+      ['ball',72,34],['n',76,37.5,3],['c',77,31],
+      ['line',72,34,57,4],
+      ['gk',46,6.5],
+      ['g',40,62,'W'],['run',40,62,56,20],['p',56,20,'W'],
+      ['g',54,66,'W'],['run',54,66,60.5,20],['p',60.5,20,'W'],
+      ['g',68,62,'W'],['run',68,62,65,20],['p',65,20,'W'],
+      ['tag',25,8,"GK: 'WALL, 3!'"],
+      ['tag',80,24,'Captain on post line'],
+      ['lbl',50,74,'Coach times it: beat the record!','middle',2.6],
+    ]},
+
+    wall_d2:{pitch:'half', items:[
+      ['gk',54,6.5],
+      ['p',41,22,'W'],['p',45.5,22,'W'],['p',50,22,'W'],
+      ['p',56,25,'CH'],['run',56,25,52,34],
+      ['ball',46,37],['o',42,39.5,'T'],['pass',46,37,52,38.5,0,{s:1.8,e:1.8}],
+      ['o',58,44,'B'],['orun',58,44,54.5,41,0,{s:3.2,e:1.5}],
+      ['tag',75,28,'CHARGE on 1st touch!'],
+      ['tag',22,14,'Wall holds still'],
+      ['lbl',50,60,'Block or save = 1 pt · Goal = 1 pt','middle',2.6],
+    ]},
+
+    crash_pic:{pitch:'half', items:[
+      ['czone',50,14,5.5,'THE SPOT'],
+      ['ogk',49,7],['o',56,17],['o',44,19],['o',62,25],['o',38,28],
+      ['ball',96.5,5.5],['p',94,8.5,'K'],
+      ['pass',96.5,5.5,51,14,-9,{s:1.6,e:1}],
+      ['g',72,32,'S'],['run',72,32,58,9.5],['p',58,9.5,'S'],
+      ['g',30,32,'LM'],['run',30,32,40,11],['p',40,11,'LM'],
+      ['g',50,38,'CM'],['run',50,38,50,28],['p',50,28,'CM'],
+      ['p',36,62,'LB'],['p',64,62,'RB'],
+      ['lbl',50,70,'Backs + GK stay home','middle',2.6],
+      ['tag',84,16,'Hand up = GO!'],
+      ['tag',70,5,'NEAR'],['tag',28,8,'FAR'],['tag',37,38,'REBOUND'],
+    ]},
+
+    crash_d1:{pitch:'half', items:[
+      ['czone',61,11,4,'NEAR · 1'],
+      ['czone',50,17,5,'THE SPOT · 2'],
+      ['czone',39,11,4,'FAR · 1'],
+      ['ball',96.5,5.5],
+      ['p',94,11,'K'],['p',91,15.5,'K'],['p',88,20,'K'],
+      ['pass',96.5,5.5,61.5,10.5,-3,{s:1.6,e:1}],
+      ['pass',96.5,5.5,51,16,-7,{s:1.6,e:1}],
+      ['pass',96.5,5.5,40,10.5,-12,{s:1.6,e:1}],
+      ['lbl',90,27,'Kickers line','middle',2.5],
+      ['tag',50,48,'Then switch corners!'],
+    ]},
+
+    crash_d2:{pitch:'half', items:[
+      ['ogk',49,7],['o',53,13,'D'],['o',45,16,'D'],
+      ['ball',96.5,5.5],['p',94,8.5,'K'],
+      ['pass',96.5,5.5,51,14,-9,{s:1.6,e:1}],
+      ['g',62,32,'1'],['run',62,32,58,9.5],['p',58,9.5,'1'],
+      ['g',40,32,'2'],['run',40,32,40,11],['p',40,11,'2'],
+      ['g',51,35,'3'],['run',51,35,50,27],['p',50,27,'3'],
+      ['tag',84,16,"'CRASH!'"],
+      ['lbl',72,40,'1 = near post','start',2.5],['lbl',72,44,'2 = far post','start',2.5],['lbl',72,48,'3 = rebound','start',2.5],
+      ['tag',50,58,'Count 1, 2, then GO'],
+    ]},
+
+    lock_pic:{pitch:'half', items:[
+      ['gk',48,6],['p',58,6,'P'],
+      ['o',56,17],['p',54,13,'M'],
+      ['o',44,20],['p',44.5,16,'M'],
+      ['o',52,27],['p',51,23,'M'],
+      ['p',84,13,'G'],
+      ['o',94,8.5],['ball',96.5,5.5],
+      ['p',62,56,'S'],
+      ['shot',50,11,10,34,6,{s:2,e:.4}],
+      ['tag',16,40,'HIGH · FAR · WIDE'],
+      ['tag',84,20,'Block short'],
+      ['lbl',62,63,'Outlet','middle',2.6],
+      ['lbl',75,12,'ref distance','middle',2.2],
+    ]},
+
+    lock_d1:{pitch:'half', items:[
+      ['zone',4,16,16,34,'CLEAR'],['zone',80,22,16,34,'CLEAR'],
+      ['gk',49,5.5],
+      ['o',53,16],['p',53,11.5,'M'],
+      ['o',42,20],['p',42.5,15.5,'M'],
+      ['c',94,9],['ball',96.5,5.5],
+      ['pass',96.5,5.5,53.5,13.5,-6,{s:1.6,e:1}],
+      ['shot',51,12,14,30,7,{s:2,e:.4}],
+      ['tag',30,8,"'MINE!'"],
+      ['lbl',50,40,'Defender stays goal-side','middle',2.6],
+    ]},
+
+    lock_d2:{pitch:'half', items:[
+      ['cone',22,76],['cone',34,76],['cone',66,76],['cone',78,76],
+      ['gk',48,6],['p',58,6,'P'],
+      ['o',56,17],['p',54,13,'M'],
+      ['o',45,20],['g',45,16,'M'],['run',45,16,40,34],['p',40,34,'M'],
+      ['o',52,28],['g',51,23,'M'],['run',51,23,56,38],['p',56,38,'M'],
+      ['p',84,13,'G'],
+      ['o',94,8.5,'K'],['ball',96.5,5.5],
+      ['shot',54,12,22,46,8,{s:2,e:.4}],
+      ['g',50,56,'S'],['run',50,56,26,50],['p',26,50,'S'],['drib',26,50,28,74,0,{s:3.4,e:1}],
+      ['tag',70,32,"'OUT!'"],
+      ['lbl',28,79.3,'gate = 2 pts','middle',2.2],['lbl',72,79.3,'gate = 2 pts','middle',2.2],
+    ]},
+  };
+
+  document.querySelectorAll('.dg').forEach(h => {
+    const key = h.dataset.d;
+    const cap = h.parentElement.querySelector('figcaption');
+    if (D[key]) render(D[key], h, (cap && cap.textContent) || key);
+  });
+
+  // Legend
+  const lg = document.getElementById('legend'); K = 1;
+  const mini = (draw, txt) => {
+    const span = document.createElement('span');
+    const s = el('svg',{viewBox:'0 0 16 8',width:40,height:20});
+    const id = ++uid; defs(s,id);
+    el('rect',{x:0,y:0,width:16,height:8,rx:1.5,fill:C.grass},s);
+    draw(s,id);
+    span.appendChild(s); span.appendChild(document.createTextNode(txt)); lg.appendChild(span);
+  };
+  mini((s)=>token(s,8,4,C.ours,'',''),'Stomper');
+  mini((s)=>token(s,8,4,C.gk,'GK','#111',{stroke:'#111'}),'Our keeper');
+  mini((s)=>token(s,8,4,C.opp,'',''),'Other team');
+  mini((s)=>token(s,8,4,C.ours,'','',{ghost:true}),'Where she started');
+  mini((s)=>token(s,8,4,C.coach,'C','#fff'),'Coach');
+  mini((s)=>{el('circle',{cx:8,cy:4,r:1.5,fill:'#fff',stroke:'#111','stroke-width':.4},s);},'Ball');
+  mini((s)=>el('path',{d:'M8,2.4 L9.4,5 L6.6,5 z',fill:'#ff8a1f'},s),'Cone');
+  mini((s,id)=>arrow(s,id,'pass',[1,4,15,4,0,{s:0,e:0}]),'Pass / kick');
+  mini((s,id)=>arrow(s,id,'shot',[1,4,15,4,0,{s:0,e:0}]),'Shot / clear');
+  mini((s,id)=>arrow(s,id,'run',[1,4,15,4,0,{s:0,e:0}]),'Run (no ball)');
+  mini((s,id)=>arrow(s,id,'drib',[1,4,15,4,0,{s:0,e:0}]),'Dribble');
+
+  // Highlight current call in the quick nav
+  const links=[...document.querySelectorAll('nav.quick a')];
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){
+    links.forEach(a=>{const on=a.getAttribute('href')==='#'+e.target.id; a.classList.toggle('on',on); if(on){const r=a.parentElement; r.scrollTo({left:a.offsetLeft-(r.clientWidth-a.offsetWidth)/2,behavior:'smooth'});}});
+  }}),{rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('section.play').forEach(s=>io.observe(s));
+
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    navigator.serviceWorker.register('sw.js');
+  }
+})();
+</script>
+</body>
+</html>

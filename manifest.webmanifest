@@ -1,0 +1,15 @@
+{
+  "name": "LaSalle Stompers 2017 Black — Game Calls",
+  "short_name": "Stompers",
+  "description": "Game calls playbook: STOMP!, SHAPE UP!, TAP & BLAST!, WALL UP!, CRASH THE BOX!, LOCK THE BOX!",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#111214",
+  "theme_color": "#111214",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
