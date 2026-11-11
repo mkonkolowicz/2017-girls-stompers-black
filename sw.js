@@ -1,6 +1,6 @@
 // Offline cache so the playbook works at fields with no signal.
 // Bump VERSION whenever index.html changes so phones pick up the update.
-const VERSION = 'stompers-v17';
+const VERSION = 'stompers-v18';
 const ASSETS = [
   './',
   './index.html',

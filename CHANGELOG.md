@@ -3,6 +3,10 @@
 Every change to the LaSalle Stompers 2017 Girls Black game calls playbook.
 Versions follow [semantic versioning](https://semver.org/): new calls or drills bump the minor number, and fixes bump the patch number.
 
+## [1.1.1] - 2026-11-11
+### Changed
+- Round the Gate moved from SHAPE UP! to **WINGS OUT!** (now WINGS OUT! Drill 3). It's a drill for advancing the ball, not for team shape. Added an "In a game" tip that links it to WINGS OUT!
+
 ## [1.1.0] - 2026-11-10
 ### Added
 - **SHAPE UP! Drill 3: Round the Gate (Third-Girl Run).** The ball goes through a gate of two tall cones, and the runner goes round it. L starts her run on G's pass, not on the through ball. Added at the head coach's request, adapted from a Teloframe drill video.
