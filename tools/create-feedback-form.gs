@@ -12,7 +12,7 @@ function createStompersFeedbackForm() {
   const CALLS = [
     'General / whole playbook',
     'Idea for a new call',
-    'SHAPE UP!', 'STOMP!', 'SET THE TRAP!', 'WINGS OUT!', 'OVER THE TOP!',
+    'SHAPE!', 'PRESS!', 'SET THE TRAP!', 'WINGS OUT!', 'OVER THE TOP!',
     'CRASH THE BOX!', 'LOCK THE BOX!', 'TAP & BLAST!', 'WALL UP!'
   ];
 
@@ -55,7 +55,7 @@ function createStompersFeedbackForm() {
   try { form.setAcceptingResponses(true); } catch (e) {}
 
   const prefill = form.createResponse()
-    .withItemResponse(qCall.createResponse('STOMP!'))
+    .withItemResponse(qCall.createResponse('PRESS!'))
     .withItemResponse(qWho.createResponse('Parent'))
     .toPrefilledUrl();
 

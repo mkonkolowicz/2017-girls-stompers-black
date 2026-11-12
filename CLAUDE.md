@@ -12,11 +12,11 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 - `2017-girls-stompers-black-playbook.pdf`: printable version. Regenerate with `node tools/make-pdf.mjs` (needs `playwright-core` and the installed Google Chrome).
 - `CHANGELOG.md`: Keep a Changelog format with semver.
 
-## Calls and groups (current: v1.3.0)
+## Calls and groups (current: v1.4.0)
 | Group | Calls (section id) |
 |---|---|
-| Team shape | SHAPE UP! (`shape`) |
-| Win the ball | STOMP! (`stomp`), SET THE TRAP! (`trap`) |
+| Team shape | SHAPE! (`shape`, includes GET SMALL!) |
+| Win the ball | PRESS! (`stomp`), SET THE TRAP! (`trap`) |
 | Advance the ball | WINGS OUT! (`wings`), OVER THE TOP! (`overtop`) |
 | Corners | CRASH THE BOX! (`crash`), LOCK THE BOX! (`lock`) |
 | Free kicks | TAP & BLAST! (`tap`), WALL UP! (`wall`) |
@@ -43,8 +43,8 @@ Each call has a "picture in your head" diagram and at least two drills (WINGS OU
 - The audience is 8 and 9 year old girls. Use short, concrete sentences and Canadian spelling.
 - No em dashes in visible copy. Use colons and periods.
 - Theme: mostly black (`--ink`), crest green accents (`--green` #137a42, `--green-hi` #3dbb6c). Inside diagrams, labels and run arrows stay yellow so they show up on the green pitch.
-- Formation: the head coach's **diamond** (since v1.3.0, from his hand drawing, 2026-11-12). Players: GK, LB, RB, CM, LM, RM, S. Back diamond GK-LB-CM-RB, front diamond CM-LM-S-RM, so CM sits just in front of the backs and LM/RM play higher and wider (a 2-1-2-1). Don't call it "2-3-1" any more. Full-pitch reference spots: GK 9,50 · LB/RB 26,38/26,62 · CM 38,50 · LM/RM 49,32/49,68 · S 62,50 (GET SMALL); stretch for BIG. Ours are black tokens, opponents are red.
-- Vocabulary follows the coaches' sideline words: Shape!, Get Small! (not "SMALL!"), Time!, Take Space!, Press! (= STOMP!), Mark Up!
+- Formation: the head coach's **diamond** (since v1.3.0, from his hand drawing, 2026-11-12). Players: GK, LB, RB, CM, LM, RM, S. Back diamond GK-LB-CM-RB, front diamond CM-LM-S-RM, so CM sits just in front of the backs and LM/RM play higher and wider (a 2-1-2-1). Don't call it "2-3-1" any more. Full-pitch reference spots: GK 9,50 · LB/RB 26,38/26,62 · CM 38,50 · LM/RM 49,32/49,68 · S 62,50 (GET SMALL!); stretch for SHAPE!. Ours are black tokens, opponents are red.
+- Vocabulary is IDENTICAL to the coaches' sideline words (v1.4.0): SHAPE!, GET SMALL!, TIME!, TAKE SPACE!, PRESS!, MARK UP! Never use the old names SHAPE UP!, BIG!, SMALL! or STOMP! in visible copy (section id `stomp` and diagram keys `stomp_*`/`shape_big` stay as internal names).
 
 ## Verify before shipping
 1. Check the animation frames: use Playwright (`playwright-core` with Chrome's `executablePath`) to screenshot `.dg[data-d="KEY"]` at several timings, and check for JS errors. Headless `--virtual-time-budget` is unreliable for rAF and transitions.

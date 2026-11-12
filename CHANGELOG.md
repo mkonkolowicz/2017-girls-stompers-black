@@ -3,6 +3,18 @@
 Every change to the LaSalle Stompers 2017 Girls Black game calls playbook.
 Versions follow [semantic versioning](https://semver.org/): new calls or drills bump the minor number, and fixes bump the patch number.
 
+## [1.4.0] - 2026-11-12
+The playbook now uses the coaches' sideline words exactly, so players, coaches and parents all say the same thing.
+
+### Changed
+- **SHAPE UP!** is now **SHAPE!**, and **BIG!** is now **SHAPE!** too (spread out to your diamond spot). GET SMALL! stays.
+- **STOMP!** is now **PRESS!** Drills renamed: "1v1 Press to the Line" and "Press & Fly".
+- Sideline Words cards now say where each word is in the playbook ("In the playbook: ...").
+- Feedback form choices renamed to SHAPE! and PRESS!
+
+### Removed
+- The "Short version" boxes in SHAPE! and PRESS!: the call and the sideline word are now the same.
+
 ## [1.3.0] - 2026-11-12
 Our formation is now the head coach's **diamond**.
 
