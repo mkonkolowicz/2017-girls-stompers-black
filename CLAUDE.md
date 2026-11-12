@@ -12,7 +12,7 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 - `2017-girls-stompers-black-playbook.pdf`: printable version. Regenerate with `node tools/make-pdf.mjs` (needs `playwright-core` and the installed Google Chrome).
 - `CHANGELOG.md`: Keep a Changelog format with semver.
 
-## Calls and groups (current: v1.2.0)
+## Calls and groups (current: v1.3.0)
 | Group | Calls (section id) |
 |---|---|
 | Team shape | SHAPE UP! (`shape`) |
@@ -43,8 +43,7 @@ Each call has a "picture in your head" diagram and at least two drills (WINGS OU
 - The audience is 8 and 9 year old girls. Use short, concrete sentences and Canadian spelling.
 - No em dashes in visible copy. Use colons and periods.
 - Theme: mostly black (`--ink`), crest green accents (`--green` #137a42, `--green-hi` #3dbb6c). Inside diagrams, labels and run arrows stay yellow so they show up on the green pitch.
-- Formation: 2-3-1 (GK, LB, RB, LM, CM, RM, S). Ours are black tokens, opponents are red.
-  - OPEN QUESTION (2026-11-12): the head coach's "U-10 Offseason Development Plan" letter says "diamond formation". Ask him what the diamond is before changing any diagrams.
+- Formation: the head coach's **diamond** (since v1.3.0, from his hand drawing, 2026-11-12). Players: GK, LB, RB, CM, LM, RM, S. Back diamond GK-LB-CM-RB, front diamond CM-LM-S-RM, so CM sits just in front of the backs and LM/RM play higher and wider (a 2-1-2-1). Don't call it "2-3-1" any more. Full-pitch reference spots: GK 9,50 · LB/RB 26,38/26,62 · CM 38,50 · LM/RM 49,32/49,68 · S 62,50 (GET SMALL); stretch for BIG. Ours are black tokens, opponents are red.
 - Vocabulary follows the coaches' sideline words: Shape!, Get Small! (not "SMALL!"), Time!, Take Space!, Press! (= STOMP!), Mark Up!
 
 ## Verify before shipping

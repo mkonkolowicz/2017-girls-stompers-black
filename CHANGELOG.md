@@ -3,6 +3,15 @@
 Every change to the LaSalle Stompers 2017 Girls Black game calls playbook.
 Versions follow [semantic versioning](https://semver.org/): new calls or drills bump the minor number, and fixes bump the patch number.
 
+## [1.3.0] - 2026-11-12
+Our formation is now the head coach's **diamond**.
+
+### Changed
+- SHAPE UP!: the team lines up in two diamonds. The back diamond is GK, LB, RB and CM. The front diamond is CM, LM, RM and S. CM sits just in front of the backs and is in both diamonds. LM and RM play higher and wider.
+- The BIG! and GET SMALL! pictures now show the diamonds stretching and shrinking. Shadow Shape (Drill 1) starts in the diamond.
+- New "Two diamonds" tip in SHAPE UP!
+- WINGS OUT!: the starting spots in the picture match the diamond.
+
 ## [1.2.0] - 2026-11-12
 Lines the playbook up with the coaching staff's U-10 Offseason Development Plan.
 

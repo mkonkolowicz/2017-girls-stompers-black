@@ -212,7 +212,7 @@
 
   <h3 class="cardgroup"><a href="#g-shape">Team shape</a></h3>
   <div class="cards">
-    <a class="callcard" href="#shape"><div class="when">Any time</div><div class="call">SHAPE UP!</div><div class="means">Get back in your 2-3-1 spot. Make triangles. "BIG" with the ball, "GET SMALL" without it.</div></a>
+    <a class="callcard" href="#shape"><div class="when">Any time</div><div class="call">SHAPE UP!</div><div class="means">Get back in your diamond spot. Make triangles. "BIG" with the ball, "GET SMALL" without it.</div></a>
   </div>
   <h3 class="cardgroup"><a href="#g-win">Win the ball</a></h3>
   <div class="cards">
@@ -249,15 +249,16 @@
     <div class="playhead">
       <div class="tag">Positioning · any time</div>
       <div class="call">SHAPE UP!</div>
-      <div class="means">Find your spot in our 2-3-1. Make triangles. Then Coach may add <strong style="color:var(--green-hi)">BIG!</strong> or <strong style="color:var(--green-hi)">GET SMALL!</strong></div>
+      <div class="means">Find your spot in our diamond. Make triangles. Then Coach may add <strong style="color:var(--green-hi)">BIG!</strong> or <strong style="color:var(--green-hi)">GET SMALL!</strong></div>
     </div>
     <div class="body">
       <div class="picture two">
-        <figure><div class="dg" data-d="shape_big"></div><figcaption><strong>"BIG!"</strong> We have the ball: spread wide to the lines and deep up the field.</figcaption></figure>
-        <figure><div class="dg" data-d="shape_small"></div><figcaption><strong>"GET SMALL!"</strong> They have the ball: squeeze together between the ball and our goal.</figcaption></figure>
+        <figure><div class="dg" data-d="shape_big"></div><figcaption><strong>"BIG!"</strong> We have the ball: stretch the diamonds wide to the lines and deep up the field.</figcaption></figure>
+        <figure><div class="dg" data-d="shape_small"></div><figcaption><strong>"GET SMALL!"</strong> They have the ball: shrink the diamonds, between the ball and our goal.</figcaption></figure>
       </div>
       <ul class="jobs" style="margin-bottom:6px">
-        <li><b>Our spots</b>GK · 2 backs (LB, RB) · 3 mids (LM, CM, RM) · 1 striker (S).</li>
+        <li><b>Our spots</b>GK · 2 backs (LB, RB) · CM in the middle · LM and RM wide · 1 striker (S).</li>
+        <li><b>Two diamonds</b>GK, the two backs and CM make the back diamond. CM, LM, RM and S make the front diamond. CM is in both, so she helps the backs and the attack.</li>
         <li><b>Triangles</b>Look around. Can you see two teammates making a triangle with you? That means you always have a pass.</li>
         <li><b>Don't bunch</b>If two Stompers are close enough to high-five, one of you is in the wrong spot.</li>
         <li><b>Rubber band</b>We're all tied together. When the ball moves, the whole team slides together.</li>
@@ -273,7 +274,7 @@
             <h3>Shadow Shape (Rubber Band)</h3>
             <p class="meta">Half or full field · whole team · 8 min · no opponents</p>
             <ol>
-              <li>Everyone stands in their 2-3-1 spot.</li>
+              <li>Everyone stands in their diamond spot.</li>
               <li>Coach (C) carries the ball and walks, then jogs, to a new spot on the field.</li>
               <li>The whole team slides together toward the ball side. Nobody stays behind.</li>
               <li>Coach yells <strong>"BIG!"</strong> and everyone spreads wide and long. Coach yells <strong>"GET SMALL!"</strong> and everyone squeezes in, between the ball and our goal.</li>
@@ -932,7 +933,7 @@
 </main>
 
 <p class="idea screen-only"><a class="pbtn" href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=Idea%20for%20a%20new%20call" target="_blank" rel="noopener">💡 Got an idea for a new call? Tell us</a></p>
-<footer>LaSalle Stompers 2017 Girls Black · ECSL · U10 · Hear the call, see the picture, do your job.<br><span class="ver">Playbook v1.2.0 · 2026-11-12 · <a href="https://github.com/mkonkolowicz/2017-girls-stompers-black/blob/main/CHANGELOG.md">What's new</a><span class="screen-only"> · <a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Send feedback</a></span></span><br><span class="credit">Beta tested by <strong>#9 Victoria K.</strong></span></footer>
+<footer>LaSalle Stompers 2017 Girls Black · ECSL · U10 · Hear the call, see the picture, do your job.<br><span class="ver">Playbook v1.3.0 · 2026-11-12 · <a href="https://github.com/mkonkolowicz/2017-girls-stompers-black/blob/main/CHANGELOG.md">What's new</a><span class="screen-only"> · <a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Send feedback</a></span></span><br><span class="credit">Beta tested by <strong>#9 Victoria K.</strong></span></footer>
 
 <script>
 (function(){
@@ -1345,38 +1346,39 @@
           fx:[['line',66,40,52,30],['tag',80,40,'STOMP!'],['tag',40,25,'COVER!']]},
       ]},
 
+    // Diamond formation (head coach, 2026-11-12): back diamond GK-LB-CM-RB, front diamond CM-LM-S-RM. CM is in both.
     shape_big:{pitch:'full',
       fixed:[['gk',9,50]],
-      actors:[['p',28,40,'LB','lb'],['p',28,60,'RB','rb'],['p',45,32,'LM','lm'],['p',40,50,'CM','cm'],
-        ['p',45,68,'RM','rm'],['p',62,50,'S','s'],['ball',43.5,52,null,'ball']],
+      actors:[['p',26,38,'LB','lb'],['p',26,62,'RB','rb'],['p',49,32,'LM','lm'],['p',38,50,'CM','cm'],
+        ['p',49,68,'RM','rm'],['p',66,50,'S','s'],['ball',41.5,52,null,'ball']],
       steps:[
         {s:'We win the ball. Coach yells "BIG!"', fx:[['tag',80,30,'BIG!']], h:600},
-        {s:'Spread wide to the sidelines and deep up the field.', m:[['lb',30,20],['rb',30,80],['lm',66,10],['cm',60,50,'drib'],
-          ['ball',63.5,52,'none'],['rm',66,90],['s',112,50]], d:1700},
-        {s:'Triangles everywhere = always a pass.', fx:[['tri',[9,50],[30,20],[30,80]],['tri',[30,20],[66,10],[60,50]],
-          ['tri',[30,80],[66,90],[60,50]],['tri',[66,10],[112,50],[60,50]],['tri',[66,90],[112,50],[60,50]]]},
+        {s:'Stretch the diamonds: wide to the sidelines and deep up the field.', m:[['lb',30,20],['rb',30,80],['lm',78,12],['cm',50,50,'drib'],
+          ['ball',53.5,52,'none'],['rm',78,88],['s',112,50]], d:1700},
+        {s:'Two big diamonds. CM is in both. Triangles everywhere = always a pass.', fx:[['tri',[9,50],[30,20],[50,50],[30,80]],
+          ['tri',[50,50],[78,12],[112,50],[78,88]]]},
       ]},
 
     shape_small:{pitch:'full',
       fixed:[['gk',9,50],['o',80,40],['ball',77,42],['o',96,62],['o',102,30],['o',110,50],['o',120,72],['o',88,82],['ogk',140,50]],
-      actors:[['p',30,20,'LB','lb'],['p',30,80,'RB','rb'],['p',66,10,'LM','lm'],['p',60,50,'CM','cm'],['p',66,90,'RM','rm'],['p',112,50,'S','s']],
+      actors:[['p',30,20,'LB','lb'],['p',30,80,'RB','rb'],['p',78,12,'LM','lm'],['p',50,50,'CM','cm'],['p',78,88,'RM','rm'],['p',112,50,'S','s']],
       steps:[
-        {s:'They have the ball. Coach yells "GET SMALL!"', fx:[['tag',45,16,'GET SMALL!']], h:600},
-        {s:'Squeeze together, between the ball and our goal.', m:[['lb',28,40],['rb',28,60],['lm',45,32],['cm',40,50],['rm',45,68],['s',62,50]], d:1700},
-        {s:'Compact and close: no gaps for them to play through.', fx:[['zone',22,26,46,48,''],['tri',[9,50],[28,40],[28,60]],
-          ['tri',[28,40],[45,32],[40,50]],['tri',[28,60],[45,68],[40,50]],['tri',[45,32],[62,50],[40,50]],['tri',[45,68],[62,50],[40,50]]]},
+        {s:'They have the ball. Coach yells "GET SMALL!"', fx:[['tag',52,9,'GET SMALL!']], h:600},
+        {s:'Shrink the diamonds, between the ball and our goal.', m:[['lb',26,38],['rb',26,62],['lm',49,32],['cm',38,50],['rm',49,68],['s',62,50]], d:1700},
+        {s:'Two small diamonds: no gaps for them to play through.', fx:[['zone',20,26,46,48,''],['tri',[9,50],[26,38],[38,50],[26,62]],
+          ['tri',[38,50],[49,32],[62,50],[49,68]]]},
       ]},
 
     shape_d1:{pitch:'full',
       fixed:[],
-      actors:[['gk',9,50,null,'gk'],['p',32,32,'LB','lb'],['p',32,68,'RB','rb'],['p',62,20,'LM','lm'],['p',58,50,'CM','cm'],
-        ['p',62,80,'RM','rm'],['p',96,50,'S','s'],['c',88,28,'C','c'],['ball',91,30,null,'ball']],
+      actors:[['gk',9,50,null,'gk'],['p',30,34,'LB','lb'],['p',30,66,'RB','rb'],['p',64,22,'LM','lm'],['p',50,50,'CM','cm'],
+        ['p',64,78,'RM','rm'],['p',94,50,'S','s'],['c',88,28,'C','c'],['ball',91,30,null,'ball']],
       steps:[
-        {s:'Everyone in their 2-3-1 spot. Coach has the ball.', h:900},
+        {s:'Everyone in their diamond spot. Coach has the ball.', h:900},
         {s:'Coach moves the ball. The whole team slides together, like a rubber band.', d:2400,
-          m:[['c',104,82,'drib'],['ball',107,84,'none'],['gk',11,56,'none'],['lb',42,48],['rb',46,74],['lm',70,42],['cm',74,62],['rm',86,86],['s',104,64]],
+          m:[['c',104,82,'drib'],['ball',107,84,'none'],['gk',11,56,'none'],['lb',38,44],['rb',44,74],['lm',78,44],['cm',62,62],['rm',86,86],['s',104,64]],
           fx:[['tag',122,72,'Ball moves'],['tag',36,90,'Team slides together']]},
-        {s:'"FREEZE!" Can you see the ball? Are you in a triangle?', fx:[['tri',[74,62],[86,86],[104,64]],['tag',30,10,'FREEZE!']]},
+        {s:'"FREEZE!" Can you see the ball? Are you in a triangle?', fx:[['tri',[62,62],[86,86],[104,64]],['tag',30,10,'FREEZE!']]},
       ]},
 
     shape_d2:{pitch:'full',
@@ -1410,7 +1412,7 @@
     wings_pic:{pitch:'full',
       fixed:[['rline',51.3,4,51.3,96],['lbl',51.3,99,'RETREAT LINE','middle',2.2],['ogk',140,50]],
       actors:[['gk',9,50,null,'gk'],['ball',13,50,null,'ball'],
-        ['p',26,40,'LB','lb'],['p',26,60,'RB','rb'],['p',42,32,'LM','lm'],['p',44,52,'CM','cm'],['p',42,68,'RM','rm'],['p',58,50,'S','s'],
+        ['p',26,40,'LB','lb'],['p',26,60,'RB','rb'],['p',44,26,'LM','lm'],['p',36,50,'CM','cm'],['p',44,74,'RM','rm'],['p',58,50,'S','s'],
         ['o',36,22,'','r1'],['o',36,78,'','r2'],['o',48,38,'','r3'],['o',48,62,'','r4'],['o',68,34,'','r5']],
       steps:[
         {s:'Our keeper has the ball. The reds must go back behind the retreat line.', d:1700,
