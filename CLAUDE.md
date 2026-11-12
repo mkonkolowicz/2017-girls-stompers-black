@@ -12,7 +12,7 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 - `2017-girls-stompers-black-playbook.pdf`: printable version. Regenerate with `node tools/make-pdf.mjs` (needs `playwright-core` and the installed Google Chrome).
 - `CHANGELOG.md`: Keep a Changelog format with semver.
 
-## Calls and groups (current: v1.1.1)
+## Calls and groups (current: v1.2.0)
 | Group | Calls (section id) |
 |---|---|
 | Team shape | SHAPE UP! (`shape`) |
@@ -20,6 +20,8 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 | Advance the ball | WINGS OUT! (`wings`), OVER THE TOP! (`overtop`) |
 | Corners | CRASH THE BOX! (`crash`), LOCK THE BOX! (`lock`) |
 | Free kicks | TAP & BLAST! (`tap`), WALL UP! (`wall`) |
+
+After the calls there's an **Extras** group (`#g-extras`) with two non-call sections: Sideline Words (`words`) and At Home (`home`), both using `.words`/`.word` cards and no diagrams.
 
 Each call has a "picture in your head" diagram and at least two drills (WINGS OUT! has three). When you add a call, update all of these: the section, its call card, its nav chip, the "N calls" count in the hero, the README table, the CHANGELOG, its feedback link, and the form's dropdown.
 
@@ -42,6 +44,8 @@ Each call has a "picture in your head" diagram and at least two drills (WINGS OU
 - No em dashes in visible copy. Use colons and periods.
 - Theme: mostly black (`--ink`), crest green accents (`--green` #137a42, `--green-hi` #3dbb6c). Inside diagrams, labels and run arrows stay yellow so they show up on the green pitch.
 - Formation: 2-3-1 (GK, LB, RB, LM, CM, RM, S). Ours are black tokens, opponents are red.
+  - OPEN QUESTION (2026-11-12): the head coach's "U-10 Offseason Development Plan" letter says "diamond formation". Ask him what the diamond is before changing any diagrams.
+- Vocabulary follows the coaches' sideline words: Shape!, Get Small! (not "SMALL!"), Time!, Take Space!, Press! (= STOMP!), Mark Up!
 
 ## Verify before shipping
 1. Check the animation frames: use Playwright (`playwright-core` with Chrome's `executablePath`) to screenshot `.dg[data-d="KEY"]` at several timings, and check for JS errors. Headless `--virtual-time-budget` is unreliable for rAF and transitions.

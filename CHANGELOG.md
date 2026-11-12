@@ -3,6 +3,21 @@
 Every change to the LaSalle Stompers 2017 Girls Black game calls playbook.
 Versions follow [semantic versioning](https://semver.org/): new calls or drills bump the minor number, and fixes bump the patch number.
 
+## [1.2.0] - 2026-11-12
+Lines the playbook up with the coaching staff's U-10 Offseason Development Plan.
+
+### Added
+- **Sideline Words**: Shape! Get Small! Time! Take Space! Press! Mark Up! What each one means, when you'll hear it, and which call it matches. Includes the tip for parents: say "Time!" or "Take Space!" instead of "Kick it!" or "Pass it!"
+- **At Home**: five ways to practise in 10 to 15 minutes a day: Daily Touch, Wall Ball, Target Practice, Watch & Talk Soccer, Free Play & 1v1s.
+- SHAPE UP!: "Every spot" (everyone learns every position) and "SHAPE!" as the short version.
+- STOMP!: "Lost it? Sprint back" and "PRESS!" as the short word.
+- WINGS OUT!: "Want the ball!" Move into space and call for it.
+- LOCK THE BOX!: Markers hear "MARK UP!", and a "Back post" job: watch for a girl sneaking there.
+- WALL UP!: the Charger is first a **Stopper**, standing in front of the ball to stop a quick kick. New "Close or far?" rule: close = wall, far = everyone MARK UP!
+
+### Changed
+- "SMALL!" is now **"GET SMALL!"**, to match the coaches' words.
+
 ## [1.1.1] - 2026-11-11
 ### Changed
 - Round the Gate moved from SHAPE UP! to **WINGS OUT!** (now WINGS OUT! Drill 3). It's a drill for advancing the ball, not for team shape. Added an "In a game" tip that links it to WINGS OUT!

@@ -54,6 +54,12 @@
   .jobs b{display:inline-block;min-width:0;background:var(--green-hi);color:var(--ink);border-radius:6px;padding:0 6px;margin-right:6px;font-size:13px}
   .say{background:var(--soft);border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:15px}
   .say strong{color:#000}
+  .words{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+  .word{background:var(--soft);border-radius:12px;padding:12px 14px;border-left:6px solid var(--green)}
+  .word .w{font-size:22px;font-weight:900;color:var(--green);margin:0 0 4px}
+  .word .hk{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .word p{margin:4px 0;font-size:15px}
+  .word .same{font-size:13px;color:var(--muted);font-weight:700}
   .fb{margin:14px 0 0;text-align:right;font-size:14px}
   .fb a{color:var(--green);font-weight:700;text-decoration:none;border:1.5px solid var(--green);border-radius:999px;padding:5px 12px;display:inline-block}
   .fb a:hover{background:var(--green-soft)}
@@ -189,7 +195,7 @@
 </header>
 
 <nav class="quick" aria-label="Jump to a call"><div class="row">
-  <span class="navg">Team shape</span><a href="#shape">SHAPE UP!</a><span class="navg">Win the ball</span><a href="#stomp">STOMP!</a><a href="#trap">SET THE TRAP!</a><span class="navg">Advance the ball</span><a href="#wings">WINGS OUT!</a><a href="#overtop">OVER THE TOP!</a><span class="navg">Corners</span><a href="#crash">CRASH THE BOX!</a><a href="#lock">LOCK THE BOX!</a><span class="navg">Free kicks</span><a href="#tap">TAP &amp; BLAST!</a><a href="#wall">WALL UP!</a>
+  <span class="navg">Team shape</span><a href="#shape">SHAPE UP!</a><span class="navg">Win the ball</span><a href="#stomp">STOMP!</a><a href="#trap">SET THE TRAP!</a><span class="navg">Advance the ball</span><a href="#wings">WINGS OUT!</a><a href="#overtop">OVER THE TOP!</a><span class="navg">Corners</span><a href="#crash">CRASH THE BOX!</a><a href="#lock">LOCK THE BOX!</a><span class="navg">Free kicks</span><a href="#tap">TAP &amp; BLAST!</a><a href="#wall">WALL UP!</a><span class="navg">Extras</span><a href="#words">SIDELINE WORDS</a><a href="#home">AT HOME</a>
 </div></nav>
 
 <main class="wrap">
@@ -206,7 +212,7 @@
 
   <h3 class="cardgroup"><a href="#g-shape">Team shape</a></h3>
   <div class="cards">
-    <a class="callcard" href="#shape"><div class="when">Any time</div><div class="call">SHAPE UP!</div><div class="means">Get back in your 2-3-1 spot. Make triangles. "BIG" with the ball, "SMALL" without it.</div></a>
+    <a class="callcard" href="#shape"><div class="when">Any time</div><div class="call">SHAPE UP!</div><div class="means">Get back in your 2-3-1 spot. Make triangles. "BIG" with the ball, "GET SMALL" without it.</div></a>
   </div>
   <h3 class="cardgroup"><a href="#g-win">Win the ball</a></h3>
   <div class="cards">
@@ -228,6 +234,11 @@
     <a class="callcard" href="#tap"><div class="when">Our indirect free kick</div><div class="call">TAP &amp; BLAST!</div><div class="means">One girl taps it a little, the next girl shoots right away.</div></a>
     <a class="callcard" href="#wall"><div class="when">Their indirect free kick</div><div class="call">WALL UP!</div><div class="means">Keeper calls the number. Wall blocks the near post. Charge on the first touch.</div></a>
   </div>
+  <h3 class="cardgroup"><a href="#g-extras">Extras</a></h3>
+  <div class="cards">
+    <a class="callcard" href="#words"><div class="when">For players and parents</div><div class="call">SIDELINE WORDS</div><div class="means">Shape! Get Small! Time! Take Space! Press! Mark Up! What each one means.</div></a>
+    <a class="callcard" href="#home"><div class="when">10 to 15 minutes a day</div><div class="call">AT HOME</div><div class="means">Five ways to get better in the driveway, backyard or basement.</div></a>
+  </div>
 
   <div class="legend" id="legend"></div>
 
@@ -238,19 +249,21 @@
     <div class="playhead">
       <div class="tag">Positioning · any time</div>
       <div class="call">SHAPE UP!</div>
-      <div class="means">Find your spot in our 2-3-1. Make triangles. Then Coach may add <strong style="color:var(--green-hi)">BIG!</strong> or <strong style="color:var(--green-hi)">SMALL!</strong></div>
+      <div class="means">Find your spot in our 2-3-1. Make triangles. Then Coach may add <strong style="color:var(--green-hi)">BIG!</strong> or <strong style="color:var(--green-hi)">GET SMALL!</strong></div>
     </div>
     <div class="body">
       <div class="picture two">
         <figure><div class="dg" data-d="shape_big"></div><figcaption><strong>"BIG!"</strong> We have the ball: spread wide to the lines and deep up the field.</figcaption></figure>
-        <figure><div class="dg" data-d="shape_small"></div><figcaption><strong>"SMALL!"</strong> They have the ball: squeeze together between the ball and our goal.</figcaption></figure>
+        <figure><div class="dg" data-d="shape_small"></div><figcaption><strong>"GET SMALL!"</strong> They have the ball: squeeze together between the ball and our goal.</figcaption></figure>
       </div>
       <ul class="jobs" style="margin-bottom:6px">
         <li><b>Our spots</b>GK · 2 backs (LB, RB) · 3 mids (LM, CM, RM) · 1 striker (S).</li>
         <li><b>Triangles</b>Look around. Can you see two teammates making a triangle with you? That means you always have a pass.</li>
         <li><b>Don't bunch</b>If two Stompers are close enough to high-five, one of you is in the wrong spot.</li>
         <li><b>Rubber band</b>We're all tied together. When the ball moves, the whole team slides together.</li>
+        <li><b>Every spot</b>Everyone learns every spot. You might be a back one game and the striker the next. Knowing how a defender thinks makes you a better striker.</li>
       </ul>
+      <p class="say"><strong>Short version:</strong> Coach may just yell <strong>"SHAPE!"</strong> It means the same thing: get back to your spot and spread out.</p>
 
       <div class="drills">
         <div class="drill">
@@ -263,7 +276,7 @@
               <li>Everyone stands in their 2-3-1 spot.</li>
               <li>Coach (C) carries the ball and walks, then jogs, to a new spot on the field.</li>
               <li>The whole team slides together toward the ball side. Nobody stays behind.</li>
-              <li>Coach yells <strong>"BIG!"</strong> and everyone spreads wide and long. Coach yells <strong>"SMALL!"</strong> and everyone squeezes in, between the ball and our goal.</li>
+              <li>Coach yells <strong>"BIG!"</strong> and everyone spreads wide and long. Coach yells <strong>"GET SMALL!"</strong> and everyone squeezes in, between the ball and our goal.</li>
               <li>Coach yells <strong>"FREEZE!"</strong> Check: can you see the ball? Are you in a triangle?</li>
             </ol>
             <div class="tips">
@@ -318,7 +331,9 @@
             <li><b>Make her go to the line</b>Block the middle so she has to go to the sideline. The sideline is our extra defender.</li>
             <li><b>2 · COVER</b>The next closest girl stands behind and to the side of the presser, about 4 big steps away. If she gets past #1, you're there.</li>
             <li><b>3 · SQUEEZE</b>Everyone else moves toward the ball and steps up so the field gets small.</li>
+            <li><b>Lost it? Sprint back</b>The second we lose the ball, sprint back. No walking. Win every 50/50 ball!</li>
           </ul>
+          <p class="say"><strong>Same call, short word:</strong> Coach may yell <strong>"PRESS!"</strong> It means STOMP!</p>
           <p class="say"><strong>Presser shouts:</strong> "I've got ball!" &nbsp; <strong>Cover shouts:</strong> "I'm behind you!"</p>
           <p class="say"><strong>Remember the retreat line:</strong> their keeper has the ball, or it's their goal kick? No STOMP yet. Coach yells <strong>"SET THE TRAP!"</strong> Run back to the retreat line and wait. When one of their players touches the keeper's pass, the ball is in play. Then spring the trap!</p>
         </div>
@@ -459,6 +474,7 @@
             <li><b>Ball girl</b>Head up. Pass to the open wing, or dribble into the space in front of you. Forward first!</li>
             <li><b>GK</b>Wait until every red is behind the retreat line. No big boots: roll it, throw it, or pass it on the ground to a wide back.</li>
             <li><b>Retreat line</b>They can't cross it until one of us touches the keeper's pass. That's free time. Use it!</li>
+            <li><b>Want the ball!</b>Don't hide behind a red player. Move into open space and call <strong>"HERE!"</strong> Be brave. It's OK to make a mistake.</li>
           </ul>
           <p class="say"><strong>After STOMP!</strong> The girl who wins it yells <strong>"WINGS OUT!"</strong> Everyone else flies wide and forward right away, before they get back.</p>
         </div>
@@ -684,7 +700,8 @@
           <ul class="jobs">
             <li><b>GK</b>Middle of the goal, a little toward the back post. Shouts <strong>"KEEPER!"</strong> if she's catching it.</li>
             <li><b>P · Post</b>Stands right next to the near post and kicks away anything that comes there.</li>
-            <li><b>M · Markers</b>Each one picks an attacker and stands goal-side, between her and our goal. Keep one hand lightly on her and your eyes on the ball.</li>
+            <li><b>M · Markers</b>Coach yells <strong>"MARK UP!"</strong> Each one picks an attacker and stands goal-side, between her and our goal. Keep one hand lightly on her and your eyes on the ball.</li>
+            <li><b>Back post</b>Watch for a red player sneaking to the back post. If she goes, her Marker goes with her.</li>
             <li><b>G · Gate</b>Stands out toward the corner, the distance the ref sets, to block a short corner.</li>
             <li><b>S · Outlet</b>Striker waits up the field for the clear. Go!</li>
           </ul>
@@ -817,10 +834,11 @@
           <ul class="jobs">
             <li><b>GK · Boss</b>Shouts <strong>"WALL, 3!"</strong> and lines them up. Stands where she can see the ball.</li>
             <li><b>W · Wall</b>The Wall Captain stands on the line from the ball to the near post. Two teammates squeeze in next to her, toward the middle. Shoulder to shoulder, arms crossed over your chest, eyes on the ball.</li>
-            <li><b>CH · Charger</b>Our fastest girl stands just off the wall. On the <em>first touch</em> she sprints at the ball to block the shot.</li>
-            <li><b>M · Marker</b>Stays goal-side of any open attacker.</li>
+            <li><b>CH · Stopper, then Charger</b>Our fastest girl. The second the whistle goes, she stands in front of the ball, as far back as the ref says, so they can't take it quickly while we set up. Then she stands just off the wall. On the <em>first touch</em> she sprints at the ball to block the shot.</li>
+            <li><b>M · Marker</b>Coach yells <strong>"MARK UP!"</strong> Stay goal-side of any open attacker.</li>
             <li><b>S · Outlet</b>Striker stays up field, ready for the clearance.</li>
           </ul>
+          <p class="say"><strong>Close or far?</strong> Kick close to our goal: build the wall. Kick far from our goal: no wall, everyone <strong>MARK UP!</strong></p>
           <p class="say"><strong>Distance:</strong> back up until the referee says stop. Don't move until they kick it.</p>
         </div>
       </div>
@@ -869,11 +887,52 @@
     </div>
   </section>
 
+  <div class="grouphead" id="g-extras"><span class="gk">Extras</span><span class="gs">The words we all use, and how to get better at home.</span></div>
+
+  <!-- ===================== SIDELINE WORDS ===================== -->
+  <section class="play" id="words">
+    <div class="playhead">
+      <div class="tag">For players and parents</div>
+      <div class="call">SIDELINE WORDS</div>
+      <div class="means">Short words Coach shouts during games and practice. Parents, please use these same words from the sideline, so everyone hears one message.</div>
+    </div>
+    <div class="body">
+      <div class="words">
+        <div class="word"><div class="w">"SHAPE!"</div><p><b>Means:</b> Get back to your spot and spread out. Don't bunch up.</p><p><b>You'll hear it:</b> We win the ball, or we're attacking and girls crowd together.</p><p class="same">Same as: SHAPE UP! · BIG!</p></div>
+        <div class="word"><div class="w">"GET SMALL!"</div><p><b>Means:</b> Squeeze together, tight and close, so they can't go through the middle.</p><p><b>You'll hear it:</b> They have the ball and we're going back to defend.</p><p class="same">Same as: SHAPE UP! · GET SMALL!</p></div>
+        <div class="word"><div class="w">"TIME!"</div><p><b>Means:</b> Nobody is on your back. Relax, turn with the ball, look up, then choose. Don't just kick it away.</p><p><b>You'll hear it:</b> You get a pass and no defender is close behind you.</p></div>
+        <div class="word"><div class="w">"TAKE SPACE!"</div><p><b>Means:</b> Open grass in front of you. Dribble forward with confidence and make a defender come to you.</p><p><b>You'll hear it:</b> There's space in front of you and you're waiting.</p></div>
+        <div class="word"><div class="w">"PRESS!"</div><p><b>Means:</b> Sprint at the girl with the ball. Take away her time and force a mistake.</p><p><b>You'll hear it:</b> They have the ball in a dangerous spot, or take a big touch.</p><p class="same">Same as: STOMP!</p></div>
+        <div class="word"><div class="w">"MARK UP!"</div><p><b>Means:</b> Find a red player. Stand goal-side, between her and our goal, close enough that she can't get an easy pass.</p><p><b>You'll hear it:</b> Throw-ins, corners, free kicks, or when they attack our box.</p><p class="same">Same as: LOCK THE BOX! · WALL UP!</p></div>
+      </div>
+      <p class="say"><strong>Parents:</strong> instead of "Kick it!" or "Pass it!", try <strong>"Time!"</strong> or <strong>"Take Space!"</strong> Let her read the game and make the choice herself.</p>
+      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Feedback</a></p>
+    </div>
+  </section>
+
+  <!-- ===================== AT HOME ===================== -->
+  <section class="play" id="home">
+    <div class="playhead">
+      <div class="tag">10 to 15 minutes a day</div>
+      <div class="call">AT HOME</div>
+      <div class="means">No big field needed. A driveway, backyard or basement works. A little every day adds up to thousands of extra touches.</div>
+    </div>
+    <div class="body">
+      <div class="words">
+        <div class="word"><div class="hk">⚽ Ball mastery</div><div class="w">10-Minute Daily Touch</div><p>Toe taps, side-to-side inside touches (pendulums), sole rolls and pull-backs. Try it with your eyes up!</p></div>
+        <div class="word"><div class="hk">🧱 Passing and first touch</div><div class="w">Wall Ball</div><p>Pass against a brick wall or garage door. Stop it with one foot, pass with the other.</p></div>
+        <div class="word"><div class="hk">🎯 Shooting</div><div class="w">Target Practice</div><p>Put cones in the corners of a goal or on a fence. Strike with your laces and land on your shooting foot.</p></div>
+        <div class="word"><div class="hk">📺 Game smarts</div><div class="w">Watch &amp; Talk Soccer</div><p>Watch a pro game with your family. Pick one player and watch what she does when she <em>doesn't</em> have the ball.</p></div>
+        <div class="word"><div class="hk">🔥 Wanting the ball</div><div class="w">Free Play &amp; 1v1s</div><p>Play 1v1 in the yard with a sibling, a parent or a friend. Keep score, play hard and try a new move.</p></div>
+      </div>
+      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Feedback</a></p>
+    </div>
+  </section>
 
 </main>
 
 <p class="idea screen-only"><a class="pbtn" href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=Idea%20for%20a%20new%20call" target="_blank" rel="noopener">💡 Got an idea for a new call? Tell us</a></p>
-<footer>LaSalle Stompers 2017 Girls Black · ECSL · U10 · Hear the call, see the picture, do your job.<br><span class="ver">Playbook v1.1.1 · 2026-11-11 · <a href="https://github.com/mkonkolowicz/2017-girls-stompers-black/blob/main/CHANGELOG.md">What's new</a><span class="screen-only"> · <a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Send feedback</a></span></span><br><span class="credit">Beta tested by <strong>#9 Victoria K.</strong></span></footer>
+<footer>LaSalle Stompers 2017 Girls Black · ECSL · U10 · Hear the call, see the picture, do your job.<br><span class="ver">Playbook v1.2.0 · 2026-11-12 · <a href="https://github.com/mkonkolowicz/2017-girls-stompers-black/blob/main/CHANGELOG.md">What's new</a><span class="screen-only"> · <a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Send feedback</a></span></span><br><span class="credit">Beta tested by <strong>#9 Victoria K.</strong></span></footer>
 
 <script>
 (function(){
@@ -1302,7 +1361,7 @@
       fixed:[['gk',9,50],['o',80,40],['ball',77,42],['o',96,62],['o',102,30],['o',110,50],['o',120,72],['o',88,82],['ogk',140,50]],
       actors:[['p',30,20,'LB','lb'],['p',30,80,'RB','rb'],['p',66,10,'LM','lm'],['p',60,50,'CM','cm'],['p',66,90,'RM','rm'],['p',112,50,'S','s']],
       steps:[
-        {s:'They have the ball. Coach yells "SMALL!"', fx:[['tag',45,16,'SMALL!']], h:600},
+        {s:'They have the ball. Coach yells "GET SMALL!"', fx:[['tag',45,16,'GET SMALL!']], h:600},
         {s:'Squeeze together, between the ball and our goal.', m:[['lb',28,40],['rb',28,60],['lm',45,32],['cm',40,50],['rm',45,68],['s',62,50]], d:1700},
         {s:'Compact and close: no gaps for them to play through.', fx:[['zone',22,26,46,48,''],['tri',[9,50],[28,40],[28,60]],
           ['tri',[28,40],[45,32],[40,50]],['tri',[28,60],[45,68],[40,50]],['tri',[45,32],[62,50],[40,50]],['tri',[45,68],[62,50],[40,50]]]},
