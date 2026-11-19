@@ -66,6 +66,29 @@ The `gh` CLI is at `/opt/homebrew/bin/gh`.
 - Credit line: "Beta tested by #9 Victoria K." with no "thank you".
 - The two backs are LB and RB. The user once wrote "CB and RB" and meant the two backs.
 - Still open: a redirect repo at the old `stompers-playbook` Pages URL. The user hasn't asked for it.
+- The head coach drives content. His inputs so far: the "U-10 Offseason Development Plan" letter (~/Downloads/U-10 Offseason work.pdf, signed "The Coaching Staff") and a hand drawing of the diamond (~/Downloads/WhatsApp Image 2026-11-12 at 15.00.44.jpeg). When he sends something, read it, then make the playbook match his wording exactly.
+- Round the Gate (WINGS OUT! Drill 3) is adapted from a Teloframe Facebook reel the head coach shared. It's for advancing the ball, not team shape.
+
+## Release history (newest first)
+- v1.4.0 (2026-11-12): coaches' words exactly. SHAPE UP! and BIG! became SHAPE!, STOMP! became PRESS!, form choices renamed.
+- v1.3.0 (2026-11-12): diamond formation. SHAPE! diagrams redrawn as two diamonds, WINGS OUT! start spots moved.
+- v1.2.0 (2026-11-12): Sideline Words and At Home extras from the offseason letter. SMALL! became GET SMALL!, plus Stopper-then-Charger, MARK UP!, and the "Close or far?" wall rule.
+- v1.1.1 (2026-11-11): Round the Gate moved to WINGS OUT!
+- v1.1.0 (2026-11-10): Round the Gate drill added.
+- v1.0.0 (2026-11-09): first version shared for feedback, with the feedback form and buttons.
+
+## Waiting on the head coach
+- 2 to 3 new corner plays and 2 to 3 indirect free-kick options. He'll design them.
+- Confirm CM's depth in the diamond. It's drawn as a holding mid just in front of the backs.
+- Maybe widen WALL UP! to cover all free kicks near our goal (not done).
+- Feedback form: 0 responses as of 2026-11-11. Check the responses Sheet when asked.
+
+## Tooling notes
+- `playwright-core` isn't installed in the repo. Use the npx cache: `ln -s ~/.npm/_npx/e41f203b7505f1fb/node_modules node_modules && node tools/make-pdf.mjs; rm node_modules`. Never commit `node_modules`.
+- PDF checks: `swift script.swift file.pdf` with PDFKit (`PDFDocument(...).string` for text, `page.thumbnail` to make a PNG).
+- Apps Script project: https://script.google.com/home/projects/1tPz7QFzuOZ3Td2WvDGGa6UxSj-TFQ2zLg5m5Z3LITG1s8dNoy8nEkc8W/edit. It holds `renameCallChoices()`, `addIdeaChoice()` and `createStompersFeedbackForm()` (never run that last one again).
+  - Edit it in Claude in Chrome: `monaco.editor.getModels()[0].setValue(...)`, then cmd+s, pick the function in the dropdown, and click Run.
+  - Dismiss the account popup and cookie banner first.
 
 ## Feedback form (added in v1.0.0)
 - Responder: https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform
