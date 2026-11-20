@@ -89,7 +89,7 @@ The `gh` CLI is at `/opt/homebrew/bin/gh`.
 ## Tooling notes
 - `playwright-core` isn't installed in the repo. Use the npx cache: `ln -s ~/.npm/_npx/e41f203b7505f1fb/node_modules node_modules && node tools/make-pdf.mjs; rm node_modules`. Never commit `node_modules`.
 - PDF checks: `swift script.swift file.pdf` with PDFKit (`PDFDocument(...).string` for text, `page.thumbnail` to make a PNG).
-- Apps Script project: https://script.google.com/home/projects/1tPz7QFzuOZ3Td2WvDGGa6UxSj-TFQ2zLg5m5Z3LITG1s8dNoy8nEkc8W/edit. It holds `renameCallChoices()`, `addIdeaChoice()` and `createStompersFeedbackForm()` (never run that last one again).
+- Apps Script project: https://script.google.com/home/projects/1tPz7QFzuOZ3Td2WvDGGa6UxSj-TFQ2zLg5m5Z3LITG1s8dNoy8nEkc8W/edit. It holds `setCallChoicesV2()` (sets the full "Which call?" list; edit and rerun it to change choices), `renameCallChoices()`, `addIdeaChoice()` and `createStompersFeedbackForm()` (never run that last one again).
   - Edit it in Claude in Chrome: `monaco.editor.getModels()[0].setValue(...)`, then cmd+s, pick the function in the dropdown, and click Run.
   - Dismiss the account popup and cookie banner first.
 
