@@ -49,6 +49,9 @@
   .picture.two{grid-template-columns:1fr 1fr}
   .picture h3,.drill h3{margin:0 0 6px;font-size:20px}
   .jobs{list-style:none;padding:0;margin:0}
+  .jobs a,.say a{color:var(--green);font-weight:700}
+  .subhead{margin:22px 0 12px;padding-top:14px;border-top:2px solid var(--line);font-size:22px;scroll-margin-top:64px}
+  .subhead::before{content:"Also: ";color:var(--green)}
   .jobs li{padding:7px 0 7px 0;border-bottom:1px dashed var(--line)}
   .jobs li:last-child{border-bottom:0}
   .jobs b{display:inline-block;min-width:0;background:var(--green-hi);color:var(--ink);border-radius:6px;padding:0 6px;margin-right:6px;font-size:13px}
@@ -188,14 +191,14 @@
     <img class="club-logo" src="icons/stompers-logo.png" width="132" height="132" alt="LaSalle Stompers logo">
     <div class="kicker">ECSL · Ontario Soccer · U10 Girls</div>
     <h1>LaSalle Stompers 2017 Girls Black<br>Game Calls Playbook</h1>
-    <p>Nine calls Coach yells from the sideline. Each one matches a picture in your head and drills we do at practice. Hear the call, see the picture, do your job.</p>
+    <p>Our six sideline words are our calls. Each one matches a picture in your head and drills we do at practice. Plus four calls for corners and free kicks. Hear the call, see the picture, do your job.</p>
     <p class="screen-only" style="color:var(--green-hi);font-weight:700">Every diagram plays like a short video. Tap a diagram to pause it, ↺ to watch again, ⛶ for full screen. On a phone, turn it sideways to go full screen.</p>
     <p class="screen-only printbar"><a class="pbtn" href="2017-girls-stompers-black-playbook.pdf" download>⬇ Printable PDF</a><button class="pbtn ghost" type="button" onclick="window.print()">🖨 Print</button><a class="pbtn ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Feedback? Tell us</a></p>
   </div>
 </header>
 
 <nav class="quick" aria-label="Jump to a call"><div class="row">
-  <span class="navg">Team shape</span><a href="#shape">SHAPE!</a><span class="navg">Win the ball</span><a href="#stomp">PRESS!</a><a href="#trap">SET THE TRAP!</a><span class="navg">Advance the ball</span><a href="#wings">WINGS OUT!</a><a href="#overtop">OVER THE TOP!</a><span class="navg">Corners</span><a href="#crash">CRASH THE BOX!</a><a href="#lock">LOCK THE BOX!</a><span class="navg">Free kicks</span><a href="#tap">TAP &amp; BLAST!</a><a href="#wall">WALL UP!</a><span class="navg">Extras</span><a href="#words">SIDELINE WORDS</a><a href="#home">AT HOME</a>
+  <span class="navg">Team shape</span><a href="#shape">SHAPE!</a><a href="#small">GET SMALL!</a><span class="navg">On the ball</span><a href="#time">TIME!</a><a href="#space">TAKE SPACE!</a><span class="navg">Defend</span><a href="#stomp">PRESS!</a><a href="#mark">MARK UP!</a><span class="navg">Corners</span><a href="#crash">CRASH THE BOX!</a><a href="#lock">LOCK THE BOX!</a><span class="navg">Free kicks</span><a href="#tap">TAP &amp; BLAST!</a><a href="#wall">WALL UP!</a><span class="navg">Extras</span><a href="#words">SIDELINE WORDS</a><a href="#home">AT HOME</a>
 </div></nav>
 
 <main class="wrap">
@@ -212,17 +215,18 @@
 
   <h3 class="cardgroup"><a href="#g-shape">Team shape</a></h3>
   <div class="cards">
-    <a class="callcard" href="#shape"><div class="when">Any time</div><div class="call">SHAPE!</div><div class="means">Spread out to your diamond spot. Make triangles. They have it? "GET SMALL!"</div></a>
+    <a class="callcard" href="#shape"><div class="when">We have the ball</div><div class="call">SHAPE!</div><div class="means">Spread out to your diamond spot. Don't bunch up. Make triangles.</div></a>
+    <a class="callcard" href="#small"><div class="when">They have the ball</div><div class="call">GET SMALL!</div><div class="means">Squeeze the diamond. Close the middle, between the ball and our goal.</div></a>
   </div>
-  <h3 class="cardgroup"><a href="#g-win">Win the ball</a></h3>
+  <h3 class="cardgroup"><a href="#g-ball">On the ball</a></h3>
   <div class="cards">
-    <a class="callcard" href="#stomp"><div class="when">They have the ball</div><div class="call">PRESS!</div><div class="means">Closest girl presses the ball. Next girl covers. Everyone squeezes in.</div></a>
-    <a class="callcard" href="#trap"><div class="when">Their keeper has it</div><div class="call">SET THE TRAP!</div><div class="means">Line up at the retreat line. When she passes: striker presses, wings block, CM jams the middle.</div></a>
+    <a class="callcard" href="#time"><div class="when">Nobody on your back</div><div class="call">TIME!</div><div class="means">Relax, turn with the ball, look up, then choose.</div></a>
+    <a class="callcard" href="#space"><div class="when">Open grass in front</div><div class="call">TAKE SPACE!</div><div class="means">Dribble forward with confidence. Make a defender come to you.</div></a>
   </div>
-  <h3 class="cardgroup"><a href="#g-advance">Advance the ball</a></h3>
+  <h3 class="cardgroup"><a href="#g-defend">Defend</a></h3>
   <div class="cards">
-    <a class="callcard" href="#wings"><div class="when">We win it · our GK has it</div><div class="call">WINGS OUT!</div><div class="means">Backs fly to the sidelines. Mids show for the ball. Pass it forward and go!</div></a>
-    <a class="callcard" href="#overtop"><div class="when">They're pressing us high</div><div class="call">OVER THE TOP!</div><div class="means">Wings are covered? GK throws or kicks it high and far, into the space behind them. Strikers and wings sprint!</div></a>
+    <a class="callcard" href="#stomp"><div class="when">They have it in a dangerous spot</div><div class="call">PRESS!</div><div class="means">Closest girl sprints at the ball. Next girl covers. Force a mistake.</div></a>
+    <a class="callcard" href="#mark"><div class="when">Throw-ins, corners, free kicks</div><div class="call">MARK UP!</div><div class="means">Find a red. Get goal-side. Stay tight.</div></a>
   </div>
   <h3 class="cardgroup"><a href="#g-corners">Corners</a></h3>
   <div class="cards">
@@ -236,41 +240,58 @@
   </div>
   <h3 class="cardgroup"><a href="#g-extras">Extras</a></h3>
   <div class="cards">
-    <a class="callcard" href="#words"><div class="when">For players and parents</div><div class="call">SIDELINE WORDS</div><div class="means">Shape! Get Small! Time! Take Space! Press! Mark Up! What each one means.</div></a>
+    <a class="callcard" href="#words"><div class="when">For players and parents</div><div class="call">SIDELINE WORDS</div><div class="means">All six calls on one page, plus a tip for parents.</div></a>
     <a class="callcard" href="#home"><div class="when">10 to 15 minutes a day</div><div class="call">AT HOME</div><div class="means">Five ways to get better in the driveway, backyard or basement.</div></a>
   </div>
 
   <div class="legend" id="legend"></div>
 
-  <div class="grouphead" id="g-shape"><span class="gk">Team shape</span><span class="gs">Where we stand, all game long.</span></div>
+  <div class="grouphead" id="g-shape"><span class="gk">Team shape</span><span class="gs">Where we stand. Spread out when we have it, get small when they do.</span></div>
 
-  <!-- ===================== SHAPE UP ===================== -->
+  <!-- ===================== SHAPE ===================== -->
   <section class="play" id="shape">
     <div class="playhead">
-      <div class="tag">Positioning · any time</div>
+      <div class="tag">We have the ball · any time</div>
       <div class="call">SHAPE!</div>
-      <div class="means">Spread out and get back to your spot in our diamond. Make triangles. When they have the ball, the call is <strong style="color:var(--green-hi)">GET SMALL!</strong></div>
+      <div class="means">Spread out and get back to your spot in our diamond. Stay in your area. Don't bunch up.</div>
     </div>
     <div class="body">
-      <div class="picture two">
+      <div class="picture">
         <figure><div class="dg" data-d="shape_big"></div><figcaption><strong>"SHAPE!"</strong> We have the ball: stretch the diamonds wide to the lines and deep up the field.</figcaption></figure>
-        <figure><div class="dg" data-d="shape_small"></div><figcaption><strong>"GET SMALL!"</strong> They have the ball: shrink the diamonds, between the ball and our goal.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>Our spots</b>GK · 2 backs (LB, RB) · CM in the middle · LM and RM wide · 1 striker (S).</li>
+            <li><b>Two diamonds</b>GK, the two backs and CM make the back diamond. CM, LM, RM and S make the front diamond. CM is in both, so she helps the backs and the attack.</li>
+            <li><b>Triangles</b>Look around. Can you see two teammates making a triangle with you? That means you always have a pass.</li>
+            <li><b>Don't bunch</b>If two Stompers are close enough to high-five, one of you is in the wrong spot.</li>
+            <li><b>Rubber band</b>We're all tied together. When the ball moves, the whole team slides together.</li>
+            <li><b>Every spot</b>Everyone learns every spot. You might be a back one game and the striker the next. Knowing how a defender thinks makes you a better striker.</li>
+          </ul>
+          <p class="say"><strong>The opposite:</strong> they have the ball? The call is <a href="#small"><strong>"GET SMALL!"</strong></a></p>
+        </div>
       </div>
-      <ul class="jobs" style="margin-bottom:6px">
-        <li><b>Our spots</b>GK · 2 backs (LB, RB) · CM in the middle · LM and RM wide · 1 striker (S).</li>
-        <li><b>Two diamonds</b>GK, the two backs and CM make the back diamond. CM, LM, RM and S make the front diamond. CM is in both, so she helps the backs and the attack.</li>
-        <li><b>Triangles</b>Look around. Can you see two teammates making a triangle with you? That means you always have a pass.</li>
-        <li><b>Don't bunch</b>If two Stompers are close enough to high-five, one of you is in the wrong spot.</li>
-        <li><b>Rubber band</b>We're all tied together. When the ball moves, the whole team slides together.</li>
-        <li><b>Every spot</b>Everyone learns every spot. You might be a back one game and the striker the next. Knowing how a defender thinks makes you a better striker.</li>
-      </ul>
-
+      <h3 class="subhead" id="wings">Our keeper has the ball</h3>
+      <div class="picture">
+        <figure><div class="dg" data-d="wings_pic"></div><figcaption>Our keeper has the ball. The other team has to go back behind the retreat line until the ball is in play.</figcaption></figure>
+        <div>
+          <h3>Build out from the back</h3>
+          <ul class="jobs">
+            <li><b>Backs wide</b>LB and RB: run to the sideline, as wide as you can go.</li>
+            <li><b>Mids wide and up</b>LM and RM: wide and up the field. CM: come toward the ball in the middle so it can come to you. S: stay high and stretch them.</li>
+            <li><b>GK</b>Wait until every red is behind the retreat line. No big boots: roll it, throw it, or pass it on the ground to a wide back.</li>
+            <li><b>Retreat line</b>They can't cross it until one of us touches the keeper's pass. That's free time. Use it!</li>
+            <li><b>Ball girl</b>Head up. Pass to the open teammate, or <a href="#space">TAKE SPACE!</a> and dribble forward. Forward first!</li>
+            <li><b>Want the ball!</b>Don't hide behind a red player. Move into open space and call <strong>"HERE!"</strong> Be brave. It's OK to make a mistake.</li>
+          </ul>
+          <p class="say"><strong>Just won the ball?</strong> Same picture, but fast. The girl who wins it yells <strong>"SHAPE!"</strong> Everyone flies wide and forward before they get back.</p>
+        </div>
+      </div>
       <div class="drills">
         <div class="drill">
           <figure><div class="dg" data-d="shape_d1"></div></figure>
           <div>
-            <span class="num">DRILL 1</span>
-            <h3>Shadow Shape (Rubber Band)</h3>
+            <span class="num">DRILL 1</span>            <h3>Shadow Shape (Rubber Band)</h3>
             <p class="meta">Half or full field · whole team · 8 min · no opponents</p>
             <ol>
               <li>Everyone stands in their diamond spot.</li>
@@ -288,8 +309,7 @@
         <div class="drill">
           <figure><div class="dg" data-d="shape_d2"></div></figure>
           <div>
-            <span class="num">DRILL 2</span>
-            <h3>Freeze-Frame Scrimmage</h3>
+            <span class="num">DRILL 2</span>            <h3>Freeze-Frame Scrimmage</h3>
             <p class="meta">Small-sided or 7v7 scrimmage · 12 min</p>
             <ol>
               <li>Play a normal scrimmage.</li>
@@ -305,6 +325,23 @@
             </div>
           </div>
         </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="wings_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 3</span>            <h3>Retreat Line Build-Out</h3>
+            <p class="meta">Our third of the field · GK + 2 backs + CM vs 3 · retreat line cones · 12 min</p>
+            <ol>
+              <li>Put cones on the retreat line and two gates on the halfway line. Reds start near our box.</li>
+              <li>Coach rolls the ball to our GK. Reds jog back behind the retreat line.</li>
+              <li>Coach yells <strong>"SHAPE!"</strong> Backs run to the sideline, wide as the cones. CM comes to show in the middle.</li>
+              <li>GK waits until every red is behind the line, then passes on the ground to a wide back.</li>
+              <li>She touches it: now reds can cross! Dribble forward or pass to CM.</li>
+              <li>Through a halfway gate = 2 points. Reds win it and score = 1 point for them.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> no rush. The reds can't come until we touch the pass, so GK takes her time.</p>
+              <p><strong>Harder:</strong> add a fourth red, or start with a goal kick instead of a roll.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -312,14 +349,273 @@
     </div>
   </section>
 
-  <div class="grouphead" id="g-win"><span class="gk">Win the ball</span><span class="gs">They have it. Here's how we get it back.</span></div>
+  <!-- ===================== GET SMALL ===================== -->
+  <section class="play" id="small">
+    <div class="playhead">
+      <div class="tag">They have the ball · we go back to defend</div>
+      <div class="call">GET SMALL!</div>
+      <div class="means">Squeeze our diamond together, tight and compact. Take away the space in the dangerous middle of the field.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="shape_small"></div><figcaption><strong>"GET SMALL!"</strong> They have the ball: shrink the diamonds, between the ball and our goal.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>Get between</b>Get back between the ball and our goal. Fast!</li>
+            <li><b>Close the middle</b>The middle is the most dangerous part of the field. No gaps there. Make them go around the outside.</li>
+            <li><b>Small, not bunched</b>Each girl still has her own spot in the diamond. The spots are just closer together.</li>
+            <li><b>Slide</b>The ball moves, the whole diamond slides with it.</li>
+            <li><b>Then PRESS!</b>The closest girl presses the ball. Everyone else stays small behind her.</li>
+          </ul>
+          <p class="say"><strong>The opposite:</strong> we win it back? The call is <a href="#shape"><strong>"SHAPE!"</strong></a></p>
+        </div>
+      </div>
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="small_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Close the Middle</h3>
+            <p class="meta">Grid about 30 × 20 big steps · 4 Stompers vs 4 · 10 min</p>
+            <ol>
+              <li>Two cones make a small gate at our end. Four Stompers stand in a wide diamond: CM, LM, RM and S. Four reds stand around the outside.</li>
+              <li>The reds pass the ball around. Coach yells <strong>"GET SMALL!"</strong></li>
+              <li>The diamond squeezes in, between the ball and the gate.</li>
+              <li>Reds score by passing through the middle and through the gate.</li>
+              <li>The ball moves, the diamond slides with it. We win it = 1 point. Then <strong>"SHAPE!"</strong>: spread out wide.</li>
+              <li>Swap teams after 2 minutes.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> small, not bunched. Everyone keeps her own spot in the diamond, just closer together.</p>
+              <p><strong>Harder:</strong> the reds play two-touch, so the ball moves faster.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="trap_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>            <h3>Small, Not Too Far</h3>
+            <p class="meta">Full field scrimmage · 7v7 · cones just before halfway · 12 min</p>
+            <ol>
+              <li>Play a scrimmage. Every time their keeper gets the ball, Coach yells <strong>"GET SMALL!"</strong></li>
+              <li>Front four get small at the retreat line. LB and RB push up to the "not too far" cones, just before halfway.</li>
+              <li>The short passes are blocked, so their keeper kicks it long over the trap.</li>
+              <li>Our backs are close but not too far, so they win the long ball.</li>
+              <li>Whoever wins it yells <strong>"SHAPE!"</strong> and we attack fast.</li>
+              <li>Win the ball in their half = a Stompers point.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> backs, if you go too far, the long ball goes over your head. Stay behind the cones.</p>
+              <p><strong>Harder:</strong> the keeper can choose short or long, so everyone has to read it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=GET%20SMALL!" target="_blank" rel="noopener">💬 Feedback on this call</a></p>
+    </div>
+  </section>
 
-  <!-- ===================== STOMP ===================== -->
+  <div class="grouphead" id="g-ball"><span class="gk">On the ball</span><span class="gs">We have it. Turn, look up, and go forward.</span></div>
+
+  <!-- ===================== TIME ===================== -->
+  <section class="play" id="time">
+    <div class="playhead">
+      <div class="tag">We have the ball · you get a pass and no defender is on your back</div>
+      <div class="call">TIME!</div>
+      <div class="means">Nobody is close behind you. Relax, turn around with the ball and look up. Make a smart choice. Don't just kick it away.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="time_pic"></div><figcaption>LB passes to CM. The closest red is far away.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>Hear it</b>Coach and teammates yell <strong>"TIME!"</strong> when nobody is close behind you. It means: you're safe, turn!</li>
+            <li><b>Peek first</b>Look over your shoulder before the ball comes. Then you already know.</li>
+            <li><b>Turn</b>Turn with the ball so you face their goal.</li>
+            <li><b>Look up</b>Head up! Where's the open teammate? Where's the open grass?</li>
+            <li><b>Choose</b>Pass forward, or <a href="#space">TAKE SPACE!</a> and dribble. No kicking it away blindly.</li>
+            <li><b>Help her</b>See a teammate get the ball with nobody near her? Yell <strong>"TIME!"</strong> for her.</li>
+          </ul>
+          <p class="say"><strong>No "TIME!"?</strong> Someone is close behind you. Pass it back or to the side, then move into space for the next pass.</p>
+        </div>
+      </div>
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="time_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Hear It, Turn</h3>
+            <p class="meta">Grid about 30 × 20 big steps · groups of 4 · 8–10 min</p>
+            <ol>
+              <li>Coach (C) has the ball at one end. A receiver (R) stands in the middle. A red defender starts behind her, sometimes close, sometimes far. A partner (P) waits behind the gate.</li>
+              <li>Coach passes to R.</li>
+              <li>Defender far away? P yells <strong>"TIME!"</strong> R turns with the ball, looks up and dribbles through the gate: 1 point.</li>
+              <li>Defender close? P stays quiet. R passes back to Coach.</li>
+              <li>Rotate: R to defender, defender to P, P to R.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> peek over your shoulder before the ball comes. Then you know before P tells you.</p>
+              <p><strong>Harder:</strong> the defender can start chasing as soon as Coach passes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="time_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>
+            <h3>Through the Middle</h3>
+            <p class="meta">Grid about 35 × 20 big steps in 3 zones · 3 Stompers vs 1 · 10 min</p>
+            <ol>
+              <li>Three zones. A stands in one end zone, B in the other. M plays in the middle zone with a red defender.</li>
+              <li>A passes into M.</li>
+              <li>Red far away? A yells <strong>"TIME!"</strong> M turns, looks up and passes to B: 1 point.</li>
+              <li>Red close? M passes back to A and moves to find space.</li>
+              <li>Now B passes in and M goes the other way. Swap M every 6 passes.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> stand sideways so you can see both ends. Don't just kick it away.</p>
+              <p><strong>Harder:</strong> add a second red in the middle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=TIME!" target="_blank" rel="noopener">💬 Feedback on this call</a></p>
+    </div>
+  </section>
+
+  <!-- ===================== TAKE SPACE ===================== -->
+  <section class="play" id="space">
+    <div class="playhead">
+      <div class="tag">We have the ball · open grass in front of you</div>
+      <div class="call">TAKE SPACE!</div>
+      <div class="means">The defenders are backing off. Be confident: dribble forward into the open field and make a defender step up to you.</div>
+    </div>
+    <div class="body">
+      <div class="picture">
+        <figure><div class="dg" data-d="space_pic"></div><figcaption>RB has the ball. There's open grass in front of her.</figcaption></figure>
+        <div>
+          <h3>The picture in your head</h3>
+          <ul class="jobs">
+            <li><b>See it</b>Open grass in front of you and nobody coming? Don't wait. Go!</li>
+            <li><b>Dribble forward</b>Big touches into open grass. Small touches when a defender gets close.</li>
+            <li><b>Make her come</b>Keep going until a red has to step up to you.</li>
+            <li><b>Then choose</b>She came to you? A teammate is free: pass. She stayed back? Keep going toward goal.</li>
+            <li><b>Teammates</b>When a teammate takes space, run forward with her so she has a pass.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="subhead" id="overtop">Space behind them</h3>
+      <div class="picture">
+        <figure><div class="dg" data-d="overtop_pic"></div><figcaption>Our keeper has the ball. The reds are lined up at the retreat line, marking every short pass.</figcaption></figure>
+        <div>
+          <h3>The space behind them</h3>
+          <ul class="jobs">
+            <li><b>GK · Look, then go</b>Short passes all covered? Throw it, or kick it from the ground, high and far into the space behind the reds. Aim toward a sideline, never across the front of our goal.</li>
+            <li><b>S · Spin</b>Turn and sprint into the space behind them. Race the red to the ball!</li>
+            <li><b>LM &amp; RM · Fly</b>When the ball is in the air, sprint forward on your side. Be ready if it lands near you.</li>
+            <li><b>CM · Second ball</b>Follow the ball up the field. If a red heads it or kicks it away, you're there to win it.</li>
+            <li><b>LB &amp; RB · Step up</b>Move up behind the play, ready if it comes back.</li>
+          </ul>
+          <p class="say"><strong>Rules:</strong> on a goal kick, the reds can cross the retreat line once the ball crosses it, so a long one gets past them fast. No drop kicks: Ontario Soccer recommends keepers don't drop-kick at this age. A throw or a kick from the ground is great.</p>
+        </div>
+      </div>
+      <div class="drills">
+        <div class="drill">
+          <figure><div class="dg" data-d="space_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 1</span>
+            <h3>Make Her Come</h3>
+            <p class="meta">Grid about 30 × 20 big steps · 2 Stompers vs 1 · 8–10 min</p>
+            <ol>
+              <li>A has the ball and B stands next to her. One red waits in the middle. Lots of open grass in between.</li>
+              <li>Teammates yell <strong>"TAKE SPACE!"</strong> A dribbles forward with confidence. B runs level with her.</li>
+              <li>A keeps going until the red steps up to her.</li>
+              <li>The red comes to A? Pass to B. The red stays with B? A keeps going.</li>
+              <li>Dribble over the end line = 1 point. Red wins it = 1 point for her.</li>
+              <li>Swap jobs.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> don't stop and wait for her. Make her come to you.</p>
+              <p><strong>Harder:</strong> add a second red who chases from behind.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="overtop_d1"></div></figure>
+          <div>
+            <span class="num">DRILL 2</span>            <h3>Throw &amp; Chase</h3>
+            <p class="meta">Grid about 35 × 25 big steps · GK + 2 runners vs 3 · 10 min</p>
+            <ol>
+              <li>Three reds stand on a line of cones, close to our runners. Behind them is a big zone: The Space.</li>
+              <li>GK has the ball. Short passes are blocked, so she looks for the space behind them</li>
+              <li>She throws or kicks it high, over the reds, into The Space.</li>
+              <li>As soon as the ball goes up, the runners spin and sprint. Reds can turn and chase.</li>
+              <li>Our runner gets there first: <strong>"TAKE SPACE!"</strong> She dribbles over the end line = 2 points. Red wins it = 1 point for them.</li>
+              <li>Rotate: everyone gets a turn as GK and runner.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> GK, aim for the space, not the girl. Runners, go the second it leaves her hands.</p>
+              <p><strong>Harder:</strong> the reds start one step closer to The Space.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="overtop_d2"></div></figure>
+          <div>
+            <span class="num">DRILL 3</span>            <h3>Win the Second Ball</h3>
+            <p class="meta">Full field · 7v7 restarts from our keeper · 12 min</p>
+            <ol>
+              <li>Coach gives the ball to our GK. Reds line up at the retreat line and cover our wings.</li>
+              <li>GK kicks it long into the space behind them, toward S.</li>
+              <li>S races a red back for it. CM follows the ball up the field.</li>
+              <li>The red gets a head or foot to it. The ball drops loose: that's the second ball!</li>
+              <li>CM wins the second ball, then passes to a wing in space. <strong>"TAKE SPACE!"</strong> Go!</li>
+              <li>Win the second ball = a Stompers point. Score from it = 3 points.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> the first ball is a race. The second ball is a bigger race. CM, don't stop running!</p>
+              <p><strong>Harder:</strong> add a red midfielder who also chases the second ball.</p>
+            </div>
+          </div>
+        </div>
+        <div class="drill">
+          <figure><div class="dg" data-d="wings_d3"></div></figure>
+          <div>
+            <span class="num">DRILL 4</span>            <h3>Round the Gate (Third-Girl Run)</h3>
+            <p class="meta">Top of their box · 5+ players and a keeper · 10 min · 2 tall cones, 2 markers, lots of balls</p>
+            <ol>
+              <li>Two tall cones about 6 big steps apart at the top of the box make the <strong>gate</strong>. One girl stands in front of the gate (G). One girl waits at a marker on each side: Right (R) and Left (L). Everyone else lines up with a ball.</li>
+              <li>The first girl in line takes a touch and passes into G.</li>
+              <li>G passes it back first time to R, who is running in.</li>
+              <li>L <strong>goes on G's pass</strong>. She runs round the outside of the left cone.</li>
+              <li>R passes first time through the gate, into the space in front of L.</li>
+              <li>L takes one touch across and shoots!</li>
+              <li>Rotate: passer to R, R to G, G to L, L to the back of the line.</li>
+            </ol>
+            <div class="tips">
+              <p><strong>Remember:</strong> the ball goes through the gate, the runner goes round it. L, wait level with your cone, then go on G's pass. If you wait for the through ball, you're too late.</p>
+              <p><strong>TAKE SPACE! without the ball:</strong> L runs into the open grass before the pass comes.</p>
+              <p><strong>Pass into space:</strong> put it past the gate where L is running, not at her feet.</p>
+              <p><strong>In a game:</strong> after <strong>"SHAPE!"</strong>, look for this. Pass into a teammate, she lays it off, and the girl who's already running gets the ball in behind.</p>
+              <p><strong>Harder:</strong> switch sides so L and R swap jobs, or add a defender behind the gate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=TAKE%20SPACE!" target="_blank" rel="noopener">💬 Feedback on this call</a></p>
+    </div>
+  </section>
+
+  <div class="grouphead" id="g-defend"><span class="gk">Defend</span><span class="gs">They have it. Win it back, and leave no one open.</span></div>
+
+  <!-- ===================== PRESS ===================== -->
   <section class="play" id="stomp">
     <div class="playhead">
-      <div class="tag">Pressing · when the other team has the ball</div>
+      <div class="tag">They have the ball in a dangerous spot, or take a big touch</div>
       <div class="call">PRESS!</div>
-      <div class="means">Go get the ball back, together. One girl presses, one covers, the rest squeeze in.</div>
+      <div class="means">Sprint at the girl with the ball. Take away her time and force a mistake. One girl presses, one covers, the rest stay small.</div>
     </div>
     <div class="body">
       <div class="picture">
@@ -330,20 +626,32 @@
             <li><b>1 · PRESS</b>The <em>closest</em> girl sprints at the ball. Two big steps away, slow down, bend your knees, stand sideways.</li>
             <li><b>Make her go to the line</b>Block the middle so she has to go to the sideline. The sideline is our extra defender.</li>
             <li><b>2 · COVER</b>The next closest girl stands behind and to the side of the presser, about 4 big steps away. If she gets past #1, you're there.</li>
-            <li><b>3 · SQUEEZE</b>Everyone else moves toward the ball and steps up so the field gets small.</li>
+            <li><b>3 · SQUEEZE</b>Everyone else gets small toward the ball.</li>
             <li><b>Lost it? Sprint back</b>The second we lose the ball, sprint back. No walking. Win every 50/50 ball!</li>
           </ul>
           <p class="say"><strong>Presser shouts:</strong> "I've got ball!" &nbsp; <strong>Cover shouts:</strong> "I'm behind you!"</p>
-          <p class="say"><strong>Remember the retreat line:</strong> their keeper has the ball, or it's their goal kick? No PRESS yet. Coach yells <strong>"SET THE TRAP!"</strong> Run back to the retreat line and wait. When one of their players touches the keeper's pass, the ball is in play. Then spring the trap!</p>
         </div>
       </div>
-
+      <h3 class="subhead" id="trap">Their keeper has the ball</h3>
+      <div class="picture">
+        <figure><div class="dg" data-d="trap_pic"></div><figcaption>We attack to the right. Their keeper has the ball, so we must stay on our side of the retreat line until her pass is touched.</figcaption></figure>
+        <div>
+          <h3>Wait at the retreat line, then press</h3>
+          <ul class="jobs">
+            <li><b>Get small, wait</b>Coach yells <strong>"GET SMALL!"</strong> Everyone runs back to the retreat line. Don't cross it until their player touches the keeper's pass.</li>
+            <li><b>S · PRESS!</b>The second the ball is played, the striker sprints at the girl who gets it. Come from the inside so she has to go to the sideline.</li>
+            <li><b>LM &amp; RM · Block</b>Stand between the ball and their wide players. No easy pass down the wing.</li>
+            <li><b>CM · Jam</b>Step into the middle so they can't pass inside. Middle closed!</li>
+            <li><b>LB &amp; RB · Up, not too far</b>Push up toward halfway, but stay behind it. If she kicks it long over us, you win it.</li>
+          </ul>
+          <p class="say"><strong>When we win it:</strong> yell <strong>"SHAPE!"</strong> and go. We're already close to their goal!</p>
+        </div>
+      </div>
       <div class="drills">
         <div class="drill">
           <figure><div class="dg" data-d="stomp_d1"></div></figure>
           <div>
-            <span class="num">DRILL 1</span>
-            <h3>1v1 Press to the Line</h3>
+            <span class="num">DRILL 1</span>            <h3>1v1 Press to the Line</h3>
             <p class="meta">Grid about 20 × 15 big steps · pairs · 8–10 min</p>
             <ol>
               <li>Defender (D) starts on the top line with the ball. Attacker (A) waits on the bottom line.</li>
@@ -362,8 +670,7 @@
         <div class="drill">
           <figure><div class="dg" data-d="stomp_d2"></div></figure>
           <div>
-            <span class="num">DRILL 2</span>
-            <h3>2v2 Press &amp; Cover</h3>
+            <span class="num">DRILL 2</span>            <h3>2v2 Press &amp; Cover</h3>
             <p class="meta">Grid about 25 × 20 big steps · 2v2 · 10 min</p>
             <ol>
               <li>Two defenders on the top line, two attackers on the bottom line. Two small gates on the top line.</li>
@@ -379,45 +686,15 @@
             </div>
           </div>
         </div>
-      </div>
-      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=PRESS!" target="_blank" rel="noopener">💬 Feedback on this call</a></p>
-    </div>
-  </section>
-
-  <!-- ===================== SET THE TRAP ===================== -->
-  <section class="play" id="trap">
-    <div class="playhead">
-      <div class="tag">Their keeper has the ball · goal kick or in her hands</div>
-      <div class="call">SET THE TRAP!</div>
-      <div class="means">Line up at the retreat line and wait. The second she passes it out, spring the trap: press the ball, block the wings, jam the middle.</div>
-    </div>
-    <div class="body">
-      <div class="picture">
-        <figure><div class="dg" data-d="trap_pic"></div><figcaption>We attack to the right. Their keeper has the ball, so we must stay on our side of the retreat line until her pass is touched.</figcaption></figure>
-        <div>
-          <h3>The picture in your head</h3>
-          <ul class="jobs">
-            <li><b>Line up</b>Everyone runs back to the retreat line. Don't cross it until their player touches the keeper's pass.</li>
-            <li><b>S · Press</b>The second the ball is played, the striker sprints at the girl who gets it. Come from the inside so she has to go to the sideline.</li>
-            <li><b>LM &amp; RM · Block</b>Stand between the ball and their wide players. No easy pass down the wing.</li>
-            <li><b>CM · Jam</b>Step into the middle so they can't pass inside. Middle closed!</li>
-            <li><b>LB &amp; RB · Up, not too far</b>Push up toward halfway, but stay behind it. If she kicks it long over the trap, you win it.</li>
-          </ul>
-          <p class="say"><strong>When we win it:</strong> yell <strong>"WINGS OUT!"</strong> and go. We're already close to their goal!</p>
-        </div>
-      </div>
-
-      <div class="drills">
         <div class="drill">
           <figure><div class="dg" data-d="trap_d1"></div></figure>
           <div>
-            <span class="num">DRILL 1</span>
-            <h3>Line Up &amp; Pounce</h3>
+            <span class="num">DRILL 3</span>            <h3>Line Up &amp; Pounce</h3>
             <p class="meta">Their third of the field · 4 Stompers vs GK + 3 · retreat line cones · 10 min</p>
             <ol>
               <li>Cones on the retreat line with three gates: left wing, middle, right wing. Stompers start near their goal.</li>
-              <li>Coach rolls the ball to their keeper and yells <strong>"SET THE TRAP!"</strong> Stompers sprint back to the retreat line.</li>
-              <li>Their keeper passes to a red back. The ball is in play: GO!</li>
+              <li>Coach rolls the ball to their keeper and yells <strong>"GET SMALL!"</strong> Stompers sprint back to the retreat line.</li>
+              <li>Their keeper passes to a red back. The ball is in play: <strong>"PRESS!"</strong></li>
               <li>S presses the ball from the inside. LM and RM block the wing gates. CM jams the middle gate.</li>
               <li>Reds score by dribbling through a gate. We score by winning it and shooting: goal = 2 points.</li>
               <li>Rotate jobs every 3 tries.</li>
@@ -429,68 +706,15 @@
           </div>
         </div>
         <div class="drill">
-          <figure><div class="dg" data-d="trap_d2"></div></figure>
-          <div>
-            <span class="num">DRILL 2</span>
-            <h3>Over the Trap</h3>
-            <p class="meta">Full field scrimmage · 7v7 · cones just before halfway · 12 min</p>
-            <ol>
-              <li>Play a scrimmage. Every time their keeper gets the ball, Coach yells <strong>"SET THE TRAP!"</strong></li>
-              <li>Front four line up at the retreat line. LB and RB push up to the "not too far" cones, just before halfway.</li>
-              <li>The short passes are blocked, so their keeper kicks it long over the trap.</li>
-              <li>Our backs are close but not too far, so they win the long ball.</li>
-              <li>Whoever wins it yells <strong>"WINGS OUT!"</strong> and we attack fast.</li>
-              <li>Win the ball in their half = a Stompers point.</li>
-            </ol>
-            <div class="tips">
-              <p><strong>Remember:</strong> backs, if you go too far, the long ball goes over your head. Stay behind the cones.</p>
-              <p><strong>Harder:</strong> the keeper can choose short or long, so everyone has to read it.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=SET%20THE%20TRAP!" target="_blank" rel="noopener">💬 Feedback on this call</a></p>
-    </div>
-  </section>
-
-  <div class="grouphead" id="g-advance"><span class="gk">Advance the ball</span><span class="gs">We have it. Here's how we move it up the field.</span></div>
-
-  <!-- ===================== WINGS OUT ===================== -->
-  <section class="play" id="wings">
-    <div class="playhead">
-      <div class="tag">Moving the ball forward · we just won it, or our keeper has it</div>
-      <div class="call">WINGS OUT!</div>
-      <div class="means">We've got it! Spread out like wings so the girl with the ball has lots of passes. Then move it forward. It's like <strong style="color:var(--green-hi)">SHAPE!</strong>, but fast.</div>
-    </div>
-    <div class="body">
-      <div class="picture">
-        <figure><div class="dg" data-d="wings_pic"></div><figcaption>Our keeper has the ball. The other team has to go back behind the retreat line until the ball is in play.</figcaption></figure>
-        <div>
-          <h3>The picture in your head</h3>
-          <ul class="jobs">
-            <li><b>Wings</b>LB and RB: run to the sideline, as wide as you can go. LM and RM: wide and up the field.</li>
-            <li><b>Show</b>CM: come toward the ball in the middle so it can come to you. Striker: stay high and stretch them.</li>
-            <li><b>Ball girl</b>Head up. Pass to the open wing, or dribble into the space in front of you. Forward first!</li>
-            <li><b>GK</b>Wait until every red is behind the retreat line. No big boots: roll it, throw it, or pass it on the ground to a wide back.</li>
-            <li><b>Retreat line</b>They can't cross it until one of us touches the keeper's pass. That's free time. Use it!</li>
-            <li><b>Want the ball!</b>Don't hide behind a red player. Move into open space and call <strong>"HERE!"</strong> Be brave. It's OK to make a mistake.</li>
-          </ul>
-          <p class="say"><strong>After PRESS!</strong> The girl who wins it yells <strong>"WINGS OUT!"</strong> Everyone else flies wide and forward right away, before they get back.</p>
-        </div>
-      </div>
-
-      <div class="drills">
-        <div class="drill">
           <figure><div class="dg" data-d="wings_d1"></div></figure>
           <div>
-            <span class="num">DRILL 1</span>
-            <h3>Press &amp; Fly</h3>
+            <span class="num">DRILL 4</span>            <h3>Press &amp; Fly</h3>
             <p class="meta">Grid about 30 × 20 big steps · 3 Stompers vs 2 · 10 min</p>
             <ol>
               <li>Mark a Wing Lane along each sideline with cones. Three Stompers start near our end line. Two red players start in the middle.</li>
               <li>Coach passes to a red player.</li>
               <li>The closest Stomper yells <strong>"PRESS!"</strong> and presses. The next girl covers.</li>
-              <li>When we win it, that girl yells <strong>"WINGS OUT!"</strong> The other two sprint into a Wing Lane, wide and forward.</li>
+              <li>When we win it, that girl yells <strong>"SHAPE!"</strong> The other two sprint into a Wing Lane, wide and forward.</li>
               <li>Pass to a wing. She dribbles over the far end line = 1 point. Do it in 6 seconds = 2 points!</li>
               <li>Reds score by dribbling over our end line. Swap teams after 5 tries.</li>
             </ol>
@@ -500,118 +724,73 @@
             </div>
           </div>
         </div>
-        <div class="drill">
-          <figure><div class="dg" data-d="wings_d2"></div></figure>
-          <div>
-            <span class="num">DRILL 2</span>
-            <h3>Retreat Line Build-Out</h3>
-            <p class="meta">Our third of the field · GK + 2 backs + CM vs 3 · retreat line cones · 12 min</p>
-            <ol>
-              <li>Put cones on the retreat line and two gates on the halfway line. Reds start near our box.</li>
-              <li>Coach rolls the ball to our GK. Reds jog back behind the retreat line.</li>
-              <li>Coach yells <strong>"WINGS OUT!"</strong> Backs run to the sideline, wide as the cones. CM comes to show in the middle.</li>
-              <li>GK waits until every red is behind the line, then passes on the ground to a wide back.</li>
-              <li>She touches it: now reds can cross! Dribble forward or pass to CM.</li>
-              <li>Through a halfway gate = 2 points. Reds win it and score = 1 point for them.</li>
-            </ol>
-            <div class="tips">
-              <p><strong>Remember:</strong> no rush. The reds can't come until we touch the pass, so GK takes her time.</p>
-              <p><strong>Harder:</strong> add a fourth red, or start with a goal kick instead of a roll.</p>
-            </div>
-          </div>
-        </div>
-        <div class="drill">
-          <figure><div class="dg" data-d="wings_d3"></div></figure>
-          <div>
-            <span class="num">DRILL 3</span>
-            <h3>Round the Gate (Third-Girl Run)</h3>
-            <p class="meta">Top of their box · 5+ players and a keeper · 10 min · 2 tall cones, 2 markers, lots of balls</p>
-            <ol>
-              <li>Two tall cones about 6 big steps apart at the top of the box make the <strong>gate</strong>. One girl stands in front of the gate (G). One girl waits at a marker on each side: Right (R) and Left (L). Everyone else lines up with a ball.</li>
-              <li>The first girl in line takes a touch and passes into G.</li>
-              <li>G passes it back first time to R, who is running in.</li>
-              <li>L <strong>goes on G's pass</strong>. She runs round the outside of the left cone.</li>
-              <li>R passes first time through the gate, into the space in front of L.</li>
-              <li>L takes one touch across and shoots!</li>
-              <li>Rotate: passer to R, R to G, G to L, L to the back of the line.</li>
-            </ol>
-            <div class="tips">
-              <p><strong>Remember:</strong> the ball goes through the gate, the runner goes round it. L, wait level with your cone, then go on G's pass. If you wait for the through ball, you're too late.</p>
-              <p><strong>Pass into space:</strong> put it past the gate where L is running, not at her feet.</p>
-              <p><strong>In a game:</strong> after <strong>"WINGS OUT!"</strong>, look for this. Pass into a teammate, she lays it off, and the girl who's already running gets the ball in behind.</p>
-              <p><strong>Harder:</strong> switch sides so L and R swap jobs, or add a defender behind the gate.</p>
-            </div>
       </div>
-      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=WINGS%20OUT!" target="_blank" rel="noopener">💬 Feedback on this call</a></p>
+      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=PRESS!" target="_blank" rel="noopener">💬 Feedback on this call</a></p>
     </div>
   </section>
 
-  <!-- ===================== OVER THE TOP ===================== -->
-  <section class="play" id="overtop">
+  <!-- ===================== MARK UP ===================== -->
+  <section class="play" id="mark">
     <div class="playhead">
-      <div class="tag">Advancing the ball · when they press us too high for WINGS OUT!</div>
-      <div class="call">OVER THE TOP!</div>
-      <div class="means">They're waiting right on top of our wings. So our keeper sends it high and far, into the big space behind them, and we race them to it.</div>
+      <div class="tag">Throw-ins, corners, free kicks, or when they attack our box</div>
+      <div class="call">MARK UP!</div>
+      <div class="means">Find a red player right away. Get goal-side, between her and our goal, and stay tight so she can't get an easy pass.</div>
     </div>
     <div class="body">
       <div class="picture">
-        <figure><div class="dg" data-d="overtop_pic"></div><figcaption>Our keeper has the ball. The reds are lined up at the retreat line, marking every short pass.</figcaption></figure>
+        <figure><div class="dg" data-d="mark_pic"></div><figcaption>Our goal is at the top. They have a throw-in near our box.</figcaption></figure>
         <div>
           <h3>The picture in your head</h3>
           <ul class="jobs">
-            <li><b>GK · Look, then go</b>Wings covered? Yell <strong>"OVER THE TOP!"</strong> Throw it or kick it high and far, into the space behind the reds. Aim toward a sideline, never across the front of our goal.</li>
-            <li><b>S · Spin</b>Turn and sprint into the space behind them. Race the red to the ball!</li>
-            <li><b>LM &amp; RM · Fly</b>When the ball is in the air, sprint forward on your side. Be ready if it lands near you.</li>
-            <li><b>CM · Second ball</b>Follow the ball up the field. If a red heads it or kicks it away, you're there to win it.</li>
-            <li><b>LB &amp; RB · Step up</b>Move up behind the play, ready if it comes back.</li>
+            <li><b>Find one</b>Right away, pick the closest red player. Point at her: "Got her!"</li>
+            <li><b>Goal-side</b>Stand between her and our goal. She moves, you move.</li>
+            <li><b>Tight</b>Close enough to touch her. Watch her AND the ball.</li>
+            <li><b>Spare</b>Everyone marked? The extra girl guards the middle in front of our goal.</li>
+            <li><b>Win it</b>Step in front when the pass comes. Then <strong>"SHAPE!"</strong></li>
           </ul>
-          <p class="say"><strong>Rules:</strong> on a goal kick, the reds can cross the retreat line once the ball crosses it, so a long one gets past them fast. No drop kicks: Ontario Soccer recommends keepers don't drop-kick at this age. A throw or a kick from the ground is great.</p>
+          <p class="say"><strong>Set pieces:</strong> MARK UP! is how we defend corners (<a href="#lock">LOCK THE BOX!</a>) and free kicks (<a href="#wall">WALL UP!</a>).</p>
         </div>
       </div>
-
       <div class="drills">
         <div class="drill">
-          <figure><div class="dg" data-d="overtop_d1"></div></figure>
+          <figure><div class="dg" data-d="mark_d1"></div></figure>
           <div>
             <span class="num">DRILL 1</span>
-            <h3>Throw &amp; Chase</h3>
-            <p class="meta">Grid about 35 × 25 big steps · GK + 2 runners vs 3 · 10 min</p>
+            <h3>Shadow Mark</h3>
+            <p class="meta">Grid about 25 × 20 big steps · pairs · 8 min</p>
             <ol>
-              <li>Three reds stand on a line of cones, close to our runners. Behind them is a big zone: The Space.</li>
-              <li>GK has the ball. Short passes are blocked, so she yells <strong>"OVER THE TOP!"</strong></li>
-              <li>She throws or kicks it high, over the reds, into The Space.</li>
-              <li>As soon as the ball goes up, the runners spin and sprint. Reds can turn and chase.</li>
-              <li>Our runner gets there first and dribbles over the end line = 2 points. Red wins it = 1 point for them.</li>
-              <li>Rotate: everyone gets a turn as GK and runner.</li>
+              <li>Two cones make a mini goal. A red attacker and a marker (M) start in the middle. Coach has the ball.</li>
+              <li>The attacker walks and jogs around. M stays goal-side, between her and the mini goal.</li>
+              <li>Coach yells <strong>"MARK UP!"</strong> M gets tight, close enough to touch.</li>
+              <li>Coach passes to the attacker. M steps in front and wins it = 1 point. The attacker gets it and turns = 1 point for her.</li>
+              <li>Swap after 5 passes.</li>
             </ol>
             <div class="tips">
-              <p><strong>Remember:</strong> GK, aim for the space, not the girl. Runners, go the second it leaves her hands.</p>
-              <p><strong>Harder:</strong> the reds start one step closer to The Space.</p>
+              <p><strong>Remember:</strong> eyes on her AND the ball. Stand sideways so you can see both.</p>
+              <p><strong>Harder:</strong> the attacker can sprint.</p>
             </div>
           </div>
         </div>
         <div class="drill">
-          <figure><div class="dg" data-d="overtop_d2"></div></figure>
+          <figure><div class="dg" data-d="mark_d2"></div></figure>
           <div>
             <span class="num">DRILL 2</span>
-            <h3>Win the Second Ball</h3>
-            <p class="meta">Full field · 7v7 restarts from our keeper · 12 min</p>
+            <h3>Throw-In Mark Up</h3>
+            <p class="meta">Our third of the field · GK + 4 Stompers vs 3 + thrower · 2 halfway gates · 10 min</p>
             <ol>
-              <li>Coach gives the ball to our GK. Reds line up at the retreat line and cover our wings.</li>
-              <li>GK yells <strong>"OVER THE TOP!"</strong> and kicks it long toward S.</li>
-              <li>S races a red back for it. CM follows the ball up the field.</li>
-              <li>The red gets a head or foot to it. The ball drops loose: that's the second ball!</li>
-              <li>CM wins the second ball, then passes to a wing in space. Go!</li>
-              <li>Win the second ball = a Stompers point. Score from it = 3 points.</li>
+              <li>Coach gives the reds a throw-in near our box and yells <strong>"MARK UP!"</strong></li>
+              <li>Each Stomper finds a red and gets goal-side. The extra Stomper guards the middle.</li>
+              <li>The throw comes in. Win it and dribble through a halfway gate = 2 points. Reds score = 1 point for them.</li>
+              <li>Next throw comes from the other side. Rotate after 4 throws.</li>
             </ol>
             <div class="tips">
-              <p><strong>Remember:</strong> the first ball is a race. The second ball is a bigger race. CM, don't stop running!</p>
-              <p><strong>Harder:</strong> add a red midfielder who also chases the second ball.</p>
+              <p><strong>Remember:</strong> find your girl before the throw, not after.</p>
+              <p><strong>Harder:</strong> the reds can swap places before the throw. Talk to stay with them!</p>
             </div>
           </div>
         </div>
       </div>
-      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=OVER%20THE%20TOP!" target="_blank" rel="noopener">💬 Feedback on this call</a></p>
+      <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=MARK%20UP!" target="_blank" rel="noopener">💬 Feedback on this call</a></p>
     </div>
   </section>
 
@@ -893,16 +1072,16 @@
     <div class="playhead">
       <div class="tag">For players and parents</div>
       <div class="call">SIDELINE WORDS</div>
-      <div class="means">Short words Coach uses in games and practice. Parents, learn them so everyone is speaking the same soccer language.</div>
+      <div class="means">All six calls on one page. Coach uses them in games and practice. Parents, learn them so everyone is speaking the same soccer language.</div>
     </div>
     <div class="body">
       <div class="words">
-        <div class="word"><div class="w">"SHAPE!"</div><p><b>Means:</b> Spread out and get back to your spot in our diamond. Don't bunch up.</p><p><b>You'll hear it:</b> We win the ball, or we're attacking and girls crowd together.</p><p class="same">In the playbook: SHAPE!</p></div>
-        <div class="word"><div class="w">"GET SMALL!"</div><p><b>Means:</b> Squeeze our diamond together, tight and close, so they can't go through the middle.</p><p><b>You'll hear it:</b> They have the ball and we're going back to defend.</p><p class="same">In the playbook: SHAPE! (GET SMALL! picture)</p></div>
-        <div class="word"><div class="w">"TIME!"</div><p><b>Means:</b> Nobody is on your back. Relax, turn with the ball, look up, then choose. Don't just kick it away.</p><p><b>You'll hear it:</b> You get a pass and no defender is close behind you.</p></div>
-        <div class="word"><div class="w">"TAKE SPACE!"</div><p><b>Means:</b> Open grass in front of you. Dribble forward with confidence and make a defender come to you.</p><p><b>You'll hear it:</b> There's space in front of you and you're waiting.</p></div>
-        <div class="word"><div class="w">"PRESS!"</div><p><b>Means:</b> Sprint at the girl with the ball. Take away her time and force a mistake.</p><p><b>You'll hear it:</b> They have the ball in a dangerous spot, or take a big touch.</p><p class="same">In the playbook: PRESS!</p></div>
-        <div class="word"><div class="w">"MARK UP!"</div><p><b>Means:</b> Find a red player. Stand goal-side, between her and our goal, close enough that she can't get an easy pass.</p><p><b>You'll hear it:</b> Throw-ins, corners, free kicks, or when they attack our box.</p><p class="same">In the playbook: LOCK THE BOX! · WALL UP!</p></div>
+        <div class="word"><div class="w">"SHAPE!"</div><p><b>Means:</b> Spread out and get back to your spot in our diamond. Don't bunch up.</p><p><b>You'll hear it:</b> We win the ball, or we're attacking and girls crowd together.</p><p class="same"><a href="#shape">Picture and drills ↑</a></p></div>
+        <div class="word"><div class="w">"GET SMALL!"</div><p><b>Means:</b> Squeeze our diamond together, tight and close, so they can't go through the middle.</p><p><b>You'll hear it:</b> They have the ball and we're going back to defend.</p><p class="same"><a href="#small">Picture and drills ↑</a></p></div>
+        <div class="word"><div class="w">"TIME!"</div><p><b>Means:</b> Nobody is on your back. Relax, turn with the ball, look up, then choose. Don't just kick it away.</p><p><b>You'll hear it:</b> You get a pass and no defender is close behind you.</p><p class="same"><a href="#time">Picture and drills ↑</a></p></div>
+        <div class="word"><div class="w">"TAKE SPACE!"</div><p><b>Means:</b> Open grass in front of you. Dribble forward with confidence and make a defender come to you.</p><p><b>You'll hear it:</b> There's space in front of you and you're waiting.</p><p class="same"><a href="#space">Picture and drills ↑</a></p></div>
+        <div class="word"><div class="w">"PRESS!"</div><p><b>Means:</b> Sprint at the girl with the ball. Take away her time and force a mistake.</p><p><b>You'll hear it:</b> They have the ball in a dangerous spot, or take a big touch.</p><p class="same"><a href="#stomp">Picture and drills ↑</a></p></div>
+        <div class="word"><div class="w">"MARK UP!"</div><p><b>Means:</b> Find a red player. Stand goal-side, between her and our goal, close enough that she can't get an easy pass.</p><p><b>You'll hear it:</b> Throw-ins, corners, free kicks, or when they attack our box.</p><p class="same"><a href="#mark">Picture and drills ↑</a></p></div>
       </div>
       <p class="say"><strong>Sideline tip:</strong> the best way to support players is to cheer them on. Shouting "Kick it!" or "Pass it!" takes away her chance to read the game and think for herself. If you feel the need to call something out, try <strong>"You've got time!"</strong> or <strong>"Take space!"</strong> To cheer a try without telling her what to do: <strong>"Good idea!"</strong> or <strong>"Yes, good try!"</strong></p>
       <p class="fb screen-only"><a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Feedback</a></p>
@@ -931,7 +1110,7 @@
 </main>
 
 <p class="idea screen-only"><a class="pbtn" href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=Idea%20for%20a%20new%20call" target="_blank" rel="noopener">💡 Got an idea for a new call? Tell us</a></p>
-<footer>LaSalle Stompers 2017 Girls Black · ECSL · U10 · Hear the call, see the picture, do your job.<br><span class="ver">Playbook v1.4.1 · 2026-11-19 · <a href="https://github.com/mkonkolowicz/2017-girls-stompers-black/blob/main/CHANGELOG.md">What's new</a><span class="screen-only"> · <a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Send feedback</a></span></span><br><span class="credit">Beta tested by <strong>#9 Victoria K.</strong></span></footer>
+<footer>LaSalle Stompers 2017 Girls Black · ECSL · U10 · Hear the call, see the picture, do your job.<br><span class="ver">Playbook v2.0.0 · 2026-11-19 · <a href="https://github.com/mkonkolowicz/2017-girls-stompers-black/blob/main/CHANGELOG.md">What's new</a><span class="screen-only"> · <a href="https://docs.google.com/forms/d/e/1FAIpQLSehVao4iN_hs0dEaz_k5A2iL-7mpqFKXwh-p09SES9mPjnvRQ/viewform?usp=pp_url&amp;entry.1089797194=General%20%2F%20whole%20playbook" target="_blank" rel="noopener">💬 Send feedback</a></span></span><br><span class="credit">Beta tested by <strong>#9 Victoria K.</strong></span></footer>
 
 <script>
 (function(){
@@ -1415,8 +1594,8 @@
       steps:[
         {s:'Our keeper has the ball. The reds must go back behind the retreat line.', d:1700,
           m:[['r1',60,18],['r2',60,82],['r3',64,40],['r4',64,60],['r5',82,50]]},
-        {s:'"WINGS OUT!" Backs fly to the sidelines. Mids go wide and up. CM shows.', d:1600,
-          m:[['lb',26,10],['rb',26,90],['lm',46,12],['rm',46,88],['cm',32,52]], fx:[['tag',13,24,'WINGS OUT!']]},
+        {s:'"SHAPE!" Backs fly to the sidelines. Mids go wide and up. CM shows.', d:1600,
+          m:[['lb',26,10],['rb',26,90],['lm',46,12],['rm',46,88],['cm',32,52]], fx:[['tag',13,24,'SHAPE!']]},
         {s:'Every red is back. GK makes a calm pass on the ground to a wide back.', m:[['ball',26,86,'pass',-4]], d:1200,
           fx:[['tag',12,36,'NO RUSH']]},
         {s:'She touches it: NOW the reds can cross. She dribbles into the space. RM flies up the line.', clear:true, d:1500,
@@ -1435,8 +1614,8 @@
         {s:'Coach passes to a red player.', m:[['ball',59.5,33]], d:1100},
         {s:'"PRESS!" The closest girl presses. The next girl covers.', m:[['p1',54,33],['p2',44,40]], d:1300,
           fx:[['tag',48,24,'PRESS!'],['tag',40,48,'COVER']]},
-        {s:'She wins it and yells "WINGS OUT!"', clear:true, m:[['p1',55,35,'none'],['ball',58.5,35.5,'none'],['o1',64,29,'none']], d:600,
-          fx:[['tag',50,26,'WINGS OUT!']]},
+        {s:'She wins it and yells "SHAPE!"', clear:true, m:[['p1',55,35,'none'],['ball',58.5,35.5,'none'],['o1',64,29,'none']], d:600,
+          fx:[['tag',50,26,'SHAPE!']]},
         {s:'The other two fly into the Wing Lanes, wide and forward.', m:[['p2',68,59],['p3',66,11]], d:1300},
         {s:'Pass to a wing! The reds chase.', m:[['ball',68,55.5],['o1',72,42]], d:1000},
         {s:'She dribbles over the end line in 6 seconds. 2 points!', m:[['p2',90,58,'drib'],['ball',93.5,58,'none']], d:1300,
@@ -1451,14 +1630,14 @@
       steps:[
         {s:'Coach rolls it to our GK. The reds jog back behind the retreat line.', d:1600,
           m:[['o1',32,58],['o2',68,58],['o3',50,63]]},
-        {s:'"WINGS OUT!" Backs run to the sideline. CM shows in the middle.', d:1400,
-          m:[['lb',8,30],['rb',92,30],['cm',50,40]], fx:[['tag',50,16,'WINGS OUT!']]},
+        {s:'"SHAPE!" Backs run to the sideline. CM shows in the middle.', d:1400,
+          m:[['lb',8,30],['rb',92,30],['cm',50,40]], fx:[['tag',50,16,'SHAPE!']]},
         {s:'Every red is back. GK makes a calm pass on the ground to a wide back.', m:[['ball',89,31.5,'pass',-5]], d:1200,
           fx:[['tag',74,8,'NO RUSH']]},
         {s:'She touches it: NOW the reds can cross! She dribbles. CM finds space.', clear:true, d:1400,
           m:[['rb',91,44,'drib'],['ball',91,47.5,'none'],['cm',64,38],['o2',82,52],['o3',58,57],['o1',30,48]]},
         {s:'A red comes at her. Pass inside to CM!', m:[['ball',67.5,39.5]], d:900},
-        {s:'CM turns and dribbles through a halfway gate. 2 points!', d:1500,
+        {s:'CM has TIME! She turns and dribbles through a halfway gate. 2 points!', d:1500,
           m:[['cm',72,70,'drib'],['ball',72,73.5,'none'],['o2',80,62]]},
       ]},
 
@@ -1469,8 +1648,8 @@
         ['p',46,16,'LM','lm'],['p',46,84,'RM','rm'],['p',36,50,'CM','cm'],['p',64,44,'S','s'],
         ['o',56,18,'','r1'],['o',56,82,'','r2'],['o',56,50,'','r3'],['o',70,40,'','r4'],['o',70,62,'','r5']],
       steps:[
-        {s:'We go WINGS OUT!, but the reds are waiting right on top of every pass.', h:1300, fx:[['tag',31,32,'ALL COVERED']]},
-        {s:'GK yells "OVER THE TOP!"', clear:true, h:700, fx:[['tag',20,64,'OVER THE TOP!']]},
+        {s:'We get in SHAPE!, but the reds are waiting right on top of every pass.', h:1300, fx:[['tag',31,32,'ALL COVERED']]},
+        {s:'GK sees the big space behind them.', clear:true, h:700, fx:[['tag',20,64,'SPACE BEHIND!']]},
         {s:'High and far, into the space behind them. Everybody sprints!', d:1700,
           m:[['ball',104,76,'shot',-10],['s',98,70],['rm',86,86],['lm',84,24],['cm',66,58],['r2',72,86],['r5',84,68]]},
         {s:'S wins the race. Go to goal!', m:[['s',120,62,'drib'],['ball',123.5,61,'none']], d:1300, fx:[['tag',118,82,'WON THE RACE!']]},
@@ -1482,10 +1661,10 @@
       actors:[['gk',8,35,null,'gk'],['ball',11.5,35,null,'ball'],['o',42,16,'','o1'],['o',42,35,'','o2'],['o',42,54,'','o3'],
         ['p',34,24,'S','s'],['p',34,50,'RM','rm']],
       steps:[
-        {s:'The reds are close. Short passes are blocked. GK yells "OVER THE TOP!"', h:1100, fx:[['tag',22,8,'OVER THE TOP!']]},
+        {s:'The reds are close. Short passes are blocked. GK looks for the space behind them.', h:1100, fx:[['tag',22,8,'SPACE BEHIND!']]},
         {s:'High over the reds, into The Space. Runners spin and sprint!', d:1500,
           m:[['ball',73,48,'pass',-9],['rm',70,51],['s',72,22],['o3',54,56],['o2',52,40]]},
-        {s:'RM gets there first and dribbles over the end line. 2 points!', m:[['rm',91,50,'drib'],['ball',94.5,49.5,'none']], d:1200},
+        {s:'RM gets there first: "TAKE SPACE!" She dribbles over the end line. 2 points!', m:[['rm',91,50,'drib'],['ball',94.5,49.5,'none']], d:1200},
       ]},
 
     overtop_d2:{pitch:'full',
@@ -1505,14 +1684,14 @@
         ['o',130,32,'','o1'],['o',130,68,'','o2'],['o',124,52,'','o3'],['o',106,92,'','o4'],['o',106,8,'','o5'],
         ['p',122,40,'S','s'],['p',116,22,'LM','lm'],['p',116,80,'RM','rm'],['p',108,56,'CM','cm'],['p',44,32,'LB','lb'],['p',44,68,'RB','rb']],
       steps:[
-        {s:'Their keeper has the ball. Coach yells "SET THE TRAP!" Everyone runs back to the retreat line.', d:1800,
+        {s:'Their keeper has the ball. Coach yells "GET SMALL!" Everyone runs back to the retreat line.', d:1800,
           m:[['s',96,44],['lm',95,18],['rm',95,82],['cm',86,56],['lb',58,34],['rb',58,66],['o1',124,14,'none'],['o2',124,86,'none'],['o3',114,50,'none']],
-          fx:[['tag',40,10,'SET THE TRAP!']]},
-        {s:'Wait… She passes it out. As soon as their player touches it, the ball is in play. GO!', m:[['ball',121,83,'pass',4]], d:1100},
+          fx:[['tag',40,10,'GET SMALL!']]},
+        {s:'Wait… She passes it out. As soon as their player touches it, the ball is in play: "PRESS!"', m:[['ball',121,83,'pass',4]], d:1100},
         {s:'S presses from the inside. RM and LM block the wing passes. CM jams the middle. Backs push up, not too far.', d:1500,
           m:[['s',115,77],['rm',109,91],['lm',110,20],['cm',112,64],['lb',68,38],['rb',69,62]],
           fx:[['tag',131,70,'PRESS!'],['tag',97,62,'JAM'],['tag',96,82,'BLOCK'],['tag',110,30,'BLOCK'],['tag',56,50,'NOT TOO FAR']]},
-        {s:'Trapped on the sideline! Win it, then "WINGS OUT!"', clear:true, m:[['ball',117.5,81.5,'none'],['o2',127,88,'none']], d:700,
+        {s:'Trapped on the sideline! Win it, then "SHAPE!"', clear:true, m:[['ball',117.5,81.5,'none'],['o2',127,88,'none']], d:700,
           fx:[['tag',131,72,'WIN IT!']]},
       ]},
 
@@ -1524,9 +1703,9 @@
       actors:[['ogk',50,7,null,'ogk'],['ball',50,10.5,null,'ball'],['o',22,28,'','o1'],['o',78,28,'','o2'],['o',50,38,'','o3'],
         ['p',42,22,'S','s'],['p',30,18,'LM','lm'],['p',66,18,'RM','rm'],['p',62,40,'CM','cm']],
       steps:[
-        {s:'Coach rolls it to their keeper: "SET THE TRAP!" Sprint back to the retreat line.', d:1700,
-          m:[['s',50,60],['lm',18,62],['rm',82,62],['cm',62,68]], fx:[['tag',22,12,'SET THE TRAP!']]},
-        {s:'Their keeper passes to a red back. Once she touches it, the ball is in play: GO!', m:[['ball',75,30.5,'pass',4]], d:1100},
+        {s:'Coach rolls it to their keeper: "GET SMALL!" Sprint back to the retreat line.', d:1700,
+          m:[['s',50,60],['lm',18,62],['rm',82,62],['cm',62,68]], fx:[['tag',22,12,'GET SMALL!']]},
+        {s:'Their keeper passes to a red back. Once she touches it, the ball is in play: "PRESS!"', m:[['ball',75,30.5,'pass',4]], d:1100},
         {s:'S presses from the inside. LM and RM block the wing gates. CM jams the middle.', d:1400,
           m:[['s',68,36],['rm',86,44],['lm',16,44],['cm',56,46],['o3',46,42,'none']],
           fx:[['tag',62,26,'PRESS!'],['tag',30,47,'JAM'],['tag',86,36,'BLOCK'],['tag',16,36,'BLOCK']]},
@@ -1540,10 +1719,10 @@
         ['p',96,44,'S'],['p',95,18,'LM'],['p',95,82,'RM'],['p',86,56,'CM'],['o',124,14],['o',124,86],['o',114,50],['p',66,34,'LB']],
       actors:[['ogk',140,50,null,'ogk'],['ball',136.5,50,null,'ball'],['o',90,36,'','o4'],['p',62,64,'RB','rb']],
       steps:[
-        {s:'We SET THE TRAP. Every short pass is blocked…', fx:[['tag',120,30,'ALL BLOCKED']], h:1300},
+        {s:'We GET SMALL at the retreat line. Every short pass is blocked…', fx:[['tag',120,30,'ALL BLOCKED']], h:1300},
         {s:'…so their keeper kicks it long, over the trap.', clear:true, m:[['ball',72,62,'pass',-8],['o4',76,56]], d:1500},
         {s:'Our backs didn\'t go too far, so RB gets there first and wins it!', m:[['rb',69,63]], d:700, fx:[['tag',52,74,'WON IT!']]},
-        {s:'"WINGS OUT!" Pass up the line to RM and go!', m:[['ball',92,80]], d:1000},
+        {s:'"SHAPE!" Pass up the line to RM and go!', m:[['ball',92,80]], d:1000},
       ]},
 
     tap_pic:{pitch:'half',
@@ -1678,6 +1857,106 @@
           fx:[['tag',70,32,"'OUT!'"]]},
         {s:'The Outlet collects it…', m:[['s',27,50]], d:900},
         {s:'…and dribbles through a halfway gate = 2 points!', m:[['s',28,72,'drib'],['ball',28,75.5,'none']], d:1300},
+      ]},
+    // ---- v2.0.0: the six sideline words as calls ----
+    small_d1:{size:[100,70], still:2,
+      fixed:[['cone',8,28],['cone',8,42],['lbl',8,24,'GATE','middle',2.2],
+        ['o',60,10],['o',84,46],['o',60,62]],
+      actors:[['o',84,26,'','o2'],['ball',80.5,27.5,null,'ball'],['p',50,35,'S','s'],['p',36,12,'LM','lm'],['p',36,58,'RM','rm'],['p',22,35,'CM','cm']],
+      steps:[
+        {s:'Our diamond is spread wide. The reds have the ball. Coach yells "GET SMALL!"', h:900, fx:[['tag',30,66,'GET SMALL!']]},
+        {s:'Squeeze the diamond, between the ball and the gate.', m:[['s',66,32],['lm',48,24],['rm',48,44],['cm',32,34]], d:1500,
+          fx:[['tri',[66,32],[48,24],[32,34],[48,44]]]},
+        {s:'No pass through the middle. They have to go around the outside.', m:[['ball',62.5,12,'pass',3]], d:1000},
+        {s:'The ball moves, the diamond slides with it. Still small!', clear:true, m:[['s',58,18],['lm',42,14],['rm',44,32],['cm',28,26]], d:1300},
+      ]},
+
+    time_pic:{pitch:'full', still:2,
+      fixed:[['gk',9,50],['ogk',140,50],['p',30,72,'RB'],['p',64,18,'LM'],['p',68,84,'RM'],
+        ['o',78,60],['o',94,28],['o',104,64],['o',114,46],['o',90,84]],
+      actors:[['p',30,30,'LB','lb'],['ball',33.5,31,null,'ball'],['p',50,52,'CM','cm'],['p',106,36,'S','s']],
+      steps:[
+        {s:'LB passes to CM. The closest red is far away.', m:[['ball',46.5,51]], d:1000, fx:[['czone',50,52,10,'NOBODY CLOSE']]},
+        {s:'Teammates yell "TIME!" CM turns with the ball and faces their goal.', m:[['cm',61,52,'drib'],['ball',64.5,52,'none']], d:1000,
+          fx:[['tag',44,78,'TIME!']]},
+        {s:'Head up. Look, then choose. S shows for the ball.', clear:true, m:[['s',92,52]], d:900, fx:[['tag',74,42,'LOOK UP']]},
+        {s:'A smart pass forward to S. Not kicked away!', m:[['ball',88.5,52.5]], d:900},
+      ]},
+
+    time_d1:{size:[100,70], still:2,
+      fixed:[['cone',92,26],['cone',92,44],['lbl',92,22,'GATE','middle',2.2],['c',8,35]],
+      actors:[['ball',11.5,35,null,'ball'],['p',36,35,'R','r'],['o',70,40,'','d'],['p',97,35,'P','p']],
+      steps:[
+        {s:'Coach passes to R. The defender is far behind her.', m:[['ball',32.5,35]], d:1000},
+        {s:'P yells "TIME!" R turns with the ball and looks up.', m:[['r',46,33,'drib'],['ball',49.5,33,'none']], d:900, fx:[['tag',84,14,'TIME!']]},
+        {s:'She dribbles through the gate before the defender gets there. 1 point!', m:[['r',88,35,'drib'],['ball',91.5,35,'none'],['d',78,44]], d:1500},
+      ]},
+
+    time_d2:{size:[100,70], still:2,
+      fixed:[['zone',4,8,24,54,'END'],['zone',72,8,24,54,'END'],['line',36,8,36,62],['line',64,8,64,62],['lbl',50,5,'MIDDLE','middle',2.4]],
+      actors:[['p',16,24,'A','a'],['ball',19.5,24.5,null,'ball'],['p',44,40,'M','m'],['o',58,18,'','o1'],['p',84,24,'B','b']],
+      steps:[
+        {s:'A passes into M. The red is far away.', m:[['ball',41,38.5]], d:1000},
+        {s:'A yells "TIME!" M turns and looks up.', m:[['m',51,35,'drib'],['ball',54.5,34,'none']], d:900, fx:[['tag',16,14,'TIME!']]},
+        {s:'Pass through to B. 1 point!', m:[['ball',80.5,25],['o1',56,28]], d:1000},
+      ]},
+
+    space_pic:{pitch:'full', still:2,
+      fixed:[['gk',9,50],['ogk',140,50],['p',30,24,'LB'],['p',44,50,'CM'],['p',72,24,'LM'],['p',100,46,'S'],
+        ['o',104,30],['o',114,56],['o',124,40]],
+      actors:[['p',38,88,'RB','rb'],['ball',41.5,88,null,'ball'],['p',80,58,'RM','rm'],['o',96,74,'','r1']],
+      steps:[
+        {s:'RB has the ball. Open grass in front of her, and she\'s waiting…', h:1100, fx:[['zone',46,66,40,16,'OPEN GRASS']]},
+        {s:'Coach yells "TAKE SPACE!" She dribbles forward with confidence.', m:[['rb',66,88,'drib'],['ball',69.5,88,'none']], d:1500,
+          fx:[['tag',28,74,'TAKE SPACE!']]},
+        {s:'A red has to step up and come to her.', m:[['r1',77,85]], d:900, fx:[['tag',100,92,'SHE COMES']]},
+        {s:'Now RM is free. Pass!', clear:true, m:[['ball',79,61.5]], d:900},
+        {s:'RM goes forward. We moved up the field fast.', m:[['rm',104,64,'drib'],['ball',107.5,64,'none']], d:1300},
+      ]},
+
+    space_d1:{size:[100,70], still:3,
+      fixed:[['cone',6,8],['cone',94,8],['cone',6,62],['cone',94,62],['line',94,8,94,62],['lbl',92,67,'end line = point','end',2.2]],
+      actors:[['p',14,24,'A','a'],['ball',17.5,24,null,'ball'],['p',14,48,'B','b'],['o',64,36,'','d']],
+      steps:[
+        {s:'Open grass in front of A. Teammates yell "TAKE SPACE!"', h:900, fx:[['tag',36,14,'TAKE SPACE!']]},
+        {s:'A dribbles forward with confidence. B runs level with her.', clear:true, m:[['a',42,26,'drib'],['ball',45.5,26,'none'],['b',40,50]], d:1500},
+        {s:'The red steps up to stop A. She came to her!', m:[['d',52,30]], d:800, fx:[['tag',66,16,'SHE COMES']]},
+        {s:'Pass to B, who is free.', clear:true, m:[['ball',53,50.5],['b',50,51]], d:900},
+        {s:'B dribbles over the end line. Point!', m:[['b',88,50,'drib'],['ball',91.5,50,'none']], d:1300},
+      ]},
+
+    mark_pic:{pitch:'half', still:3,
+      fixed:[['o',97,24],['p',50,64,'S']],
+      actors:[['gk',50,7,null,'gk'],['ball',95,21.5,null,'ball'],['o',70,20,'','o1'],['o',55,31,'','o2'],['o',38,22,'','o3'],['o',64,46,'','o4'],
+        ['p',28,40,'LB','lb'],['p',86,46,'RB','rb'],['p',56,54,'CM','cm'],['p',30,58,'LM','lm'],['p',82,60,'RM','rm']],
+      steps:[
+        {s:'Their throw-in near our box. Coach yells "MARK UP!"', h:900, fx:[['tag',18,12,'MARK UP!']]},
+        {s:'Everyone finds a red and gets goal-side: between her and our goal.', clear:true, d:1600,
+          m:[['rb',67,16],['cm',53,26.5],['lb',39.5,17.5],['rm',62,41.5],['lm',46,40]]},
+        {s:'Stay tight. LM is the spare: she guards the middle.', fx:[['tag',84,30,'GOAL-SIDE'],['tag',30,48,'SPARE']], h:1100},
+        {s:'The throw comes in. RB steps in front and wins it!', clear:true, m:[['ball',69,19,'pass',-3],['rb',68.5,18]], d:1000, fx:[['tag',84,12,'WON IT!']]},
+      ]},
+
+    mark_d1:{size:[100,70], still:2,
+      fixed:[['cone',42,6],['cone',58,6],['lbl',50,3.6,'mini goal','middle',2.2],['c',50,64]],
+      actors:[['o',30,40,'','a'],['p',35,31,'M','m'],['ball',47,61,null,'ball']],
+      steps:[
+        {s:'The attacker moves around. M stays goal-side, between her and the mini goal.', m:[['a',66,42],['m',62,33]], d:1700},
+        {s:'Coach yells "MARK UP!" M gets tight, close enough to touch.', m:[['a',72,32],['m',68,27.5]], d:1100, fx:[['tag',22,20,'MARK UP!']]},
+        {s:'Coach passes to the attacker. M steps in front and wins it. Point!', m:[['ball',70,30.5],['m',70,29]], d:1000, fx:[['tag',86,44,'WON IT!']]},
+      ]},
+
+    mark_d2:{pitch:'half', still:2,
+      fixed:[['gk',50,7],['cone',22,76],['cone',34,76],['cone',66,76],['cone',78,76],['lbl',28,79.3,'gate = 2 pts','middle',2.2],['lbl',72,79.3,'gate = 2 pts','middle',2.2],
+        ['o',2,30]],
+      actors:[['ball',4.5,28,null,'ball'],['o',20,24,'','o1'],['o',36,36,'','o2'],['o',28,48,'','o3'],
+        ['p',40,52,'1','p1'],['p',58,42,'2','p2'],['p',62,60,'3','p3'],['p',50,66,'4','p4']],
+      steps:[
+        {s:'Coach gives the reds a throw-in near our box: "MARK UP!"', h:800, fx:[['tag',72,14,'MARK UP!']]},
+        {s:'Each Stomper finds a red and gets goal-side. The extra girl guards the middle.', clear:true, d:1600,
+          m:[['p1',23,19.5],['p2',39,31],['p3',31,43],['p4',48,28]]},
+        {s:'The throw comes in. Her marker steps in front and wins it.', m:[['ball',37.5,32,'pass',-3]], d:1000},
+        {s:'Dribble out through a gate = 2 points!', m:[['p2',28,72,'drib'],['ball',28,75.5,'none']], d:1500},
       ]},
   };
 

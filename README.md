@@ -1,22 +1,23 @@
 # LaSalle Stompers 2017 Girls Black: Game Calls Playbook
 
-U10 girls · ECSL · Ontario Soccer · **Playbook v1.4.1** ([changelog](CHANGELOG.md))
+U10 girls · ECSL · Ontario Soccer · **Playbook v2.0.0** ([changelog](CHANGELOG.md))
 
-A mobile-friendly playbook of nine sideline calls, grouped by situation. Each call has a picture of what to do and at least two practice drills:
+A mobile-friendly playbook of ten calls, grouped by situation. The first six are the coaching staff's sideline words. Each call has a picture of what to do and at least two practice drills:
 
 | Call | When |
 |---|---|
-| **PRESS!** | Pressing: they have the ball |
-| **SHAPE!** (and GET SMALL!) | Positioning in our diamond formation |
-| **WINGS OUT!** | We just won it, or our keeper has it (retreat line) |
-| **OVER THE TOP!** | They press too high: GK throws or kicks it long behind them |
-| **SET THE TRAP!** | Their keeper has it: line up at the retreat line, then press |
+| **SHAPE!** | We have the ball: spread out to our diamond (includes building out from our keeper) |
+| **GET SMALL!** | They have the ball: squeeze the diamond, close the middle |
+| **TIME!** | A player gets a pass with no defender on her back: turn, look up, choose |
+| **TAKE SPACE!** | Open grass in front: dribble forward (includes the space behind them) |
+| **PRESS!** | They have it in a dangerous spot (includes waiting at the retreat line) |
+| **MARK UP!** | Throw-ins, corners, free kicks: find a red, get goal-side |
 | **TAP & BLAST!** | Our indirect free kick |
 | **WALL UP!** | Their indirect free kick |
 | **CRASH THE BOX!** | Our corner |
 | **LOCK THE BOX!** | Their corner |
 
-Plus two extras: **Sideline Words** (Shape! Get Small! Time! Take Space! Press! Mark Up!) for players and parents, and **At Home** (five ways to practise in 10 to 15 minutes a day).
+Plus two extras: **Sideline Words** (all six calls on one page, with the coaches' tip for parents), and **At Home** (five ways to practise in 10 to 15 minutes a day).
 
 **Live:** https://mkonkolowicz.github.io/2017-girls-stompers-black/
 
@@ -27,7 +28,7 @@ Plus two extras: **Sideline Words** (Shape! Get Small! Time! Take Space! Press! 
 Once you've opened it, it works offline at the field.
 
 ## Print
-- **Printable PDF:** [2017-girls-stompers-black-playbook.pdf](2017-girls-stompers-black-playbook.pdf), 23 pages, Letter size. There's also a download button at the top of the site.
+- **Printable PDF:** [2017-girls-stompers-black-playbook.pdf](2017-girls-stompers-black-playbook.pdf), 27 pages, Letter size. There's also a download button at the top of the site.
 - **Print button** on the site prints the current page with every diagram shown as its finished picture.
 
 ## Editing

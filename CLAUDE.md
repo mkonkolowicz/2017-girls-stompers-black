@@ -12,18 +12,19 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 - `2017-girls-stompers-black-playbook.pdf`: printable version. Regenerate with `node tools/make-pdf.mjs` (needs `playwright-core` and the installed Google Chrome).
 - `CHANGELOG.md`: Keep a Changelog format with semver.
 
-## Calls and groups (current: v1.4.1)
+## Calls and groups (current: v2.0.0)
+**The coaches' six sideline words ARE the open-play calls** (user decision, 2026-11-19). Every drill and diagram uses only these words. Don't add open-play calls with other names; new patterns go inside one of the six as an "Also:" sub-section (`h3.subhead`) or a drill.
 | Group | Calls (section id) |
 |---|---|
-| Team shape | SHAPE! (`shape`, includes GET SMALL!) |
-| Win the ball | PRESS! (`stomp`), SET THE TRAP! (`trap`) |
-| Advance the ball | WINGS OUT! (`wings`), OVER THE TOP! (`overtop`) |
+| Team shape (`g-shape`) | SHAPE! (`shape`, sub "Build out from the back" `#wings`), GET SMALL! (`small`) |
+| On the ball (`g-ball`) | TIME! (`time`), TAKE SPACE! (`space`, sub "Space behind them" `#overtop`) |
+| Defend (`g-defend`) | PRESS! (`stomp`, sub "Their keeper has the ball" `#trap`: "GET SMALL!" at the retreat line, then "PRESS!"), MARK UP! (`mark`) |
 | Corners | CRASH THE BOX! (`crash`), LOCK THE BOX! (`lock`) |
 | Free kicks | TAP & BLAST! (`tap`), WALL UP! (`wall`) |
 
-After the calls there's an **Extras** group (`#g-extras`) with two non-call sections: Sideline Words (`words`) and At Home (`home`), both using `.words`/`.word` cards and no diagrams.
+After the calls there's an **Extras** group (`#g-extras`) with two non-call sections: Sideline Words (`words`, a one-page summary of the six calls linking to each, plus the coaches' parent tip) and At Home (`home`), both using `.words`/`.word` cards and no diagrams. Old ids `wings`, `trap`, `overtop` survive as sub-section anchors; diagram keys `wings_*`, `trap_*`, `overtop_*`, `stomp_*` are internal names.
 
-Each call has a "picture in your head" diagram and at least two drills (WINGS OUT! has three). When you add a call, update all of these: the section, its call card, its nav chip, the "N calls" count in the hero, the README table, the CHANGELOG, its feedback link, and the form's dropdown.
+Each call has a "picture in your head" diagram and at least two drills. When you add a call, update all of these: the section, its call card, its nav chip, the "N calls" count in the hero, the README table, the CHANGELOG, its feedback link, and the form's dropdown.
 
 ## Diagram engine (the `const D = {...}` object in index.html)
 - `pitch:'full'` is 150×100, horizontal, with our goal on the LEFT and the team attacking right. `pitch:'half'` is 100×80 with the goal at the TOP and the halfway line at y=77. `size:[w,h]` gives a plain grid.
@@ -70,6 +71,7 @@ The `gh` CLI is at `/opt/homebrew/bin/gh`.
 - Round the Gate (WINGS OUT! Drill 3) is adapted from a Teloframe Facebook reel the head coach shared. It's for advancing the ball, not team shape.
 
 ## Release history (newest first)
+- v2.0.0 (2026-11-19): the six sideline words became the calls. New GET SMALL!, TIME!, TAKE SPACE!, MARK UP! sections and 9 new diagrams; SET THE TRAP!, WINGS OUT!, OVER THE TOP! folded into PRESS!, SHAPE!, TAKE SPACE!.
 - v1.4.1 (2026-11-19): updated coach letter (~/Downloads/U10 Black Off-season work.pages). New parent sideline tip, At Home labels match the coaches exactly.
 - v1.4.0 (2026-11-12): coaches' words exactly. SHAPE UP! and BIG! became SHAPE!, STOMP! became PRESS!, form choices renamed.
 - v1.3.0 (2026-11-12): diamond formation. SHAPE! diagrams redrawn as two diamonds, WINGS OUT! start spots moved.
@@ -97,6 +99,6 @@ The `gh` CLI is at `/opt/homebrew/bin/gh`.
 - Responses Sheet: https://docs.google.com/spreadsheets/d/1yV4gXK69eBxayucU7uCctSTmkwFR8ZXoIEOUP71C2N0/edit
 - Pre-fill: "Which call?" is `entry.1089797194`. ("I am a…" is `entry.535876269`.) Each call's button is `<viewform>?usp=pp_url&entry.1089797194=<CALL, URL-encoded>`.
 - Built by `tools/create-feedback-form.gs` run from an Apps Script project in the user's account.
-- "Which call?" choices: General / whole playbook, Idea for a new call, then the 9 calls. The hero "Feedback? Tell us" and footer "Send feedback" links pre-fill General; the footer `.idea` button pre-fills "Idea for a new call". To change choices later, use `addIdeaChoice()`-style code in the same Apps Script project ("Untitled project"), not `createStompersFeedbackForm` (that makes a new form).
+- "Which call?" choices: General / whole playbook, Idea for a new call, then the 10 calls (6 words + 4 set pieces, since v2.0.0). The hero "Feedback? Tell us" and footer "Send feedback" links pre-fill General; the footer `.idea` button pre-fills "Idea for a new call". To change choices later, use `addIdeaChoice()`-style code in the same Apps Script project ("Untitled project"), not `createStompersFeedbackForm` (that makes a new form).
 - Email notifications for new responses are ON (set in the form's Responses tab, 2026-11-09).
 - **When you add a call:** also add its "💬 Feedback on this call" link (`p.fb.screen-only` at the end of the section's `.body`), and add the call to the form's "Which call?" dropdown (edit URL above) so the pre-fill matches.

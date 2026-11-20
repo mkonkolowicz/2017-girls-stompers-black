@@ -3,6 +3,27 @@
 Every change to the LaSalle Stompers 2017 Girls Black game calls playbook.
 Versions follow [semantic versioning](https://semver.org/): new calls or drills bump the minor number, and fixes bump the patch number.
 
+## [2.0.0] - 2026-11-19
+The coaching staff's six sideline words are now the playbook's calls. Every word has its own picture and drills, and practice is organized around them.
+
+### Added
+- **GET SMALL!** is its own call now, with a new drill: Close the Middle.
+- **TIME!**: new call. Picture: receive, turn, look up, choose. Drills: Hear It, Turn and Through the Middle.
+- **TAKE SPACE!**: new call. Picture: dribble into open grass and make a defender come to you. New drill: Make Her Come.
+- **MARK UP!**: new call. Picture: their throw-in near our box. Drills: Shadow Mark and Throw-In Mark Up.
+- New groups: Team shape (SHAPE!, GET SMALL!), On the ball (TIME!, TAKE SPACE!), Defend (PRESS!, MARK UP!).
+
+### Changed
+- **WINGS OUT!** is now part of SHAPE! ("Build out from the back"). Retreat Line Build-Out is a SHAPE! drill, and Press & Fly is a PRESS! drill.
+- **SET THE TRAP!** is now part of PRESS! ("Their keeper has the ball"). The calls are "GET SMALL!" to line up at the retreat line, then "PRESS!" Over the Trap is now Small, Not Too Far, a GET SMALL! drill.
+- **OVER THE TOP!** is now part of TAKE SPACE! ("The space behind them"). Throw & Chase, Win the Second Ball and Round the Gate are TAKE SPACE! drills.
+- Every picture and drill uses only the six words. "Just won it" is now "SHAPE!"
+- Sideline Words is a one-page summary that links to each call.
+- Feedback form choices updated to match.
+
+### Removed
+- SET THE TRAP!, WINGS OUT! and OVER THE TOP! as separate calls. Their old links still jump to the right place.
+
 ## [1.4.1] - 2026-11-19
 Matches the coaching staff's updated "U10 Black Team off-season development plan".
 
