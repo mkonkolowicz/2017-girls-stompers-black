@@ -12,7 +12,7 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 - `2017-girls-stompers-black-playbook.pdf`: printable version. Regenerate with `node tools/make-pdf.mjs` (needs `playwright-core` and the installed Google Chrome).
 - `CHANGELOG.md`: Keep a Changelog format with semver.
 
-## Calls and groups (current: v1.4.0)
+## Calls and groups (current: v1.4.1)
 | Group | Calls (section id) |
 |---|---|
 | Team shape | SHAPE! (`shape`, includes GET SMALL!) |
@@ -66,10 +66,11 @@ The `gh` CLI is at `/opt/homebrew/bin/gh`.
 - Credit line: "Beta tested by #9 Victoria K." with no "thank you".
 - The two backs are LB and RB. The user once wrote "CB and RB" and meant the two backs.
 - Still open: a redirect repo at the old `stompers-playbook` Pages URL. The user hasn't asked for it.
-- The head coach drives content. His inputs so far: the "U-10 Offseason Development Plan" letter (~/Downloads/U-10 Offseason work.pdf, signed "The Coaching Staff") and a hand drawing of the diamond (~/Downloads/WhatsApp Image 2026-11-12 at 15.00.44.jpeg). When he sends something, read it, then make the playbook match his wording exactly.
+- The head coach drives content. His inputs so far: the "U10 Black Team off-season development plan" (~/Downloads/U10 Black Off-season work.pages, 2026-11-19, supersedes the earlier ~/Downloads/U-10 Offseason work.pdf; export .pages with Pages via osascript) and a hand drawing of the diamond (~/Downloads/WhatsApp Image 2026-11-12 at 15.00.44.jpeg). When he sends something, read it, then make the playbook match his wording exactly.
 - Round the Gate (WINGS OUT! Drill 3) is adapted from a Teloframe Facebook reel the head coach shared. It's for advancing the ball, not team shape.
 
 ## Release history (newest first)
+- v1.4.1 (2026-11-19): updated coach letter (~/Downloads/U10 Black Off-season work.pages). New parent sideline tip, At Home labels match the coaches exactly.
 - v1.4.0 (2026-11-12): coaches' words exactly. SHAPE UP! and BIG! became SHAPE!, STOMP! became PRESS!, form choices renamed.
 - v1.3.0 (2026-11-12): diamond formation. SHAPE! diagrams redrawn as two diamonds, WINGS OUT! start spots moved.
 - v1.2.0 (2026-11-12): Sideline Words and At Home extras from the offseason letter. SMALL! became GET SMALL!, plus Stopper-then-Charger, MARK UP!, and the "Close or far?" wall rule.

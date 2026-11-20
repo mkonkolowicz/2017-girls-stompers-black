@@ -3,6 +3,13 @@
 Every change to the LaSalle Stompers 2017 Girls Black game calls playbook.
 Versions follow [semantic versioning](https://semver.org/): new calls or drills bump the minor number, and fixes bump the patch number.
 
+## [1.4.1] - 2026-11-19
+Matches the coaching staff's updated "U10 Black Team off-season development plan".
+
+### Changed
+- Sideline Words: parents are asked to learn the words, not shout them. New sideline tip from the coaches: cheer first; if you call something, "You've got time!" or "Take space!"; cheer a try with "Good idea!" or "Yes, good try!"
+- At Home: labels now match the coaches' table exactly: Ball mastery, Passing & first touch, Shooting, Game IQ, Desire & competitiveness, and the activity names in their wording.
+
 ## [1.4.0] - 2026-11-12
 The playbook now uses the coaches' sideline words exactly, so players, coaches and parents all say the same thing.
 
