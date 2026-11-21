@@ -1,13 +1,13 @@
 # LaSalle Stompers 2017 Girls Black: Game Calls Playbook
 
-U10 girls · ECSL · Ontario Soccer · **Playbook v2.0.0** ([changelog](CHANGELOG.md))
+U10 girls · ECSL · Ontario Soccer · **Playbook v2.0.1** ([changelog](CHANGELOG.md))
 
 A mobile-friendly playbook of ten calls, grouped by situation. The first six are the coaching staff's sideline words. Each call has a picture of what to do and at least two practice drills:
 
 | Call | When |
 |---|---|
 | **SHAPE!** | We have the ball: spread out to our diamond (includes building out from our keeper) |
-| **GET SMALL!** | They have the ball: squeeze the diamond, close the middle |
+| **GET SMALL!** | They have the ball: squeeze the diamond, close the middle. S stays high |
 | **TIME!** | A player gets a pass with no defender on her back: turn, look up, choose |
 | **TAKE SPACE!** | Open grass in front: dribble forward (includes the space behind them) |
 | **PRESS!** | They have it in a dangerous spot (includes waiting at the retreat line) |

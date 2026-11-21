@@ -3,6 +3,14 @@
 Every change to the LaSalle Stompers 2017 Girls Black game calls playbook.
 Versions follow [semantic versioning](https://semver.org/): new calls or drills bump the minor number, and fixes bump the patch number.
 
+## [2.0.1] - 2026-11-20
+Head coach feedback: the striker stays high at all times.
+
+### Changed
+- GET SMALL! picture: S no longer drops back into the small diamond. She stays high, ready for the pass when we win it. New "S · Stay high" job.
+- Close the Middle drill: the small diamond is now GK, LB, RB and CM. S stands high; winning it and passing to S = 2 points.
+- GET SMALL! card, Sideline Words and Shadow Shape say "S stays high".
+
 ## [2.0.0] - 2026-11-19
 The coaching staff's six sideline words are now the playbook's calls. Every word has its own picture and drills, and practice is organized around them.
 

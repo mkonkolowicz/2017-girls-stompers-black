@@ -12,7 +12,7 @@ Game-calls playbook for the LaSalle Stompers 2017 Girls Black team (U10 girls, E
 - `2017-girls-stompers-black-playbook.pdf`: printable version. Regenerate with `node tools/make-pdf.mjs` (needs `playwright-core` and the installed Google Chrome).
 - `CHANGELOG.md`: Keep a Changelog format with semver.
 
-## Calls and groups (current: v2.0.0)
+## Calls and groups (current: v2.0.1)
 **The coaches' six sideline words ARE the open-play calls** (user decision, 2026-11-19). Every drill and diagram uses only these words. Don't add open-play calls with other names; new patterns go inside one of the six as an "Also:" sub-section (`h3.subhead`) or a drill.
 | Group | Calls (section id) |
 |---|---|
@@ -44,7 +44,7 @@ Each call has a "picture in your head" diagram and at least two drills. When you
 - The audience is 8 and 9 year old girls. Use short, concrete sentences and Canadian spelling.
 - No em dashes in visible copy. Use colons and periods.
 - Theme: mostly black (`--ink`), crest green accents (`--green` #137a42, `--green-hi` #3dbb6c). Inside diagrams, labels and run arrows stay yellow so they show up on the green pitch.
-- Formation: the head coach's **diamond** (since v1.3.0, from his hand drawing, 2026-11-12). Players: GK, LB, RB, CM, LM, RM, S. Back diamond GK-LB-CM-RB, front diamond CM-LM-S-RM, so CM sits just in front of the backs and LM/RM play higher and wider (a 2-1-2-1). Don't call it "2-3-1" any more. Full-pitch reference spots: GK 9,50 · LB/RB 26,38/26,62 · CM 38,50 · LM/RM 49,32/49,68 · S 62,50 (GET SMALL!); stretch for SHAPE!. Ours are black tokens, opponents are red.
+- Formation: the head coach's **diamond** (since v1.3.0, from his hand drawing, 2026-11-12). Players: GK, LB, RB, CM, LM, RM, S. Back diamond GK-LB-CM-RB, front diamond CM-LM-S-RM, so CM sits just in front of the backs and LM/RM play higher and wider (a 2-1-2-1). Don't call it "2-3-1" any more. Full-pitch reference spots: GK 9,50 · LB/RB 26,38/26,62 · CM 38,50 · LM/RM 49,32/49,68 · S stays HIGH, never drops into GET SMALL! (head coach, 2026-11-20; e.g. S 100,50 while the rest are small); stretch for SHAPE!. Ours are black tokens, opponents are red.
 - Vocabulary is IDENTICAL to the coaches' sideline words (v1.4.0): SHAPE!, GET SMALL!, TIME!, TAKE SPACE!, PRESS!, MARK UP! Never use the old names SHAPE UP!, BIG!, SMALL! or STOMP! in visible copy (section id `stomp` and diagram keys `stomp_*`/`shape_big` stay as internal names).
 
 ## Verify before shipping
@@ -71,6 +71,7 @@ The `gh` CLI is at `/opt/homebrew/bin/gh`.
 - Round the Gate (WINGS OUT! Drill 3) is adapted from a Teloframe Facebook reel the head coach shared. It's for advancing the ball, not team shape.
 
 ## Release history (newest first)
+- v2.0.1 (2026-11-20): head coach: striker high at all times. GET SMALL! picture and Close the Middle drill keep S high.
 - v2.0.0 (2026-11-19): the six sideline words became the calls. New GET SMALL!, TIME!, TAKE SPACE!, MARK UP! sections and 9 new diagrams; SET THE TRAP!, WINGS OUT!, OVER THE TOP! folded into PRESS!, SHAPE!, TAKE SPACE!.
 - v1.4.1 (2026-11-19): updated coach letter (~/Downloads/U10 Black Off-season work.pages). New parent sideline tip, At Home labels match the coaches exactly.
 - v1.4.0 (2026-11-12): coaches' words exactly. SHAPE UP! and BIG! became SHAPE!, STOMP! became PRESS!, form choices renamed.
